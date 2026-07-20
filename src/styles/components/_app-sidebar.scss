@@ -1,0 +1,83 @@
+/* ==========================================================================
+   App sidebar
+   관리자 화면 좌측 공통 1차 내비게이션입니다.
+   ========================================================================== */
+
+.app-sidebar {
+  display: flex;
+  flex: 0 0 96px;
+  min-height: calc(100vh - 60px);
+  justify-content: flex-end;
+  padding: 40px 0 40px 20px;
+}
+
+.app-sidebar__nav {
+  display: flex;
+  width: 76px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 2px solid var(--color-white);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 30%);
+  box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-menu {
+  display: flex;
+  width: 52px;
+  height: 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 16px;
+  color: var(--color-gray-80);
+  font-size: 10px;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.sidebar-menu img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-menu.is-active {
+  border-radius: var(--radius-pill);
+  color: var(--color-gray-0);
+  background: var(--color-gray-80);
+  box-shadow: 0 6px 5px rgb(0 0 0 / 25%);
+}
+
+/* 태블릿 이하에서는 좌측 바를 하단 고정 내비게이션으로 전환합니다. */
+@media (max-width: 900px) {
+  .app-sidebar {
+    position: fixed;
+    z-index: 50;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .app-sidebar__nav {
+    width: 100%;
+    height: 68px;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 6px 12px;
+    border-radius: 18px;
+    background: rgb(255 255 255 / 88%);
+  }
+
+  .sidebar-menu {
+    width: 56px;
+    height: 52px;
+  }
+}

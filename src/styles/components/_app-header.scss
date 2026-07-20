@@ -1,0 +1,142 @@
+/* ==========================================================================
+   App header
+   피그마 925:11863 기준 관리자 화면 공통 헤더입니다.
+   로그인 페이지에는 포함하지 않고 이후 app-shell에서 사용합니다.
+   ========================================================================== */
+
+.app-header {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 60px;
+  align-items: stretch;
+  background: var(--color-gray-80);
+}
+
+.app-header__logo {
+  display: flex;
+  flex: 0 0 96px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0 12px 20px;
+}
+
+.app-header__logo img {
+  width: 65px;
+  height: 37px;
+}
+
+.app-header__utilities {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.header-search {
+  display: flex;
+  width: 290px;
+  height: 40px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  border: 1px solid var(--color-gray-40);
+  border-radius: var(--radius-pill);
+}
+
+.header-search input {
+  min-width: 0;
+  flex: 1;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: var(--color-white);
+  background: transparent;
+  font-size: 15px;
+}
+
+.header-search input::placeholder {
+  color: var(--color-gray-10);
+}
+
+.header-search img {
+  width: 24px;
+  height: 24px;
+}
+
+.app-header__divider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-gray-50);
+}
+
+.header-user {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  color: var(--color-white);
+  background: transparent;
+  font-size: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.header-user > img {
+  width: 28px;
+  height: 28px;
+}
+
+.header-user strong {
+  font-weight: 500;
+}
+
+.app-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 작은 데스크톱·태블릿에서는 검색창과 사용자명을 단계적으로 축소합니다. */
+@media (max-width: 1024px) {
+  .app-header__utilities {
+    gap: 12px;
+  }
+
+  .header-search {
+    width: clamp(180px, 28vw, 290px);
+  }
+
+  .header-user span {
+    display: none;
+  }
+}
+
+/* 모바일에서는 검색 입력을 아이콘 버튼 형태로 축약합니다. */
+@media (max-width: 640px) {
+  .app-header__logo {
+    flex-basis: 76px;
+    padding-left: 12px;
+  }
+
+  .app-header__utilities {
+    gap: 6px;
+    padding-right: 12px;
+  }
+
+  .header-search {
+    width: 40px;
+    padding: 0 7px;
+    border-color: transparent;
+  }
+
+  .header-search input,
+  .app-header__divider {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+<!--
+  관리자 화면 공통 헤더.
+  로그인 화면에는 사용하지 않고, 이후 페이지의 app-shell에서 include합니다.
+-->
+<header class="app-header">
+  <a class="app-header__logo" href="{{base}}" aria-label="Doo'h 홈">
+    <img src="{{base}}assets/images/header-logo.svg" alt="Doo'h" />
+  </a>
+
+  <div class="app-header__utilities">
+    <label class="header-search">
+      <span class="sr-only">통합 검색</span>
+      <input type="search" placeholder="검색어를 입력해주세요." />
+      <img src="{{base}}assets/icons/search.svg" alt="" />
+    </label>
+
+    <span class="app-header__divider" aria-hidden="true"></span>
+
+    <button class="header-user" type="button">
+      <img src="{{base}}assets/images/user-avatar.svg" alt="" />
+      <span><strong>한양대학교병원 관리자</strong>님</span>
+    </button>
+
+    <span class="app-header__divider" aria-hidden="true"></span>
+
+    <div class="app-header__actions">
+      <button class="icon-button icon-button--dark" type="button" aria-label="알림">
+        <img src="{{base}}assets/icons/alarm.svg" alt="" />
+      </button>
+      <button class="icon-button icon-button--dark" type="button" aria-label="언어 선택">
+        <img src="{{base}}assets/icons/language-dark.svg" alt="" />
+      </button>
+    </div>
+  </div>
+</header>

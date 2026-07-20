@@ -1,0 +1,750 @@
+// ==========================================================================
+// Login page
+// 로그인·상품 안내 모달 전용 스타일. 공통 컴포넌트 폴더에 두지 않습니다.
+// ==========================================================================
+
+.login-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 597px));
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(24px, 6.48vh, 70px) max(var(--page-gutter), calc((100vw - 1218px) / 2));
+  overflow-x: hidden;
+
+  &__background {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.brand-panel,
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: clamp(700px, 86.08vh, 800px);
+}
+
+// --------------------------------------------------------------------------
+// Left brand panel
+// --------------------------------------------------------------------------
+
+.brand-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 80px 0;
+  color: var(--color-white);
+}
+
+.brand-logo {
+  width: 107px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.brand-copy {
+  width: 100%;
+
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 1.67vw, 32px);
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Right login card
+// --------------------------------------------------------------------------
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0;
+  overflow: hidden;
+  border: 2px solid rgb(255 255 255 / 90%);
+  border-radius: 60px;
+  background: linear-gradient(153deg, rgb(255 255 255 / 8%), rgb(255 255 255 / 28%));
+  box-shadow: 0 4px 50px rgb(113 137 199 / 70%);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 32px;
+  }
+}
+
+.login-content {
+  width: 100%;
+  padding: 0 clamp(40px, 6.7vw, 80px);
+}
+
+.login-heading {
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    color: var(--color-brand-blue);
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.5;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-gray-60);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+.login-top-line {
+  flex-shrink: 0;
+  width: 100%;
+  height: 1px;
+  margin: 32px 0 40px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+// --------------------------------------------------------------------------
+// Login form
+// --------------------------------------------------------------------------
+
+.login-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &__label {
+    padding: 0 20px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+    background: var(--color-white);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+
+    &:focus-within {
+      border-color: var(--color-brand-blue);
+      box-shadow: 0 0 0 3px rgb(52 77 138 / 14%);
+    }
+
+    img {
+      flex: 0 0 auto;
+      width: 16px;
+      height: 16px;
+    }
+
+    input {
+      width: 100%;
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      color: var(--color-gray-80);
+      background: transparent;
+      font-size: 16px;
+      line-height: 1.5;
+
+      &::placeholder {
+        color: var(--color-placeholder);
+      }
+    }
+  }
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+.save-id {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+
+    &:checked + .custom-check {
+      border-color: var(--color-brand-blue);
+      background: var(--color-brand-blue);
+
+      img {
+        display: block;
+      }
+    }
+
+    &:focus-visible + .custom-check {
+      outline: 3px solid rgb(52 77 138 / 25%);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.custom-check {
+  display: grid;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+  background: var(--color-white);
+
+  img {
+    display: none;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-footer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 100%;
+  padding: 0 clamp(40px, 6.7vw, 80px);
+}
+
+.contact-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 40px;
+  padding: 7px 20px;
+  border: 1px solid var(--color-white);
+  border-radius: var(--radius-pill);
+  color: #142042;
+  background: linear-gradient(105deg, rgb(255 255 255 / 20%), rgb(255 255 255 / 50%));
+  font-size: 17px;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+
+  strong {
+    color: #06B6D4;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-gray-60);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}
+
+// --------------------------------------------------------------------------
+// Pricing modal (login only)
+// --------------------------------------------------------------------------
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  visibility: hidden;
+  padding: 20px;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 200ms ease, visibility 200ms ease;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgb(20 32 66 / 50%);
+  }
+}
+
+.pricing-dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(960px, 100%);
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  border: 1px solid rgb(255 255 255 / 90%);
+  border-radius: 40px;
+  background: linear-gradient(163deg, rgb(255 255 255 / 40%), rgb(255 255 255 / 80%));
+  box-shadow: -20px 0 40px rgb(0 0 0 / 30%);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+
+  &__header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    flex: 0 0 64px;
+    align-items: center;
+    gap: 16px;
+    padding: 0 32px;
+    border-bottom: 1px solid #f8fafc;
+
+    h2 {
+      flex: 1;
+      margin: 0;
+      color: var(--color-gray-95);
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 32px;
+  }
+
+  &__footer {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 32px;
+    border-top: 1px solid var(--color-gray-0);
+  }
+}
+
+.pricing-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  h3 {
+    margin: 0;
+    color: #142042;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -1px;
+
+    strong {
+      color: #344d8a;
+      font-weight: 800;
+    }
+  }
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.plan {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 12px;
+  padding: 40px 32px;
+  border-radius: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.90);
+  background: linear-gradient(159deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.80) 100%);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(15px);
+  webkit-backdrop-filter: blur(15px);
+  h4 {
+    margin: 0;
+    color: var(--color-brand-blue);
+    font-size: 19px;
+    line-height: 1.5;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    white-space: nowrap;
+
+    strong {
+      color: var(--color-primary-80);
+      font-size: 32px;
+      line-height: 1.5;
+    }
+
+    span {
+      color: var(--color-gray-60);
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 139px;
+    margin: 0;
+    padding: 24px 0 32px;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 17px;
+    line-height: 1.5;
+    white-space: nowrap;
+
+    &::before {
+      position: absolute;
+      top: 0.05em;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: url('../../assets/icons/icon_check.svg') no-repeat center center / contain;
+      content: '';
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 20px;
+    color: var(--color-brand-blue);
+    background: #e7ecfa;
+    font-size: 19px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    border-color: transparent;
+    color: var(--color-white);
+    background: linear-gradient(152deg, #4566b7, #09142d);
+    box-shadow: 0 8px 16px rgb(113 137 199 / 80%);
+    border: 0;
+    h4,
+    .plan__price strong,
+    .plan__price span {
+      color: var(--color-white);
+    }
+
+    li::before {
+      background-image: url('../../assets/icons/icon_check-f.svg');
+    }
+
+    .plan__button {
+      color: var(--color-brand-blue);
+      background: var(--color-white);
+    }
+  }
+}
+
+.badge {
+  padding: 3px 6px;
+  border-radius: var(--radius-pill);
+  color: var(--color-white);
+  background: var(--color-warning);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+// --------------------------------------------------------------------------
+// Responsive
+// --------------------------------------------------------------------------
+
+// 태블릿: 브랜드 패널 숨기고 로그인 카드만 중앙 배치
+@media (max-width: 1240px) {
+  .login-page {
+    grid-template-columns: minmax(0, 597px);
+    padding-right: var(--page-gutter);
+    padding-left: var(--page-gutter);
+  }
+
+  .brand-panel {
+    display: none;
+  }
+}
+
+// 낮은 화면: 카드가 잘리지 않도록 상단 정렬 + 스크롤
+@media (max-height: 860px) and (min-width: 641px) {
+  .login-page {
+    align-items: flex-start;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .brand-panel,
+  .login-card {
+    height: auto;
+    min-height: 0;
+  }
+}
+
+// 상품 안내: 3열 → 1열
+@media (max-width: 900px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .plan {
+    ul {
+      min-height: 0;
+    }
+  }
+
+  .pricing-intro h3 {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+// 모바일
+@media (max-width: 640px) {
+  .login-page {
+    display: block;
+    padding: 16px;
+  }
+
+  .login-card {
+    height: auto;
+    min-height: calc(100dvh - 32px);
+    padding: 20px 0 24px;
+    border-radius: 32px;
+
+    &__top {
+      padding: 0 16px;
+    }
+  }
+
+  .login-content,
+  .login-footer {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .login-heading {
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  .login-top-line {
+    margin: 24px 0;
+  }
+
+  .login-form {
+    gap: 24px;
+  }
+
+  .field {
+    &__label {
+      padding: 0 16px;
+      font-size: 15px;
+    }
+
+    &__control {
+      height: 52px;
+      padding: 0 16px;
+
+      input {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .form-options {
+    padding: 0 8px;
+    font-size: 14px;
+  }
+
+  .form-actions {
+    gap: 10px;
+
+    .button {
+      height: 52px;
+      padding: 0 20px;
+      font-size: 17px;
+    }
+  }
+
+  .login-footer {
+    gap: 12px;
+    margin-top: auto;
+  }
+
+  .contact-pill {
+    gap: 8px;
+    min-height: 44px;
+    padding: 8px 16px;
+    font-size: 15px;
+  }
+
+  .company-info {
+    font-size: 12px;
+  }
+
+  .modal {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .pricing-dialog {
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+    border-radius: 24px 24px 0 0;
+
+    &__header {
+      flex: 0 0 56px;
+      padding: 0 16px;
+
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    &__content {
+      gap: 24px;
+      padding: 20px 16px;
+    }
+
+    &__footer {
+      padding: 12px 16px;
+    }
+  }
+
+  .pricing-intro {
+    h3 {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .contact-pill {
+      width: 100%;
+    }
+  }
+
+  .plan {
+    padding: 28px 20px;
+
+    &__price strong {
+      font-size: 28px;
+    }
+
+    li {
+      white-space: normal;
+    }
+  }
+}
+
+// 좁은 모바일: 문의/사업자 정보 줄바꿈
+@media (max-width: 460px) {
+  .contact-pill {
+    flex-direction: column;
+    gap: 2px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .company-info {
+    white-space: normal;
+
+    span {
+      display: block;
+    }
+  }
+}

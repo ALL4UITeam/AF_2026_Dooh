@@ -1,0 +1,12 @@
+// ==========================================================================
+// 공통 스타일 진입점
+// 페이지 전용 스타일은 각 페이지 JS에서 별도 import 합니다.
+// ==========================================================================
+
+@use 'settings/tokens';
+@use 'base/reset';
+
+@use 'components/buttons';
+@use 'components/app-header';
+@use 'components/navigation';
+@use 'components/app-sidebar';

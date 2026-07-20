@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Navigation and app footer
+   목록 페이지에서 반복 사용할 페이지네이션과 공통 푸터 기본형입니다.
+   ========================================================================== */
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination__button,
+.pagination__edge,
+.pagination__ellipsis {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius-pill);
+  color: var(--color-gray-60);
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.pagination__edge {
+  display: flex;
+  width: auto;
+  gap: 0;
+  padding: 0 8px;
+  color: var(--color-gray-40);
+}
+
+.pagination__edge img {
+  width: 20px;
+  height: 20px;
+}
+
+.pagination__ellipsis img {
+  width: 24px;
+  height: 24px;
+}
+
+.pagination__button:hover,
+.pagination__button:focus-visible,
+.pagination__button.is-current {
+  color: var(--color-white);
+  background: var(--color-primary-80);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .pagination {
+    gap: 2px;
+  }
+
+  .pagination__button:nth-of-type(n + 6):not(:last-of-type),
+  .pagination__ellipsis {
+    display: none;
+  }
+}
+
+.app-footer {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px var(--page-gutter);
+  border-top: 1px solid var(--color-gray-10);
+  background: var(--color-white);
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-gray-60);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}

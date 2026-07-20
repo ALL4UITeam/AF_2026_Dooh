@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Design tokens
+   피그마 변수(1138:7599 기준 Primary/Gray/System)를 CSS 커스텀 프로퍼티로 둡니다.
+   ========================================================================== */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css');
+
+:root {
+  /* Typography */
+  font-family: 'Pretendard GOV', 'Pretendard', sans-serif;
+  font-synthesis: none;
+
+  /* Primary (Figma Primary/*) */
+  --color-primary-0: #ffffff;
+  --color-primary-5: #eff2fb;
+  --color-primary-10: #dee4f5;
+  --color-primary-20: #bdc9eb;
+  --color-primary-30: #98aadb;
+  --color-primary-50: #4d67a8;
+  --color-primary-60: #344d8a;
+  --color-primary-70: #213364;
+  --color-primary-80: #142042;
+
+  /* Alias: 기존 코드·로그인에서 쓰던 브랜드 블루 */
+  --color-brand-blue: var(--color-primary-60);
+
+  /* Neutral (Figma Gray/*) */
+  --color-white: #ffffff;
+  --color-gray-0: #f8fafc;
+  --color-gray-5: #f1f5f9;
+  --color-gray-10: #e2e8f0;
+  --color-gray-20: #cbd5e1;
+  --color-gray-30: #94a3b8;
+  --color-gray-40: #64748b;
+  --color-gray-50: #475569;
+  --color-gray-60: #334155;
+  --color-gray-80: #0f172a;
+  --color-gray-95: #050914;
+
+  /* Semantic */
+  --color-secondary-50: #06b6d4;
+  --color-cyan-50: var(--color-secondary-50);
+  --color-danger: #9f1239;
+  --color-placeholder: #8999af;
+  --color-warning: #ffb340;
+  --color-success-10: #e6f5ea;
+  --color-success-40: #52c47c;
+  --color-success-60: #1b8743;
+  --color-info-10: #e0f2fe;
+  --color-info-60: #0284c7;
+  --color-pending-10: #f1f3f5;
+  --color-pending-40: #adb5bd;
+  --color-pending-60: #495057;
+
+  /* Shared shape and motion */
+  --radius-pill: 999px;
+  --radius-control: 6px;
+  --radius-card: 20px;
+  --transition-fast: 150ms ease;
+  --border-width-regular: 1px;
+
+  /* Fluid page gutters: 20px → 40px */
+  --page-gutter: clamp(20px, 4vw, 40px);
+}

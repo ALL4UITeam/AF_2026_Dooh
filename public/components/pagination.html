@@ -1,0 +1,21 @@
+<!-- 공통 페이지네이션: 실제 데이터 연결 시 페이지 번호와 aria-current만 갱신합니다. -->
+<nav class="pagination" aria-label="목록 페이지 이동">
+  <button class="pagination__edge" type="button">
+    <img src="{{base}}assets/icons/page-prev.svg" alt="" />이전
+  </button>
+  <button class="pagination__button is-current" type="button" aria-current="page">1</button>
+  <button class="pagination__button" type="button">2</button>
+  <button class="pagination__button" type="button">3</button>
+  <button class="pagination__button" type="button">4</button>
+  <button class="pagination__button" type="button">5</button>
+  <button class="pagination__button" type="button">6</button>
+  <button class="pagination__button" type="button">7</button>
+  <button class="pagination__button" type="button">8</button>
+  <span class="pagination__ellipsis" aria-hidden="true">
+    <img src="{{base}}assets/icons/page-ellipsis.svg" alt="" />
+  </span>
+  <button class="pagination__button" type="button">99</button>
+  <button class="pagination__edge" type="button">
+    다음<img src="{{base}}assets/icons/page-next.svg" alt="" />
+  </button>
+</nav>
