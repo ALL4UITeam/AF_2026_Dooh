@@ -1,7 +1,6 @@
 # Doo'h CMS
 
 - 페이지 목록(개발용): `index.html`
-- **컴포넌트 가이드**: `guide.html` (Figma Section 1 · 1163:3687)
 - 관리자 미디어 목록(리스트): `CMS_02서비스_01미디어_목록.html`
 - 관리자 미디어 목록(카드): `CMS_02서비스_01미디어_카드.html`
 - 관리자 미디어 등록: `CMS_02서비스_01미디어_등록.html`
@@ -28,8 +27,8 @@ npm run build
 - 그대로 복사할 정적 파일: `public/assets`
 - Vite가 해시 파일명으로 처리할 이미지: `src/assets/images`
 - 공통 SCSS: `src/styles/settings`, `base`, `components`
-- **가이드·공통 컴포넌트 SCSS**: `src/styles/components/_cms-btn.scss`, `_badge-state.scss`, `_form-controls.scss`, `_tab-menu.scss`, `_info-panel.scss`
-- 페이지 전용 SCSS: `src/styles/pages` (로그인 폼·상품안내는 `login.scss`에만, 가이드는 `guide.scss`)
+- **공통 컴포넌트 SCSS**: `src/styles/components/_cms-btn.scss`, `_badge-state.scss`, `_form-controls.scss`, `_tab-menu.scss`, `_info-panel.scss`
+- 페이지 전용 SCSS: `src/styles/pages` (로그인 폼·상품안내는 `login.scss`에만)
 - 공통 JS: `src/js/components`
 - 페이지 전용 JS: `src/js/pages`
 - CSS 이미지 경로: SCSS 파일 기준 상대경로 사용  
