@@ -1082,14 +1082,14 @@
   }
 }
 
-/* Step 02 — 선택 검토 · 적용 (Figma 1210:14036 / info 1210:14758) */
+/* Step 02 — 선택 검토 · 적용 (Figma 1210:14037) */
 .media-select-review {
   display: flex;
   min-height: 0;
   flex: 1;
   flex-direction: column;
-  gap: 12px;
-  overflow: hidden;
+  gap: 24px;
+  overflow: visible;
 }
 
 .media-select-summary {

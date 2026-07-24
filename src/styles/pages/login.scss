@@ -479,7 +479,7 @@
     width: 100%;
     height: 56px;
     padding: 0 16px;
-    border: 0;
+    border: 1px solid transparent;
     border-radius: 20px;
     color: var(--color-brand-blue);
     background: #e7ecfa;
@@ -489,9 +489,10 @@
   }
 
   &:hover {
-    border-color: transparent;
+    // Figma 1138:9647 — hover: border Primary/60 + drop-shadow
+    border-color: var(--color-primary-60);
     color: var(--color-white);
-    background: linear-gradient(152deg, #4566b7, #09142d);
+    background: linear-gradient(151.46deg, var(--color-primary-50) 0%, #0b1124 100%);
     box-shadow: 0 8px 16px rgb(113 137 199 / 80%);
     h4,
     .plan__price strong,
@@ -504,8 +505,10 @@
     }
 
     .plan__button {
-      color: var(--color-brand-blue);
+      border-color: var(--color-primary-60);
+      color: var(--color-primary-60);
       background: var(--color-white);
+      box-shadow: 0 4px 6px rgb(100 116 139 / 40%);
     }
   }
 }
