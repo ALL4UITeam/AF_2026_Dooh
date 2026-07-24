@@ -82,10 +82,12 @@
   padding: 0 12px;
   border-radius: var(--radius-control);
   box-shadow: none;
+}
 
-  &-delete {
-    width: 90px;
-  }
+.time-slot-row .btn--form {
+  flex-shrink: 0;
+  width: 100px;
+  min-width: 100px;
 }
 
 // --------------------------------------------------------------------------
@@ -634,10 +636,7 @@
 
     .btn--form {
       width: 100%;
-    }
-
-    .btn--form-delete {
-      width: 100%;
+      min-width: 0;
     }
   }
 
