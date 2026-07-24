@@ -123,6 +123,62 @@ function getHtmlEntries() {
   return entries
 }
 
+/**
+ * Vite 빌드가 CSS <link> 순서를 바꿔 cascade가 깨지는 문제를 막습니다.
+ * 원본 HTML의 ./src/styles/*.scss 순서를 빌드 결과 CSS 링크에 그대로 반영합니다.
+ */
+function preserveStylesheetOrderPlugin() {
+  /** @type {Map<string, string[]>} */
+  const scssOrderByHtml = new Map()
+
+  const scssToKey = (href) => {
+    const file = href.split('/').pop() || ''
+    return file.replace(/\.scss$/i, '')
+  }
+
+  return {
+    name: 'preserve-stylesheet-order',
+    buildStart() {
+      scssOrderByHtml.clear()
+      const root = process.cwd()
+      readdirSync(root, { withFileTypes: true })
+        .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
+        .forEach((entry) => {
+          const filePath = resolve(root, entry.name)
+          const html = readFileSync(filePath, 'utf8')
+          const order = [
+            ...html.matchAll(/<link\b[^>]*href=["']([^"']*src\/styles\/[^"']+\.scss)["'][^>]*>/gi),
+          ].map((match) => scssToKey(match[1]))
+          if (order.length) {
+            scssOrderByHtml.set(filePath, order)
+          }
+        })
+    },
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        const order = scssOrderByHtml.get(resolve(ctx.filename)) || []
+        if (!order.length) return html
+
+        const linkRe = /<link\b[^>]*rel=["']stylesheet["'][^>]*>/gi
+        const links = html.match(linkRe) || []
+        if (links.length < 2) return html
+
+        const rank = (linkTag) => {
+          const href = linkTag.match(/href=["']([^"']+)["']/i)?.[1] || ''
+          const file = href.split('/').pop() || ''
+          const index = order.findIndex((key) => file === `${key}.css` || file.startsWith(`${key}-`))
+          return index === -1 ? Number.MAX_SAFE_INTEGER : index
+        }
+
+        const sorted = [...links].sort((a, b) => rank(a) - rank(b))
+        let i = 0
+        return html.replace(linkRe, () => sorted[i++])
+      },
+    },
+  }
+}
+
 export default defineConfig({
   // dist/index.html을 file://로 직접 열어도 에셋 경로가 유지됩니다.
   base: './',
@@ -139,7 +195,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [pagesListPlugin(), partialsPlugin()],
+  plugins: [pagesListPlugin(), partialsPlugin(), preserveStylesheetOrderPlugin()],
   build: {
     assetsDir: 'assets',
     assetsInlineLimit: 0,

@@ -1037,15 +1037,18 @@
   align-items: stretch;
   gap: 6px;
 
-  .search-field {
+  .search-field,
+  .search-field.search-field--fluid {
     flex: 1 1 0;
     width: auto;
     min-width: 0;
+    max-width: none;
     height: 40px;
   }
 }
 
-.search-field--fluid {
+.search-field.search-field--fluid {
+  width: auto;
   max-width: none;
 }
 
@@ -1503,10 +1506,12 @@
   .media-select-panel__search {
     gap: 4px;
 
-    .search-field {
+    .search-field,
+    .search-field.search-field--fluid {
       flex: 1 1 0;
       width: auto;
       min-width: 0;
+      max-width: none;
       height: 36px;
     }
   }
@@ -1738,10 +1743,12 @@
   }
 
   .media-select-panel__search {
-    .search-field {
+    .search-field,
+    .search-field.search-field--fluid {
       flex: 1 1 0;
       width: auto;
       min-width: 0;
+      max-width: none;
       height: 32px;
       padding: 0 12px;
     }
