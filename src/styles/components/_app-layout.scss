@@ -1,0 +1,193 @@
+/* ==========================================================================
+   App layout — admin pages shared responsive (sidebar bottom nav ~900px)
+   ========================================================================== */
+
+@use '../settings/asset-urls' as asset;
+
+.app-page {
+  min-width: 320px;
+  background-color: var(--color-gray-10);
+  background-image: asset.$image-media-bg;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 100% auto;
+
+  @media (max-width: 900px) {
+    background-position: top center;
+    background-size: 160% auto;
+  }
+
+  @media (max-width: 640px) {
+    background-size: 220% auto;
+  }
+}
+
+.app-layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  overflow: visible;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.app-main {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    padding: 24px var(--page-gutter) var(--app-gnb-bottom-height);
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    gap: 16px;
+    padding: 16px var(--page-gutter) var(--app-gnb-bottom-height);
+    font-size: 13px;
+  }
+}
+
+.page-heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 40px;
+  border-radius: var(--radius-card);
+  background: var(--color-primary-80);
+  color: var(--color-white);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -168px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    border-radius: 1000px;
+    background: rgb(58 91 208 / 20%);
+    filter: blur(100px);
+    pointer-events: none;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    margin: 0;
+    color: var(--color-white);
+    font-size: 32px;
+    font-weight: 900;
+    line-height: normal;
+  }
+
+  @media (max-width: 900px) {
+    padding: 16px 20px;
+
+    h1 {
+      height: auto;
+      min-height: 0;
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 14px 16px;
+    border-radius: 16px;
+
+    h1 {
+      font-size: 22px;
+    }
+  }
+}
+
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 24px;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-primary-20);
+    text-decoration: underline;
+  }
+
+  > img {
+    width: 4px;
+    height: 6px;
+  }
+
+  a img {
+    width: 10px;
+    height: 10px;
+  }
+
+  span {
+    color: var(--color-secondary-50);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
+}
+
+.page-heading__meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--color-primary-10);
+  font-size: 15px;
+  line-height: 1.5;
+
+  strong {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 640px) {
+    flex-wrap: wrap;
+    min-height: 0;
+    font-size: 12px;
+    line-height: 1.4;
+
+    strong {
+      font-size: 14px;
+    }
+  }
+}
+
+.page-heading__dot {
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-10);
+}
+
+.media-content {
+  @media (max-width: 640px) {
+    gap: 16px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+}

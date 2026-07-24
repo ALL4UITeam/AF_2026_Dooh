@@ -1,0 +1,227 @@
+﻿<section class="media-detail media-detail--analytics">
+  {{> pages/media/detail-hero}}
+
+  <div class="media-detail__analytics">
+    <div class="kpi-strip">
+      <div class="kpi-card">
+        <div class="kpi-card__head">
+          <span class="kpi-card__label">운영 상태</span>
+          <span class="kpi-card__line" aria-hidden="true"></span>
+        </div>
+        <strong class="kpi-card__value">활성화</strong>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-card__head">
+          <span class="kpi-card__label">운영 시간</span>
+          <span class="kpi-card__line" aria-hidden="true"></span>
+        </div>
+        <strong class="kpi-card__value">09:00~18:00</strong>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-card__head">
+          <span class="kpi-card__label">일 보장 횟수</span>
+          <span class="kpi-card__line" aria-hidden="true"></span>
+        </div>
+        <p class="kpi-card__value kpi-card__value--unit">
+          <strong>54</strong><span>회</span>
+        </p>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-card__head">
+          <span class="kpi-card__label">사이클 최대</span>
+          <span class="kpi-card__line" aria-hidden="true"></span>
+        </div>
+        <p class="kpi-card__value kpi-card__value--unit">
+          <strong>600</strong><span>초</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="analytics-grid">
+      <article class="detail-card detail-card--chart-panel">
+        <h2 class="detail-card__title">콘텐츠 운영 분포</h2>
+        <div class="detail-card__body">
+          <div class="pie-panel">
+            <div class="pie-panel__chart pie-panel__chart--empty" aria-hidden="true"></div>
+            <ul class="pie-legend">
+              <li class="pie-legend__item">
+                <span class="pie-legend__label">
+                  <span class="pie-legend__dot pie-legend__dot--commercial" aria-hidden="true"></span>
+                  상업 광고
+                </span>
+                <span class="pie-legend__value"><strong>80</strong>%</span>
+              </li>
+              <li class="pie-legend__item">
+                <span class="pie-legend__label">
+                  <span class="pie-legend__dot pie-legend__dot--public" aria-hidden="true"></span>
+                  공익 광고
+                </span>
+                <span class="pie-legend__value"><strong>20</strong>%</span>
+              </li>
+              <li class="pie-legend__item">
+                <span class="pie-legend__label">
+                  <span class="pie-legend__dot pie-legend__dot--own" aria-hidden="true"></span>
+                  자사 광고
+                </span>
+                <span class="pie-legend__value"><strong>0</strong>%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card detail-card--chart-panel">
+        <h2 class="detail-card__title">월별 스케줄 운영 수</h2>
+        <div class="detail-card__body detail-card__body--compact-chart">
+          <div class="mini-bar-chart" role="img" aria-label="월별 스케줄 운영 수">
+            <div class="mini-bar-chart__plot">
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 87.5%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 50.8%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 67.2%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 58.6%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 81.3%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 16.4%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar mini-bar-chart__bar--active" style="--bar-h: 100%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 68.8%"></span></div>
+            </div>
+            <div class="mini-bar-chart__x" aria-hidden="true">
+              <span>'09</span><span>'10</span><span>'11</span><span>'12</span><span>'01</span><span>'02</span><span>'03</span><span>'04</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card detail-card--chart-panel">
+        <h2 class="detail-card__title">광고 유형 비율</h2>
+        <div class="detail-card__body">
+          <div class="pie-panel">
+            <div class="pie-panel__chart pie-panel__chart--empty" aria-hidden="true"></div>
+            <ul class="pie-legend">
+              <li class="pie-legend__item">
+                <span class="pie-legend__label">
+                  <span class="pie-legend__dot pie-legend__dot--commercial" aria-hidden="true"></span>
+                  보장형
+                </span>
+                <span class="pie-legend__value"><strong>80</strong>%</span>
+              </li>
+              <li class="pie-legend__item">
+                <span class="pie-legend__label">
+                  <span class="pie-legend__dot pie-legend__dot--exposure" aria-hidden="true"></span>
+                  일반 노출
+                </span>
+                <span class="pie-legend__value"><strong>20</strong>%</span>
+              </li>
+              <li class="pie-legend__item">
+                <span class="pie-legend__label">
+                  <span class="pie-legend__dot pie-legend__dot--partner" aria-hidden="true"></span>
+                  제휴
+                </span>
+                <span class="pie-legend__value"><strong>0</strong>%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card detail-card--chart-panel">
+        <h2 class="detail-card__title">요일별 노출 지수</h2>
+        <div class="detail-card__body detail-card__body--compact-chart">
+          <div class="mini-bar-chart" role="img" aria-label="요일별 노출 지수">
+            <div class="mini-bar-chart__plot">
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 69.5%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 85.9%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 67.2%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 85.9%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar mini-bar-chart__bar--active" style="--bar-h: 100%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 60.9%"></span></div>
+              <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 35.2%"></span></div>
+            </div>
+            <div class="mini-bar-chart__x" aria-hidden="true">
+              <span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="media-detail__overview media-detail__overview--analytics-bottom">
+      <div class="media-detail__overview-col media-detail__overview-col--stretch">
+        <article class="detail-card detail-card--fill">
+          <h2 class="detail-card__title">기본정보</h2>
+          <div class="detail-card__body">
+            <div class="detail-row">
+              <span class="detail-row__label">미디어명</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">강남대로 DID 02</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">설치장소 유형</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">실외 도로변</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">셋탑 코드</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">STB010</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">Display</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">LCD 55" FHD</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">운영 시간</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">09:00 ~ 18:00</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">슬롯 구성</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">20초 · 30슬롯</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">보장 횟수</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">54회 / 일</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">운영 설정</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">평일 09-18</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">상태</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">
+                <span class="badge-state badge-state--success">
+                  <span class="badge-state__dot" aria-hidden="true"></span>
+                  활성화
+                </span>
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="media-detail__overview-col">
+        {{> pages/media/display-preview}}
+
+        <article class="detail-card detail-card--link-status">
+          <h2 class="detail-card__title">연결 현황</h2>
+          <div class="link-status">
+            <div class="link-status__item link-status__item--product">
+              <span class="link-status__label">연결 프로덕트</span>
+              <strong class="link-status__count">21</strong>
+            </div>
+            <div class="link-status__item link-status__item--schedule">
+              <span class="link-status__label">연결 스케줄</span>
+              <strong class="link-status__count">7</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  {{> pages/media/detail-actions}}
+</section>

@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Info panels — Figma info_guide / info-tip / info_alert
+   ========================================================================== */
+
+@use '../settings/asset-urls' as asset;
+
+.info-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border: 1px solid var(--color-primary-10);
+  border-radius: var(--radius-control);
+  background: var(--color-primary-5);
+
+  &__title {
+    margin: 0;
+    color: var(--color-gray-95);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--color-gray-60);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+.info-tip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-control);
+  background: var(--color-gray-5);
+  color: var(--color-gray-60);
+  font-size: 15px;
+  line-height: 1.5;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-image: asset.$icon-dot-info;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8px 8px;
+  }
+}
+
+.info-alert {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  border-radius: var(--radius-control);
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    border-radius: var(--radius-pill);
+    background: currentcolor;
+    opacity: 0.2;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  &--error {
+    border: 1px solid var(--color-error-40);
+    background: var(--color-error-10);
+    color: var(--color-error-60);
+  }
+
+  &--warning {
+    border: 1px solid var(--color-warning-40);
+    background: var(--color-warning-10);
+    color: var(--color-warning-60);
+  }
+
+  &--etc {
+    border: 1px solid var(--color-gray-20);
+    background: var(--color-gray-5);
+    color: var(--color-gray-60);
+  }
+}
+
+.toggle {
+  position: relative;
+  display: inline-flex;
+  width: 70px;
+  height: 32px;
+  align-items: center;
+  padding: 2px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-gray-20);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+
+  &__thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-pill);
+    background: var(--color-white);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+    transition: transform var(--transition-fast);
+  }
+
+  &.is-on {
+    background: var(--color-primary-60);
+
+    .toggle__thumb {
+      transform: translateX(38px);
+    }
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.summary-item {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  height: 60px;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--color-gray-30);
+  border-radius: 10px;
+  background: var(--color-white);
+  text-align: left;
+  cursor: pointer;
+
+  strong {
+    color: var(--color-gray-50);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.64px;
+    line-height: normal;
+  }
+
+  span {
+    color: var(--color-gray-60);
+    font-size: 15px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  &.is-selected {
+    border-color: var(--color-primary-60);
+    background: var(--color-primary-5);
+    box-shadow: 0 8px 12px rgb(0 0 0 / 12%);
+
+    strong,
+    span {
+      color: var(--color-primary-70);
+    }
+  }
+}
+
+.badge-settop-wrap,
+.guide-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.guide-icon-item {
+  display: flex;
+  width: 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-gray-60);
+  font-size: 11px;
+  line-height: 1.3;
+  text-align: center;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}

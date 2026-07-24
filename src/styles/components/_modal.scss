@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Modal shell — shared overlay
+   ========================================================================== */
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  visibility: hidden;
+  padding: 20px;
+  place-items: center;
+  opacity: 0;
+  transition:
+    opacity 200ms ease,
+    visibility 200ms ease;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgb(20 32 66 / 50%);
+  }
+}

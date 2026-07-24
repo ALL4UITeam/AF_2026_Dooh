@@ -1,0 +1,527 @@
+<!-- Figma 1163:3687 Section 1 — 컴포넌트 가이드 본문 -->
+<section class="guide-section" id="tokens">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Design Tokens</h2>
+    <p class="guide-section__desc">Figma 변수 기준 CSS 커스텀 프로퍼티 (<code>src/styles/settings/_tokens.scss</code>)</p>
+  </div>
+  <div class="guide-token-grid">
+    <div class="guide-token">
+      <span class="guide-token__swatch" style="background: var(--color-primary-60)"></span>
+      <code>--color-primary-60</code>
+    </div>
+    <div class="guide-token">
+      <span class="guide-token__swatch" style="background: var(--color-primary-80)"></span>
+      <code>--color-primary-80</code>
+    </div>
+    <div class="guide-token">
+      <span class="guide-token__swatch" style="background: var(--color-success-60)"></span>
+      <code>--color-success-60</code>
+    </div>
+    <div class="guide-token">
+      <span class="guide-token__swatch" style="background: var(--color-info-60)"></span>
+      <code>--color-info-60</code>
+    </div>
+    <div class="guide-token">
+      <span class="guide-token__swatch" style="background: var(--color-warning-60)"></span>
+      <code>--color-warning-60</code>
+    </div>
+    <div class="guide-token">
+      <span class="guide-token__swatch" style="background: var(--color-error-60)"></span>
+      <code>--color-error-60</code>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section" id="buttons">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Button</h2>
+    <p class="guide-section__desc">Figma <strong>btn</strong> (1138:9228) · <strong>btn_cta</strong> (1138:9203)</p>
+  </div>
+  <p class="guide-section__label">btn — Size M (40px)</p>
+  <div class="guide-showcase">
+    <button type="button" class="btn btn--primary">버튼</button>
+    <button type="button" class="btn btn--primary" disabled>버튼</button>
+    <button type="button" class="btn btn--secondary">버튼</button>
+    <button type="button" class="btn btn--secondary" disabled>버튼</button>
+    <button type="button" class="btn btn--tertiary">버튼</button>
+    <button type="button" class="btn btn--tertiary" disabled>버튼</button>
+  </div>
+  <p class="guide-section__label">btn — Size S (32px)</p>
+  <div class="guide-showcase">
+    <button type="button" class="btn btn--primary btn--s">버튼</button>
+    <button type="button" class="btn btn--secondary btn--s">버튼</button>
+    <button type="button" class="btn btn--tertiary btn--s">버튼</button>
+  </div>
+  <p class="guide-section__label">btn_cta — Size L (56px)</p>
+  <div class="guide-showcase">
+    <button type="button" class="btn-cta btn-cta--l btn-cta--primary">버튼</button>
+    <button type="button" class="btn-cta btn-cta--l btn-cta--secondary">버튼</button>
+    <button type="button" class="btn-cta btn-cta--l btn-cta--tertiary">버튼</button>
+  </div>
+  <p class="guide-section__label">btn_text</p>
+  <div class="guide-showcase">
+    <button type="button" class="btn-text btn-text--s">텍스트</button>
+    <button type="button" class="btn-text btn-text--m">텍스트</button>
+  </div>
+</section>
+
+<section class="guide-section" id="badges">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Badge</h2>
+    <p class="guide-section__desc">Figma <strong>badge_state</strong> (1138:9134) · badge_settop · badge_info</p>
+  </div>
+  <p class="guide-section__label">badge_state — Size M</p>
+  <div class="guide-showcase">
+    <span class="badge-state badge-state--info"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--success"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--warning"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--error"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--pending"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+  </div>
+  <p class="guide-section__label">badge_state — on (solid)</p>
+  <div class="guide-showcase">
+    <span class="badge-state badge-state--info badge-state--on"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--success badge-state--on"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--warning badge-state--on"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--error badge-state--on"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--pending badge-state--on"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+  </div>
+  <p class="guide-section__label">badge_state — Size L</p>
+  <div class="guide-showcase">
+    <span class="badge-state badge-state--l badge-state--info"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+    <span class="badge-state badge-state--l badge-state--success"><span class="badge-state__dot" aria-hidden="true"></span>txt</span>
+  </div>
+  <p class="guide-section__label">기타</p>
+  <div class="guide-showcase">
+    <span class="badge-settop">STB010</span>
+    <span class="badge-info">정보 뱃지</span>
+  </div>
+</section>
+
+<section class="guide-section" id="forms">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Form</h2>
+    <p class="guide-section__desc">Figma input · selectbox · check · radio · search · custom time picker</p>
+  </div>
+  <p class="guide-section__label">input</p>
+  <div class="guide-showcase guide-showcase--column">
+    <input class="field-input" type="text" placeholder="내용을 입력 해주세요." />
+    <input class="field-input is-disabled" type="text" value="전체" disabled />
+    <input class="field-input" type="text" value="전체" />
+    <div class="field-input-wrap">
+      <span class="field-input-tag"># <strong>브랜드</strong></span>
+      <input type="text" placeholder="내용을 입력" />
+    </div>
+  </div>
+  <p class="guide-section__label">selectbox</p>
+  <div class="guide-showcase">
+    <div class="field-select-box">
+      <select>
+        <option>전체</option>
+      </select>
+    </div>
+    <div class="field-select-box is-disabled">
+      <select disabled>
+        <option>전체</option>
+      </select>
+    </div>
+  </div>
+  <p class="guide-section__label">search</p>
+  <div class="guide-showcase">
+    <label class="search-field">
+      <span class="search-field__icon" aria-hidden="true"></span>
+      <input type="search" placeholder="검색어를 입력하세요" />
+    </label>
+  </div>
+  <p class="guide-section__label">check / radio</p>
+  <div class="guide-showcase">
+    <label class="check-box"><span class="check"><span class="check__mark" aria-hidden="true"></span></span><span>default</span></label>
+    <label class="check-box"><span class="check check--on"><span class="check__mark" aria-hidden="true"></span></span><span>on</span></label>
+    <label class="check-box"><span class="check is-disabled" aria-disabled="true"><span class="check__mark" aria-hidden="true"></span></span><span>disabled</span></label>
+    <label class="check-box"><span class="check check--l check--on"><span class="check__mark" aria-hidden="true"></span></span><span>large on</span></label>
+  </div>
+  <div class="guide-showcase">
+    <label class="radio-box"><span class="radio"><span class="radio__dot" aria-hidden="true"></span></span><span>default</span></label>
+    <label class="radio-box"><span class="radio radio--on"><span class="radio__dot" aria-hidden="true"></span></span><span>on</span></label>
+    <label class="radio-box"><span class="radio is-disabled"><span class="radio__dot" aria-hidden="true"></span></span><span>disabled</span></label>
+  </div>
+  <p class="guide-section__label">time / time-range</p>
+  <div class="guide-showcase guide-showcase--column">
+    <div class="field-time">
+      <input type="time" id="guide-time-single" value="09:00" aria-label="시간" />
+      <span class="field-time__icon" aria-hidden="true"></span>
+    </div>
+    <div class="field-time-range">
+      <div class="field-time">
+        <input type="time" id="guide-time-start" value="09:00" aria-label="시작 시간" />
+        <span class="field-time__icon" aria-hidden="true"></span>
+      </div>
+      <span class="field-time-range__sep" aria-hidden="true">~</span>
+      <div class="field-time">
+        <input type="time" id="guide-time-end" value="18:00" aria-label="종료 시간" />
+        <span class="field-time__icon" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+  <p class="guide-section__label">label</p>
+  <div class="guide-showcase">
+    <span class="field-label">일반 라벨</span>
+    <span class="field-label field-label--required">필수 라벨</span>
+  </div>
+</section>
+
+<section class="guide-section" id="tabs">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Tab / View Toggle</h2>
+    <p class="guide-section__desc">Figma tabmenu · tabmenu02 · list option (1138:9083, 1138:8992, 1138:9178)</p>
+  </div>
+  <p class="guide-section__label">tabmenu</p>
+  <div class="guide-showcase">
+    <div class="tab-menu" role="tablist" aria-label="탭 메뉴">
+      <button type="button" class="tab-menu__item is-active" role="tab" aria-selected="true">탭 01</button>
+      <button type="button" class="tab-menu__item" role="tab">탭 02</button>
+      <button type="button" class="tab-menu__item" role="tab">탭 03</button>
+    </div>
+  </div>
+  <p class="guide-section__label">tabmenu02</p>
+  <div class="guide-showcase">
+    <div class="tab-menu02" role="tablist">
+      <button type="button" class="tab-menu02__item is-active">리스트</button>
+      <button type="button" class="tab-menu02__item">카드</button>
+      <button type="button" class="tab-menu02__item">맵</button>
+    </div>
+  </div>
+  <p class="guide-section__label">list option (view-options)</p>
+  <div class="guide-showcase">
+    <div class="view-options" aria-label="보기 방식">
+      <a class="view-option view-option--list is-active" href="#tabs">
+        <span class="view-option__icon" aria-hidden="true"></span>
+        <span>리스트</span>
+      </a>
+      <a class="view-option view-option--grid" href="#tabs">
+        <span class="view-option__icon" aria-hidden="true"></span>
+        <span>카드</span>
+      </a>
+    </div>
+  </div>
+  <p class="guide-section__label">tab-menu-page (미디어 상세 탭)</p>
+  <div class="guide-showcase guide-showcase--column">
+    <nav class="tab-menu-page" role="tablist" aria-label="예시 탭">
+      <div class="tab-menu-page__list">
+        <button type="button" class="tab-menu-page__item is-active" role="tab" aria-selected="true">상세</button>
+        <button type="button" class="tab-menu-page__item" role="tab" aria-selected="false">연결</button>
+      </div>
+      <div class="tab-menu-page__track" aria-hidden="true"></div>
+    </nav>
+  </div>
+</section>
+
+<section class="guide-section" id="sorting">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Sorting</h2>
+    <p class="guide-section__desc">Figma sorting · sorting_group (1138:9165, 1138:7654)</p>
+  </div>
+  <div class="guide-showcase guide-showcase--grid">
+    <button type="button" class="summary-item is-selected"><strong>9</strong><span>전체</span></button>
+    <button type="button" class="summary-item"><strong>7</strong><span>운영중</span></button>
+    <button type="button" class="summary-item"><strong>2</strong><span>중지</span></button>
+  </div>
+</section>
+
+<section class="guide-section" id="feedback">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Feedback</h2>
+    <p class="guide-section__desc">Figma info_guide · info-tip · info_alert · Toggle</p>
+  </div>
+  <div class="guide-showcase guide-showcase--column">
+    <div class="info-guide">
+      <h3 class="info-guide__title">안내 제목</h3>
+      <p class="info-guide__text">info_guide 컴포넌트입니다. 페이지 상단이나 폼 영역에 사용합니다.</p>
+    </div>
+    <p class="info-tip"><span class="info-tip__icon" aria-hidden="true"></span>info-tip — 짧은 보조 설명</p>
+    <div class="info-alert info-alert--error">
+      <span class="info-alert__icon" aria-hidden="true"></span>
+      <div class="info-alert__body">
+        <h3 class="info-alert__title">오류</h3>
+        <p class="info-alert__text">info_alert error 상태입니다.</p>
+      </div>
+    </div>
+    <div class="info-alert info-alert--warning">
+      <span class="info-alert__icon" aria-hidden="true"></span>
+      <div class="info-alert__body">
+        <h3 class="info-alert__title">주의</h3>
+        <p class="info-alert__text">info_alert warning 상태입니다.</p>
+      </div>
+    </div>
+  </div>
+  <p class="guide-section__label">Toggle</p>
+  <div class="guide-showcase">
+    <button type="button" class="toggle" aria-pressed="false"><span class="toggle__thumb"></span></button>
+    <button type="button" class="toggle is-on" aria-pressed="true"><span class="toggle__thumb"></span></button>
+  </div>
+</section>
+
+<section class="guide-section" id="navigation">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Navigation</h2>
+    <p class="guide-section__desc">Figma pagination (1138:9275)</p>
+  </div>
+  {{> components/pagination}}
+</section>
+
+<section class="guide-section" id="detail-hero">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Detail Hero</h2>
+    <p class="guide-section__desc">미디어 상세 히어로 · <code>pages/media/detail-hero</code> · Figma 1138:7119</p>
+  </div>
+  <div class="guide-showcase guide-showcase--flush">
+    {{> pages/media/detail-hero}}
+  </div>
+</section>
+
+<section class="guide-section" id="detail-fields">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Detail Fields</h2>
+    <p class="guide-section__desc"><code>detail-row</code> (v1) · <code>data-box</code> (v2) · <code>detail-card</code></p>
+  </div>
+  <p class="guide-section__label">detail-row</p>
+  <div class="guide-showcase guide-showcase--column guide-showcase--card">
+    <article class="detail-card" style="width: 100%; max-width: 480px">
+      <h2 class="detail-card__title">기본정보</h2>
+      <div class="detail-card__body">
+        <div class="detail-row">
+          <span class="detail-row__label">미디어명</span>
+          <span class="detail-row__line" aria-hidden="true"></span>
+          <span class="detail-row__value">강남대로 DID 02</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-row__label">상태</span>
+          <span class="detail-row__line" aria-hidden="true"></span>
+          <span class="detail-row__value">
+            <span class="badge-state badge-state--success">
+              <span class="badge-state__dot" aria-hidden="true"></span>
+              활성화
+            </span>
+          </span>
+        </div>
+      </div>
+    </article>
+  </div>
+  <p class="guide-section__label">data-box (3열)</p>
+  <div class="guide-showcase guide-showcase--column guide-showcase--card">
+    <article class="detail-card" style="width: 100%; max-width: 720px">
+      <h2 class="detail-card__title">셋탑 정보</h2>
+      <div class="detail-card__body">
+        <div class="data-box-grid data-box-grid--cols-3">
+          <div class="data-box">
+            <span class="data-box__label">셋탑 코드</span>
+            <span class="data-box__value">STB010</span>
+          </div>
+          <div class="data-box">
+            <span class="data-box__label">제조사</span>
+            <span class="data-box__value">LG전자</span>
+          </div>
+          <div class="data-box">
+            <span class="data-box__label">모델</span>
+            <span class="data-box__value">MTV-300</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="guide-section" id="detail-summary">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Detail Summary</h2>
+    <p class="guide-section__desc">퀵 인포 스트립 · <code>detail-summary</code> (상세02)</p>
+  </div>
+  <div class="guide-showcase guide-showcase--flush">
+    <div class="detail-summary" style="width: 100%">
+      <div class="detail-summary__list">
+        <div class="detail-summary__item">
+          <span class="detail-summary__icon detail-summary__icon--settop" aria-hidden="true"></span>
+          <span class="detail-summary__text">LG · MVT-300</span>
+        </div>
+        <div class="detail-summary__item">
+          <span class="detail-summary__icon detail-summary__icon--display" aria-hidden="true"></span>
+          <span class="detail-summary__text">LCD · 16:9</span>
+        </div>
+        <div class="detail-summary__item">
+          <span class="detail-summary__icon detail-summary__icon--location" aria-hidden="true"></span>
+          <span class="detail-summary__text">서울 강남구 역삼동</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section" id="detail-kpi">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Detail KPI</h2>
+    <p class="guide-section__desc"><code>kpi-strip</code> / <code>kpi-card</code> · Figma 1138:8665</p>
+  </div>
+  <div class="guide-showcase guide-showcase--flush">
+    <div class="kpi-strip" style="width: 100%">
+      <div class="kpi-card">
+        <div class="kpi-card__head">
+          <span class="kpi-card__label">운영 상태</span>
+          <span class="kpi-card__line" aria-hidden="true"></span>
+        </div>
+        <strong class="kpi-card__value">활성화</strong>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-card__head">
+          <span class="kpi-card__label">일 보장 횟수</span>
+          <span class="kpi-card__line" aria-hidden="true"></span>
+        </div>
+        <p class="kpi-card__value kpi-card__value--unit"><strong>54</strong><span>회</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section" id="detail-charts">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Detail Charts</h2>
+    <p class="guide-section__desc"><code>pie-panel</code> · <code>mini-bar-chart</code> · <code>content-summary</code> · 파이 영역은 빈 플레이스홀더</p>
+  </div>
+  <p class="guide-section__label">pie-panel + legend</p>
+  <div class="guide-showcase guide-showcase--card">
+    <div class="pie-panel" style="width: 100%; max-width: 420px">
+      <div class="pie-panel__chart pie-panel__chart--empty" aria-hidden="true"></div>
+      <ul class="pie-legend">
+        <li class="pie-legend__item">
+          <span class="pie-legend__label">
+            <span class="pie-legend__dot pie-legend__dot--commercial" aria-hidden="true"></span>
+            상업 광고
+          </span>
+          <span class="pie-legend__value"><strong>80</strong>%</span>
+        </li>
+        <li class="pie-legend__item">
+          <span class="pie-legend__label">
+            <span class="pie-legend__dot pie-legend__dot--public" aria-hidden="true"></span>
+            공익 광고
+          </span>
+          <span class="pie-legend__value"><strong>20</strong>%</span>
+        </li>
+        <li class="pie-legend__item">
+          <span class="pie-legend__label">
+            <span class="pie-legend__dot pie-legend__dot--own" aria-hidden="true"></span>
+            자사 광고
+          </span>
+          <span class="pie-legend__value"><strong>0</strong>%</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="guide-section__label">mini-bar-chart</p>
+  <div class="guide-showcase guide-showcase--card">
+    <div class="mini-bar-chart" style="width: 100%; max-width: 360px; height: 180px" role="img" aria-label="예시 바 차트">
+      <div class="mini-bar-chart__plot">
+        <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 70%"></span></div>
+        <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 45%"></span></div>
+        <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar mini-bar-chart__bar--active" style="--bar-h: 100%"></span></div>
+        <div class="mini-bar-chart__col"><span class="mini-bar-chart__bar" style="--bar-h: 55%"></span></div>
+      </div>
+      <div class="mini-bar-chart__x" aria-hidden="true">
+        <span>'01</span><span>'02</span><span>'03</span><span>'04</span>
+      </div>
+    </div>
+  </div>
+  <p class="guide-section__label">content-summary</p>
+  <div class="guide-showcase guide-showcase--flush">
+    <div class="content-summary" style="width: 100%">
+      <div class="content-summary__item">
+        <div class="content-summary__label">
+          <span class="content-summary__dot content-summary__dot--commercial" aria-hidden="true"></span>
+          <span>상업 광고</span>
+        </div>
+        <div class="content-summary__meta">
+          <p class="content-summary__count"><strong>6</strong><span>개</span></p>
+          <span class="content-summary__rate">80%</span>
+        </div>
+      </div>
+      <div class="content-summary__item">
+        <div class="content-summary__label">
+          <span class="content-summary__dot content-summary__dot--public" aria-hidden="true"></span>
+          <span>공익 광고</span>
+        </div>
+        <div class="content-summary__meta">
+          <p class="content-summary__count"><strong>2.5</strong><span>개</span></p>
+          <span class="content-summary__rate">20%</span>
+        </div>
+      </div>
+      <div class="content-summary__item">
+        <div class="content-summary__label">
+          <span class="content-summary__dot content-summary__dot--own" aria-hidden="true"></span>
+          <span>자사 광고</span>
+        </div>
+        <div class="content-summary__meta">
+          <p class="content-summary__count"><strong>1.5</strong><span>개</span></p>
+          <span class="content-summary__rate">20%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section" id="detail-preview">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Detail Preview</h2>
+    <p class="guide-section__desc">디스플레이 미리보기 · <code>pages/media/display-preview</code></p>
+  </div>
+  <div class="guide-showcase guide-showcase--flush" style="max-width: 560px">
+    {{> pages/media/display-preview}}
+  </div>
+</section>
+
+<section class="guide-section" id="detail-link">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Detail Link Status</h2>
+    <p class="guide-section__desc"><code>link-status</code> · 연결 프로덕트 / 스케줄</p>
+  </div>
+  <div class="guide-showcase guide-showcase--flush" style="max-width: 560px">
+    <div class="link-status" style="width: 100%">
+      <div class="link-status__item link-status__item--product">
+        <span class="link-status__label">연결 프로덕트</span>
+        <strong class="link-status__count">21</strong>
+      </div>
+      <div class="link-status__item link-status__item--schedule">
+        <span class="link-status__label">연결 스케줄</span>
+        <strong class="link-status__count">7</strong>
+      </div>
+    </div>
+  </div>
+  <p class="guide-section__label">하단 CTA (detail-actions)</p>
+  <div class="guide-showcase guide-showcase--flush">
+    {{> pages/media/detail-actions}}
+  </div>
+</section>
+
+<section class="guide-section" id="icons">
+  <div class="guide-section__head">
+    <h2 class="guide-section__title">Icons</h2>
+    <p class="guide-section__desc">아이콘 1개 = SVG 1개 · <code>public/assets/icons/</code></p>
+  </div>
+  <div class="guide-icon-grid">
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/gnb-monitoring.svg" alt="" /><span>monitoring</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/gnb-service.svg" alt="" /><span>service</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/gnb-manage.svg" alt="" /><span>manage</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/gnb-execution.svg" alt="" /><span>execution</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/gnb-system.svg" alt="" /><span>system</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/view-list.svg" alt="" /><span>view-list</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/view-list-on.svg" alt="" /><span>view-list-on</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/view-grid.svg" alt="" /><span>view-grid</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/view-grid-on.svg" alt="" /><span>view-grid-on</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/check-mark.svg" alt="" /><span>check-mark</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/search-blue.svg" alt="" /><span>search</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/location-pin.svg" alt="" /><span>location</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/ico-price.svg" alt="" /><span>price</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/detail-icon-settop.svg" alt="" /><span>detail-settop</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/detail-icon-display.svg" alt="" /><span>detail-display</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/detail-icon-location.svg" alt="" /><span>detail-location</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/ico-display-info.svg" alt="" /><span>display-info</span></div>
+    <div class="guide-icon-item"><img src="{{base}}assets/icons/ico-location-white.svg" alt="" /><span>location-white</span></div>
+  </div>
+</section>

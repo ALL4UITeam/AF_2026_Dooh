@@ -1,0 +1,297 @@
+/* ==========================================================================
+   Product detail — Figma 1188:3258 프로덕트 상세
+   ========================================================================== */
+
+@use '../components/badge-state';
+@use '../components/cms-btn';
+
+.app-main--detail {
+  gap: 24px;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+// --------------------------------------------------------------------------
+// Hero — Figma 1188:3298 (title area)
+// --------------------------------------------------------------------------
+
+.product-detail-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 40px;
+  border-radius: var(--radius-card);
+  background: var(--color-primary-80);
+  box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+}
+
+.product-detail-hero__glow {
+  position: absolute;
+  top: -168px;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  border-radius: var(--radius-pill);
+  background: rgb(58 91 208 / 20%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.product-detail-hero__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.product-detail-hero__intro {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.product-detail-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+
+  a,
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-primary-20);
+    font-size: 13px;
+    line-height: normal;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+
+  img {
+    flex-shrink: 0;
+    width: 4px;
+    height: 7px;
+  }
+
+  a img {
+    width: 10px;
+    height: 10px;
+    filter: brightness(0) saturate(100%) invert(84%) sepia(14%) saturate(746%) hue-rotate(199deg)
+      brightness(103%) contrast(93%);
+  }
+}
+
+.product-detail-hero__breadcrumb-current {
+  color: var(--color-secondary-50) !important;
+}
+
+.product-detail-hero__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  min-height: 60px;
+}
+
+.product-detail-hero__title {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 32px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.product-detail-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  color: var(--color-primary-10);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.product-detail-hero__total {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  color: inherit;
+  white-space: nowrap;
+
+  strong {
+    font-size: 17px;
+    font-weight: 700;
+  }
+}
+
+.product-detail-hero__meta-dot {
+  flex-shrink: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-10);
+}
+
+.product-detail-hero__updated {
+  white-space: nowrap;
+}
+
+.product-detail-hero__stats {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.product-detail-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 20px 32px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 7%);
+
+  &__label {
+    color: var(--color-primary-20);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  &__value {
+    color: var(--color-white);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Status flow — Draft → Ready → Active
+// --------------------------------------------------------------------------
+
+.product-status-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px 40px;
+  border: 1px solid var(--color-gray-20);
+  border-radius: 12px;
+  background: var(--color-gray-10);
+}
+
+.product-status-flow__arrow {
+  flex-shrink: 0;
+  width: 6px;
+  height: 12px;
+}
+
+.product-register__shell--calc .auto-calc {
+  margin: 0;
+}
+
+// --------------------------------------------------------------------------
+// Responsive
+// --------------------------------------------------------------------------
+
+@media (max-width: 1400px) {
+  .product-detail-hero__stats {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+
+  .product-detail-hero__body {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1100px) {
+  .product-detail-hero {
+    padding: 16px 20px;
+  }
+
+  .product-detail-hero__title {
+    font-size: 26px;
+  }
+
+  .product-detail-stat {
+    flex: 1 1 calc(33.333% - 16px);
+    padding: 14px 16px;
+  }
+
+  .product-detail-stat__value {
+    font-size: 20px;
+  }
+
+  .product-status-flow {
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-detail-hero__title-row {
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .product-detail-hero__title {
+    font-size: 22px;
+  }
+
+  .product-detail-hero__meta {
+    min-height: 0;
+    gap: 6px;
+  }
+
+  .product-detail-stat {
+    flex: 1 1 calc(50% - 8px);
+    padding: 12px;
+  }
+
+  .product-detail-stat__label {
+    font-size: 13px;
+  }
+
+  .product-detail-stat__value {
+    font-size: 17px;
+    white-space: normal;
+  }
+
+  .product-status-flow {
+    gap: 6px;
+    padding: 12px 14px;
+  }
+
+  .product-register__subtitle {
+    white-space: normal;
+  }
+
+  .auto-calc {
+    padding: 16px 16px;
+  }
+
+  .auto-calc__label {
+    white-space: normal;
+  }
+}

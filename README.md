@@ -1,6 +1,12 @@
 # Doo'h CMS
 
-- 관리자 미디어 목록: `index.html`
+- 페이지 목록(개발용): `index.html`
+- **컴포넌트 가이드**: `guide.html` (Figma Section 1 · 1163:3687)
+- 관리자 미디어 목록(리스트): `CMS_02서비스_01미디어_목록.html`
+- 관리자 미디어 목록(카드): `CMS_02서비스_01미디어_카드.html`
+- 관리자 미디어 등록: `CMS_02서비스_01미디어_등록.html`
+- 프로덕트 관리(리스트): `CMS_02운영_01프로덕트_목록.html`
+- 프로덕트 관리(카드): `CMS_02운영_01프로덕트_카드.html`
 - 로그인: `login.html` (단일 파일, partial 없음)
 
 ## 실행
@@ -15,19 +21,21 @@ npm run build
 
 ## 파일 사용 규칙
 
-- 페이지 영역 조각: `public/partials/*.html`
-- 반복 UI 컴포넌트: `public/components/*.html`
+- 앱 셸·공통 조각: `public/partials/*.html`
+- **재사용 UI 컴포넌트** (뱃지, 페이지네이션 등): `public/components/*.html`
+- **페이지 전용 섹션** (목록 테이블, 등록 폼 등): `public/pages/<도메인>/*.html`
 - 이후 페이지 레이아웃: `public/layouts/*.html`
 - 그대로 복사할 정적 파일: `public/assets`
 - Vite가 해시 파일명으로 처리할 이미지: `src/assets/images`
 - 공통 SCSS: `src/styles/settings`, `base`, `components`
-- 페이지 전용 SCSS: `src/styles/pages` (로그인 폼·상품안내는 `login.scss`에만)
+- **가이드·공통 컴포넌트 SCSS**: `src/styles/components/_cms-btn.scss`, `_badge-state.scss`, `_form-controls.scss`, `_tab-menu.scss`, `_info-panel.scss`
+- 페이지 전용 SCSS: `src/styles/pages` (로그인 폼·상품안내는 `login.scss`에만, 가이드는 `guide.scss`)
 - 공통 JS: `src/js/components`
 - 페이지 전용 JS: `src/js/pages`
 - CSS 이미지 경로: SCSS 파일 기준 상대경로 사용  
   예: `src/styles/pages/media-list.scss`에서는 `url('../../assets/images/media-bg.png')`
 
-관리자 화면만 `{{> partial-name}}` / `{{> components/...}}` include를 사용합니다.
+관리자 화면만 `{{> partial-name}}` / `{{> components/...}}` / `{{> pages/...}}` include를 사용합니다.
 로그인은 `login.html` 한 파일에 마크업이 모두 들어 있습니다.
 
 관리자 공통 헤더는 `public/partials/app-header.html`에 준비되어 있습니다.

@@ -1,0 +1,37 @@
+<!-- 프로덕트 목록 검색·필터 (Figma 1138:9667) -->
+<form class="media-filters" id="media-filters">
+  <div class="media-selects">
+    <label class="field-select">
+      <span class="sr-only">상태</span>
+      <select id="status-filter">
+        <option value="all">상태 전체</option>
+        <option value="active">Active</option>
+        <option value="ready">Ready</option>
+        <option value="draft">Draft</option>
+      </select>
+      <img src="{{base}}assets/icons/select-arrow.svg" alt="" />
+    </label>
+    <label class="field-select">
+      <span class="sr-only">위치</span>
+      <select id="location-filter">
+        <option value="all">위치 전체</option>
+        <option value="seoul">서울</option>
+        <option value="metro">수도권</option>
+        <option value="nationwide">전국</option>
+      </select>
+      <img src="{{base}}assets/icons/select-arrow.svg" alt="" />
+    </label>
+  </div>
+
+  <div class="media-filters__search">
+    <label class="search-input">
+      <span class="sr-only">프로덕트 검색</span>
+      <img src="{{base}}assets/icons/search-blue.svg" alt="" />
+      <input id="media-keyword" type="search" placeholder="검색어를 입력해주세요." />
+    </label>
+    <button class="filter-reset-btn" id="reset-filters" type="reset" aria-label="초기화">
+      <span class="filter-reset-btn__icon" aria-hidden="true"></span>
+    </button>
+    <button class="action-button action-button--primary" type="submit">검색</button>
+  </div>
+</form>

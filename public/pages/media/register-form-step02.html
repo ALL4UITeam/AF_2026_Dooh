@@ -1,0 +1,194 @@
+<div class="media-register__shell">
+  <div class="media-register__step">
+    <span class="media-register__step-badge">
+      <span class="media-register__step-icon" aria-hidden="true"></span>
+      <span>Step 02</span>
+    </span>
+    <h2 class="media-register__step-title">운영기준</h2>
+  </div>
+
+  <div class="media-register__sections">
+    <section class="form-section" aria-labelledby="form-section-operating">
+      <header class="form-section__head form-section__head--display">
+        <div class="form-section__title-group">
+          <h3 class="form-section__title" id="form-section-operating">운영기준</h3>
+          <p class="form-section__subtitle">직접 입력하거나 다른 미디어의 운영 설정을 가져올 수 있습니다.</p>
+        </div>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field form-field--full">
+            <div class="tab-menu02" role="tablist" aria-label="운영기준 입력 방식">
+              <button type="button" class="tab-menu02__item is-active" role="tab" aria-selected="true">
+                <span class="tab-menu02__icon tab-menu02__icon--direct" aria-hidden="true"></span>
+                직접 선택
+              </button>
+              <span class="tab-menu02__divider" aria-hidden="true"></span>
+              <button type="button" class="tab-menu02__item" role="tab" aria-selected="false">
+                <span class="tab-menu02__icon tab-menu02__icon--import" aria-hidden="true"></span>
+                운영설정 가져오기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field">
+            <span class="form-field__label">
+              운영시간
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </span>
+            <div class="field-time-range">
+              <div class="field-time">
+                <input
+                  type="time"
+                  id="operating-time-start"
+                  name="operating-time-start"
+                  value="00:00"
+                  aria-label="운영 시작 시간"
+                  required
+                />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+              <span class="field-time-range__sep" aria-hidden="true">~</span>
+              <div class="field-time">
+                <input
+                  type="time"
+                  id="operating-time-end"
+                  name="operating-time-end"
+                  aria-label="운영 종료 시간"
+                  required
+                />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="slot-count">
+              슬롯 수
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="slot-count"
+              type="text"
+              inputmode="numeric"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="slot-duration">
+              1슬롯당 재생시간 (초)
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="slot-duration"
+              type="text"
+              inputmode="numeric"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+        </div>
+
+        <div class="form-section__sum">
+          <div class="calc-panel">
+            <div class="calc-panel__info">
+              <span class="calc-panel__icon-wrap" aria-hidden="true">
+                <span class="calc-panel__icon"></span>
+              </span>
+              <div class="calc-panel__text">
+                <p class="calc-panel__title">노출 보장 횟수 · 자동계산</p>
+                <p class="calc-panel__desc">운영시간(초) ÷ (슬롯 수 × 슬롯당 재생시간)</p>
+              </div>
+            </div>
+            <div class="calc-panel__result">
+              <span class="calc-panel__formula">32,400 ÷ (6 × 20)</span>
+              <span class="calc-panel__equal" aria-hidden="true"></span>
+              <span class="calc-panel__value">
+                <strong class="calc-panel__value-num">270</strong>
+                <span class="calc-panel__value-unit">회/일</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-section-location">
+      <header class="form-section__head">
+        <h3 class="form-section__title" id="form-section-location">위치 정보</h3>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field form-field--full">
+            <span class="form-field__label">국가</span>
+            <div class="radio-card-group radio-card-group--cols-3" role="radiogroup" aria-label="국가">
+              <label class="radio-card is-active">
+                <input type="radio" name="country" value="kr" checked />
+                <span class="radio-card__label">한국</span>
+                <span class="radio-card__control" aria-hidden="true"><span class="radio-card__dot"></span></span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="country" value="cn" />
+                <span class="radio-card__label">중국</span>
+                <span class="radio-card__control" aria-hidden="true"><span class="radio-card__dot"></span></span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="country" value="vn" />
+                <span class="radio-card__label">베트남</span>
+                <span class="radio-card__control" aria-hidden="true"><span class="radio-card__dot"></span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field">
+            <label class="form-field__label" for="location-district">
+              시군구
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <div class="field-select-box field-select-box--fluid">
+              <select id="location-district">
+                <option value="">전체</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="location-town">
+              읍/면/동
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <div class="field-select-box field-select-box--fluid">
+              <select id="location-town">
+                <option value="">전체</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="location-type">
+              설치장소 유형
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <div class="field-select-box field-select-box--fluid">
+              <select id="location-type">
+                <option value="">전체</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="media-register__actions">
+  <div class="media-register__actions-left">
+    <a class="btn-cta btn-cta--l btn-cta--tertiary" href="{{base}}CMS_02서비스_01미디어_목록.html">목록</a>
+  </div>
+  <div class="media-register__actions-right">
+    <a class="btn-cta btn-cta--l btn-cta--secondary" href="{{base}}CMS_02서비스_01미디어_등록.html">이전</a>
+    <button class="btn-cta btn-cta--l btn-cta--primary" type="button">다음</button>
+  </div>
+</div>

@@ -1,0 +1,206 @@
+<div class="product-register__shell">
+  <div class="product-register__card-head">
+    <h2 class="product-register__title">기본 정보 입력</h2>
+  </div>
+
+  <div class="product-register__sections">
+    <section class="form-section" aria-labelledby="form-section-basic">
+      <header class="form-section__head">
+        <h3 class="form-section__title" id="form-section-basic">기본 정보</h3>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field">
+            <label class="form-field__label" for="product-name">
+              프로덕트명
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="product-name"
+              type="text"
+              placeholder="예: 교보타워 종로 패키지"
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="product-id">프로덕트 ID (자동)</label>
+            <input
+              class="field-input field-input--fluid"
+              id="product-id"
+              type="text"
+              placeholder="저장 시 자동 부여"
+              readonly
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="product-price">
+              단가
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="product-price"
+              type="text"
+              inputmode="numeric"
+              placeholder="예: ₩120,000"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-section-schedule">
+      <header class="form-section__head">
+        <h3 class="form-section__title" id="form-section-schedule">편성 유형</h3>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-1">
+          <div class="form-field form-field--full">
+            <div class="tab-menu02" role="tablist" aria-label="편성 유형">
+              <button type="button" class="tab-menu02__item" role="tab" aria-selected="false" data-schedule-type="direct">
+                <span class="tab-menu02__icon tab-menu02__icon--schedule-direct" aria-hidden="true"></span>
+                직접선택
+              </button>
+              <span class="tab-menu02__divider" aria-hidden="true"></span>
+              <button type="button" class="tab-menu02__item" role="tab" aria-selected="false" data-schedule-type="fixed">
+                <span class="tab-menu02__icon tab-menu02__icon--schedule-fixed" aria-hidden="true"></span>
+                고정형
+              </button>
+              <span class="tab-menu02__divider" aria-hidden="true"></span>
+              <button type="button" class="tab-menu02__item" role="tab" aria-selected="false" data-schedule-type="condition">
+                <span class="tab-menu02__icon tab-menu02__icon--schedule-condition" aria-hidden="true"></span>
+                조건형
+              </button>
+              <span class="tab-menu02__divider" aria-hidden="true"></span>
+              <button type="button" class="tab-menu02__item is-active" role="tab" aria-selected="true" data-schedule-type="time">
+                <span class="tab-menu02__icon tab-menu02__icon--schedule-time" aria-hidden="true"></span>
+                타임형
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field form-field--full">
+          <span class="form-field__label">
+            노출시간
+            <span class="form-field__required" aria-hidden="true">*</span>
+          </span>
+          <div class="time-slot-list" data-time-slot-list>
+            <div class="time-slot-row">
+              <div class="field-time">
+                <input type="time" name="exposure-start[]" value="00:00" aria-label="노출 시작 시간" required />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+              <span class="time-slot-row__sep" aria-hidden="true">~</span>
+              <div class="field-time">
+                <input type="time" name="exposure-end[]" aria-label="노출 종료 시간" required />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+              <button class="btn btn--secondary btn--form" type="button" data-time-slot-add>+ 시간추가</button>
+            </div>
+            <div class="time-slot-row">
+              <div class="field-time">
+                <input type="time" name="exposure-start[]" value="00:00" aria-label="노출 시작 시간" required />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+              <span class="time-slot-row__sep" aria-hidden="true">~</span>
+              <div class="field-time">
+                <input type="time" name="exposure-end[]" aria-label="노출 종료 시간" required />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+              <button class="btn btn--tertiary btn--form btn--form-delete" type="button" data-time-slot-remove>삭제</button>
+            </div>
+            <div class="time-slot-row">
+              <div class="field-time">
+                <input type="time" name="exposure-start[]" value="00:00" aria-label="노출 시작 시간" required />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+              <span class="time-slot-row__sep" aria-hidden="true">~</span>
+              <div class="field-time">
+                <input type="time" name="exposure-end[]" aria-label="노출 종료 시간" required />
+                <span class="field-time__icon" aria-hidden="true"></span>
+              </div>
+              <button class="btn btn--tertiary btn--form btn--form-delete" type="button" data-time-slot-remove>삭제</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid form-grid--upload">
+          <div class="form-field">
+            <span class="form-field__label">대표이미지 업로드(1장)</span>
+            <div class="file-upload">
+              <div class="file-upload__info">
+                <p class="file-upload__title">파일 업로드</p>
+                <p class="file-upload__desc">새 파일 업로드 시 기존 이미지 교체</p>
+              </div>
+              <label class="btn btn--secondary btn--form">
+                버튼
+                <input class="file-upload__input" type="file" accept="image/*" aria-label="대표이미지 업로드" />
+              </label>
+            </div>
+          </div>
+          <div class="form-field form-field--preview">
+            <span class="form-field__label">현재이미지</span>
+            <div class="file-preview">
+              <img
+                class="file-preview__img"
+                src="{{base}}assets/images/product-thumb.jpg"
+                alt="현재 대표 이미지"
+                width="292"
+                height="180"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="product-register__row">
+  <section class="product-register__shell product-register__shell--media" aria-labelledby="product-media-title">
+    <div class="product-register__card-head">
+      <h2 class="product-register__title" id="product-media-title">미디어 선택</h2>
+      <p class="product-register__subtitle">N:M · 미디어는 여러 프로덕트에 중복 포함</p>
+    </div>
+    <div class="media-pick">
+      <div class="media-pick__empty">
+        <div class="media-pick__icon-wrap" aria-hidden="true">
+          <img class="media-pick__icon" src="{{base}}assets/icons/empty-media.svg" alt="" width="80" height="62" />
+        </div>
+        <p class="media-pick__text">미디어를 선택해주세요.</p>
+      </div>
+      <button class="btn btn--secondary btn--form" type="button" data-open-media-select>+ 미디어 추가</button>
+    </div>
+  </section>
+
+  <section class="product-register__shell product-register__shell--calc" aria-labelledby="product-calc-title">
+    <div class="product-register__card-head">
+      <h2 class="product-register__title" id="product-calc-title">자동 산정</h2>
+    </div>
+    <div class="auto-calc">
+      <div class="auto-calc__row">
+        <span class="auto-calc__label">운영시간 (교집합)</span>
+        <span class="auto-calc__value">선택시 산정</span>
+      </div>
+      <div class="auto-calc__row">
+        <span class="auto-calc__label">슬롯 (최소 재생)</span>
+        <span class="auto-calc__value">-</span>
+      </div>
+      <div class="auto-calc__row">
+        <span class="auto-calc__label">노출 보장</span>
+        <span class="auto-calc__value">-</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="media-register__actions">
+  <div class="media-register__actions-left">
+    <a class="btn-cta btn-cta--l btn-cta--tertiary" href="{{base}}CMS_02운영_01프로덕트_목록.html">취소</a>
+  </div>
+  <div class="media-register__actions-right">
+    <button class="btn-cta btn-cta--l btn-cta--secondary" type="button">임시저장</button>
+    <button class="btn-cta btn-cta--l btn-cta--primary" type="button">프로덕트 등록</button>
+  </div>
+</div>

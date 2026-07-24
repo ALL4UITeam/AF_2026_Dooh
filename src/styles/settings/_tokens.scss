@@ -16,6 +16,7 @@
   --color-primary-10: #dee4f5;
   --color-primary-20: #bdc9eb;
   --color-primary-30: #98aadb;
+  --color-primary-40: #7189c7;
   --color-primary-50: #4d67a8;
   --color-primary-60: #344d8a;
   --color-primary-70: #213364;
@@ -38,7 +39,9 @@
   --color-gray-95: #050914;
 
   /* Semantic */
+  --color-secondary-20: #a5f3fc;
   --color-secondary-50: #06b6d4;
+  --color-secondary-80: #155e75;
   --color-cyan-50: var(--color-secondary-50);
   --color-danger: #9f1239;
   --color-placeholder: #8999af;
@@ -47,10 +50,20 @@
   --color-success-40: #52c47c;
   --color-success-60: #1b8743;
   --color-info-10: #e0f2fe;
+  --color-info-40: #38bdf8;
   --color-info-60: #0284c7;
   --color-pending-10: #f1f3f5;
   --color-pending-40: #adb5bd;
   --color-pending-60: #495057;
+  --color-warning-10: #fff6e6;
+  --color-warning-40: #ffb340;
+  --color-warning-60: #d97706;
+  --color-error-10: #fdeeed;
+  --color-error-40: #f0655d;
+  --color-error-60: #c92a2a;
+  --color-disabled-10: #ebedf2;
+  --color-disabled-30: #c6cfdc;
+  --color-disabled-50: #8999af;
 
   /* Shared shape and motion */
   --radius-pill: 999px;
@@ -59,6 +72,15 @@
   --transition-fast: 150ms ease;
   --border-width-regular: 1px;
 
-  /* Fluid page gutters: 20px → 40px */
+  /* Fluid page gutters: 20px → 40px (640px 이하 16px) */
   --page-gutter: clamp(20px, 4vw, 40px);
+
+  /* Bottom GNB (mobile) — height + margin + safe area */
+  --app-gnb-bottom-height: calc(68px + 16px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-gutter: 16px;
+  }
 }

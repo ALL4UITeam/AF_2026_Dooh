@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Doo'h CMS 미디어 상세" />
+    <title>미디어 상세 | Doo'h CMS</title>
+    {{> app-critical-styles}}
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+    <link rel="stylesheet" href="./src/styles/pages/media-register.scss" />
+    <link rel="stylesheet" href="./src/styles/pages/media-detail.scss" />
+    <script type="module" src="./src/js/media-detail.js"></script>
+  </head>
+  <body class="app-page" data-active-menu="service" data-active-submenu-item="media">
+    {{> app-header}}
+
+    <div class="app-layout">
+      {{> app-sidebar}}
+
+      <main class="app-main app-main--detail">
+        {{> pages/media/detail-view02}}
+      </main>
+    </div>
+  </body>
+</html>

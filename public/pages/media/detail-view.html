@@ -1,0 +1,197 @@
+﻿<section class="media-detail">
+  {{> pages/media/detail-hero}}
+
+  <nav class="tab-menu-page" role="tablist" aria-label="미디어 상세 탭">
+    <div class="tab-menu-page__list">
+      <button type="button" class="tab-menu-page__item is-active" role="tab" aria-selected="true" data-tab="detail">
+        상세
+      </button>
+      <button type="button" class="tab-menu-page__item" role="tab" aria-selected="false" data-tab="link">
+        연결
+      </button>
+    </div>
+    <div class="tab-menu-page__track" aria-hidden="true"></div>
+  </nav>
+
+  <div class="media-detail__panel" data-tab-panel="detail">
+    <div class="media-detail__grid">
+      <article class="detail-card">
+        <h2 class="detail-card__title">기본정보</h2>
+        <div class="detail-card__body">
+          <div class="detail-row">
+            <span class="detail-row__label">미디어명</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">강남대로 DID 02</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">설치장소 유형</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">LG · MTV-300</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">상태</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">
+              <span class="badge-state badge-state--success">
+                <span class="badge-state__dot" aria-hidden="true"></span>
+                활성화
+              </span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="detail-card__title">셋탑 정보</h2>
+        <div class="detail-card__body">
+          <div class="detail-row">
+            <span class="detail-row__label">셋탑 코드</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">STB010</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">제조사</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">LG전자</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">모델</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">MTV-300</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">OS</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">webOS Signage 6.0</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">제어보드</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">SoC 내장형</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="detail-card__title">디스플레이 정보</h2>
+        <div class="detail-card__body">
+          <div class="detail-row">
+            <span class="detail-row__label">디스플레이 유형</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">LCD</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">설치 형태 (방향)</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">가로형</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">화면비</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">16:9</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">해상도</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">FHD 1920 × 1080</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">크기</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">55</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="detail-card__title">위치 정보</h2>
+        <div class="detail-card__body">
+          <div class="detail-row">
+            <span class="detail-row__label">국가</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">한국</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">시 / 군 / 구</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">서울 강남구</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">읍 / 면 / 동</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">역삼동</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="detail-card__title">광고물 분류</h2>
+        <div class="detail-card__body">
+          <div class="detail-row">
+            <span class="detail-row__label">광고물 형태</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">고정형</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">법적 광고물 유형</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">벽면이용간판</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">공공목적 광고 비율</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">20%</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card">
+        <h2 class="detail-card__title">운영 설정</h2>
+        <div class="detail-card__body">
+          <div class="detail-row">
+            <span class="detail-row__label">운영시간</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">09:00 ~ 18:00</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">슬롯 수</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">6 슬롯</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-row__label">1슬롯당 재생시간</span>
+            <span class="detail-row__line" aria-hidden="true"></span>
+            <span class="detail-row__value">20초</span>
+          </div>
+          <div class="detail-card__sum">
+            <div class="calc-panel calc-panel--readonly">
+              <div class="calc-panel__info">
+                <span class="calc-panel__icon-wrap" aria-hidden="true">
+                  <span class="calc-panel__icon"></span>
+                </span>
+                <div class="calc-panel__text">
+                  <p class="calc-panel__title">노출 보장 횟수 · 자동계산</p>
+                  <p class="calc-panel__desc">운영시간(초) ÷ (슬롯 수 × 슬롯당 재생시간)</p>
+                </div>
+              </div>
+              <div class="calc-panel__result">
+                <span class="calc-panel__value">
+                  <strong class="calc-panel__value-num">270</strong>
+                  <span class="calc-panel__value-unit">회/일</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="media-detail__panel" data-tab-panel="link" hidden>
+    <div class="media-detail__empty">
+      <p>연결된 프로덕트 정보가 여기에 표시됩니다.</p>
+    </div>
+  </div>
+
+  {{> pages/media/detail-actions}}
+</section>

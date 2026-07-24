@@ -1,25 +1,165 @@
 <!-- 관리자 화면 공통 1차 내비게이션 -->
 <aside class="app-sidebar" aria-label="주 메뉴">
   <nav class="app-sidebar__nav">
-    <a class="sidebar-menu" href="#">
-      <img src="{{base}}assets/icons/gnb-monitoring.svg" alt="" />
-      <span>모니터링</span>
-    </a>
-    <a class="sidebar-menu is-active" href="{{base}}">
-      <img src="{{base}}assets/icons/gnb-service.svg" alt="" />
-      <span>서비스</span>
-    </a>
-    <a class="sidebar-menu" href="#">
-      <img src="{{base}}assets/icons/gnb-monitoring.svg" alt="" />
-      <span>운영</span>
-    </a>
-    <a class="sidebar-menu" href="#">
-      <img src="{{base}}assets/icons/gnb-execution.svg" alt="" />
-      <span>실행</span>
-    </a>
-    <a class="sidebar-menu" href="#">
-      <img src="{{base}}assets/icons/gnb-system.svg" alt="" />
-      <span>시스템</span>
-    </a>
+    <div class="sidebar-menu-group">
+      <button
+        class="sidebar-menu"
+        type="button"
+        data-has-submenu
+        aria-expanded="false"
+        aria-controls="sidebar-submenu-monitoring"
+      >
+        <span class="sidebar-menu__icon sidebar-menu__icon--monitoring" aria-hidden="true"></span>
+        <span>모니터링</span>
+      </button>
+    </div>
+
+    <div class="sidebar-menu-group">
+      <button
+        class="sidebar-menu"
+        type="button"
+        data-has-submenu
+        aria-expanded="false"
+        aria-controls="sidebar-submenu-service"
+      >
+        <span class="sidebar-menu__icon sidebar-menu__icon--service" aria-hidden="true"></span>
+        <span>서비스</span>
+      </button>
+    </div>
+
+    <div class="sidebar-menu-group">
+      <button
+        class="sidebar-menu"
+        type="button"
+        data-has-submenu
+        aria-expanded="false"
+        aria-controls="sidebar-submenu-operation"
+      >
+        <span class="sidebar-menu__icon sidebar-menu__icon--manage" aria-hidden="true"></span>
+        <span>운영</span>
+      </button>
+    </div>
+
+    <div class="sidebar-menu-group">
+      <button
+        class="sidebar-menu"
+        type="button"
+        data-has-submenu
+        aria-expanded="false"
+        aria-controls="sidebar-submenu-execution"
+      >
+        <span class="sidebar-menu__icon sidebar-menu__icon--execution" aria-hidden="true"></span>
+        <span>실행</span>
+      </button>
+    </div>
+
+    <div class="sidebar-menu-group">
+      <button
+        class="sidebar-menu"
+        type="button"
+        data-has-submenu
+        aria-expanded="false"
+        aria-controls="sidebar-submenu-system"
+      >
+        <span class="sidebar-menu__icon sidebar-menu__icon--system" aria-hidden="true"></span>
+        <span>시스템</span>
+      </button>
+    </div>
   </nav>
+
+  <!-- nav 밖 — backdrop-filter 중첩 방지 -->
+  <div class="sidebar-submenu" id="sidebar-submenu-monitoring" hidden>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">대시보드</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">실시간 현황</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">알림</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+  </div>
+
+  <div class="sidebar-submenu" id="sidebar-submenu-service" hidden>
+    <a class="sidebar-submenu__item" href="{{base}}CMS_02서비스_01미디어_목록.html" data-submenu-item="media">
+      <span class="sidebar-submenu__label">미디어</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">콘텐츠</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">미디어 그룹</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+  </div>
+
+  <div class="sidebar-submenu" id="sidebar-submenu-operation" hidden>
+    <a class="sidebar-submenu__item" href="{{base}}CMS_02운영_01프로덕트_목록.html" data-submenu-item="product">
+      <span class="sidebar-submenu__label">프로덕트 관리</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">스케줄</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">배포</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">이력</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+  </div>
+
+  <div class="sidebar-submenu" id="sidebar-submenu-execution" hidden>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">캠페인</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">송출</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">로그</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+  </div>
+
+  <div class="sidebar-submenu" id="sidebar-submenu-system" hidden>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">계정</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">권한</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+    <a class="sidebar-submenu__item" href="#">
+      <span class="sidebar-submenu__label">설정</span>
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--default" src="{{base}}assets/icons/submenu-arrow.svg" alt="" />
+      <img class="sidebar-submenu__arrow sidebar-submenu__arrow--active" src="{{base}}assets/icons/submenu-arrow-active.svg" alt="" />
+    </a>
+  </div>
 </aside>

@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Product list — Figma 1138:9667 / 1138:9928 / sorting_group 1151:3418
+   ========================================================================== */
+
+.media-summary--product .summary-item {
+  flex: 0 1 auto;
+  width: max-content;
+  max-width: 100%;
+}
+
+.media-table--product {
+  min-width: 980px;
+
+  th:nth-child(6),
+  td:nth-child(6) {
+    text-align: right;
+  }
+}
+
+.price-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+  color: var(--color-gray-60);
+  white-space: nowrap;
+
+  &__unit {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  &__amount {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
+
+.status-label--ready {
+  color: var(--color-warning-60);
+  background: var(--color-warning-10);
+}
+
+.status-label--draft {
+  color: var(--color-pending-60);
+  background: var(--color-pending-10);
+}
+
+.media-card--product .media-card__price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+  color: var(--color-gray-60);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  img {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.media-card__status--ready {
+  color: var(--color-warning-60);
+  background: var(--color-warning-10);
+}
+
+.media-card__status--draft {
+  color: var(--color-pending-60);
+  background: var(--color-pending-10);
+}
+
+@media (max-width: 640px) {
+  .media-summary--product {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .media-summary--product .summary-item {
+    width: 100%;
+    max-width: none;
+  }
+
+  .media-card--product .media-card__price {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,186 @@
+﻿<section class="media-detail media-detail--overview">
+  {{> pages/media/detail-hero}}
+
+  <div class="media-detail__overview">
+    <div class="media-detail__overview-col">
+      {{> pages/media/display-preview}}
+
+      <article class="detail-card detail-card--summary">
+        <div class="detail-card__title-row">
+          <h2 class="detail-card__title">콘텐츠 운영 요약</h2>
+          <p class="detail-card__subtitle">전체 10개의 확정 스케줄</p>
+        </div>
+        <div class="content-summary">
+          <div class="content-summary__item">
+            <div class="content-summary__label">
+              <span class="content-summary__dot content-summary__dot--commercial" aria-hidden="true"></span>
+              <span>상업 광고</span>
+            </div>
+            <div class="content-summary__meta">
+              <p class="content-summary__count">
+                <strong>6</strong><span>개</span>
+              </p>
+              <span class="content-summary__rate">80%</span>
+            </div>
+          </div>
+          <div class="content-summary__item">
+            <div class="content-summary__label">
+              <span class="content-summary__dot content-summary__dot--public" aria-hidden="true"></span>
+              <span>공익 광고</span>
+            </div>
+            <div class="content-summary__meta">
+              <p class="content-summary__count">
+                <strong>2.5</strong><span>개</span>
+              </p>
+              <span class="content-summary__rate">20%</span>
+            </div>
+          </div>
+          <div class="content-summary__item">
+            <div class="content-summary__label">
+              <span class="content-summary__dot content-summary__dot--own" aria-hidden="true"></span>
+              <span>자사 광고</span>
+            </div>
+            <div class="content-summary__meta">
+              <p class="content-summary__count">
+                <strong>1.5</strong><span>개</span>
+              </p>
+              <span class="content-summary__rate">20%</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="media-detail__overview-col media-detail__overview-col--stretch">
+      <article class="detail-card">
+        <h2 class="detail-card__title">기본정보</h2>
+        <div class="detail-card__body">
+          <div class="detail-row-grid">
+            <div class="detail-row">
+              <span class="detail-row__label">미디어명</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">강남대로 DID 02</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">설치장소 유형</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">실외 도로변</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">셋탑 코드</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">STB010</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">Display</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">LCD 55" FHD</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">운영 시간</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">09:00 ~ 18:00</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">슬롯 구성</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">20초 · 30슬롯</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">보장 횟수</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">54회 / 일</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">운영 설정</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">평일 09-18</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-row__label">상태</span>
+              <span class="detail-row__line" aria-hidden="true"></span>
+              <span class="detail-row__value">
+                <span class="badge-state badge-state--success">
+                  <span class="badge-state__dot" aria-hidden="true"></span>
+                  활성화
+                </span>
+              </span>
+            </div>
+            <div class="detail-row detail-row--blank" aria-hidden="true"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-card detail-card--chart">
+        <h2 class="detail-card__title">월별 스케줄 운영 수</h2>
+        <div class="detail-card__body detail-card__body--chart">
+          <div class="schedule-chart" role="img" aria-label="월별 스케줄 운영 수 차트">
+            <div class="schedule-chart__plot">
+              <div class="schedule-chart__y" aria-hidden="true">
+                <span>100</span>
+                <span>80</span>
+                <span>60</span>
+                <span>40</span>
+                <span>20</span>
+                <span>0</span>
+              </div>
+              <div class="schedule-chart__area">
+                <div class="schedule-chart__grid" aria-hidden="true"></div>
+                <div class="schedule-chart__bars">
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar" style="--bar-h: 57%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar" style="--bar-h: 17%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar" style="--bar-h: 32%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar" style="--bar-h: 20%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar" style="--bar-h: 41%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar" style="--bar-h: 11%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar schedule-chart__bar--active" style="--bar-h: 95%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar schedule-chart__bar--dashed" style="--bar-h: 15%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar schedule-chart__bar--dashed" style="--bar-h: 57%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap">
+                    <div class="schedule-chart__bar schedule-chart__bar--dashed" style="--bar-h: 52%"></div>
+                  </div>
+                  <div class="schedule-chart__bar-wrap"></div>
+                  <div class="schedule-chart__bar-wrap"></div>
+                </div>
+              </div>
+            </div>
+            <div class="schedule-chart__x" aria-hidden="true">
+              <span>‘24.09</span>
+              <span>‘24.10</span>
+              <span>‘24.11</span>
+              <span>‘24.12</span>
+              <span>‘25.01</span>
+              <span>‘25.02</span>
+              <span>‘25.03</span>
+              <span>‘25.04</span>
+              <span>‘25.05</span>
+              <span>‘25.06</span>
+              <span>‘25.07</span>
+              <span>‘25.08</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  {{> pages/media/detail-actions}}
+</section>

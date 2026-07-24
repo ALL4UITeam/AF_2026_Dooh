@@ -1,0 +1,245 @@
+<div class="media-register__shell">
+  <div class="media-register__step">
+    <span class="media-register__step-badge">
+      <span class="media-register__step-icon" aria-hidden="true"></span>
+      <span>Step 01</span>
+    </span>
+    <h2 class="media-register__step-title">기본정보 입력</h2>
+  </div>
+
+  <div class="media-register__sections">
+    <section class="form-section" aria-labelledby="form-section-basic">
+      <header class="form-section__head">
+        <h3 class="form-section__title" id="form-section-basic">기본 정보</h3>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field form-field--col-narrow">
+            <label class="form-field__label" for="media-name">
+              미디어명
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <div class="form-field__control form-field__control--with-btn">
+              <input
+                class="field-input field-input--fluid"
+                id="media-name"
+                type="text"
+                placeholder="내용을 입력 해주세요."
+              />
+              <button class="btn btn--secondary" type="button">중복확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-section-settop-3">
+      <header class="form-section__head">
+        <h3 class="form-section__title" id="form-section-settop-3">셋탑 정보 (3 col)</h3>
+        <span class="badge-info badge-info--settop">
+          <span class="badge-info__icon" aria-hidden="true"></span>
+          셋탑 선택 시 정보 자동 로드
+        </span>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field">
+            <label class="form-field__label" for="settop-code-3">
+              셋탑 코드
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="settop-code-3"
+              type="text"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="settop-manufacturer-3">제조사</label>
+            <input class="field-input field-input--fluid is-disabled" id="settop-manufacturer-3" type="text" value="LG전자" disabled />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="settop-model-3">모델</label>
+            <input class="field-input field-input--fluid is-disabled" id="settop-model-3" type="text" value="MTV-300" disabled />
+          </div>
+        </div>
+        <div class="form-grid form-grid--settop-tail">
+          <div class="form-field">
+            <label class="form-field__label" for="settop-os">OS</label>
+            <input class="field-input field-input--fluid is-disabled" id="settop-os" type="text" value="webOS Signage 6.0" disabled />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="settop-board">제어보드</label>
+            <input class="field-input field-input--fluid is-disabled" id="settop-board" type="text" value="SoC 내장형" disabled />
+          </div>
+          <div class="form-field form-field--spacer" aria-hidden="true"></div>
+          <div class="form-field form-field--full">
+            <div class="info-alert info-alert--warning info-alert--compact" role="note">
+              <p class="info-alert__text">
+                ADMIN 경로로 수신된 미디어는 등록 후 수정에서 슬롯 등 상세 정보를 입력해야 사용 가능합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-section-settop-2">
+      <header class="form-section__head">
+        <h3 class="form-section__title" id="form-section-settop-2">셋탑 정보 (2 col)</h3>
+        <span class="badge-info badge-info--settop">
+          <span class="badge-info__icon" aria-hidden="true"></span>
+          셋탑 선택 시 정보 자동 로드
+        </span>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-2">
+          <div class="form-field">
+            <label class="form-field__label" for="settop-code-2a">
+              셋탑 코드
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="settop-code-2a"
+              type="text"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="settop-manufacturer-2a">제조사</label>
+            <input
+              class="field-input field-input--fluid"
+              id="settop-manufacturer-2a"
+              type="text"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+        </div>
+        <div class="form-grid form-grid--cols-2">
+          <div class="form-field">
+            <label class="form-field__label" for="settop-code-2b">
+              셋탑 코드
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="settop-code-2b"
+              type="text"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="settop-manufacturer-2b">제조사</label>
+            <input class="field-input field-input--fluid is-disabled" id="settop-manufacturer-2b" type="text" value="LG전자" disabled />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-section-settop-1">
+      <header class="form-section__head">
+        <h3 class="form-section__title" id="form-section-settop-1">셋탑 정보 (1 col)</h3>
+        <span class="badge-info badge-info--settop">
+          <span class="badge-info__icon" aria-hidden="true"></span>
+          셋탑 선택 시 정보 자동 로드
+        </span>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-1">
+          <div class="form-field">
+            <label class="form-field__label" for="settop-code-1a">
+              셋탑 코드
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="settop-code-1a"
+              type="text"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="settop-code-1b">
+              셋탑 코드
+              <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="field-input field-input--fluid"
+              id="settop-code-1b"
+              type="text"
+              placeholder="내용을 입력 해주세요."
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-section-display">
+      <header class="form-section__head form-section__head--display">
+        <div class="form-section__title-group">
+          <h3 class="form-section__title" id="form-section-display">디스플레이 정보</h3>
+          <p class="form-section__subtitle">셋탑에 정보가 없으면 직접 입력</p>
+        </div>
+      </header>
+      <div class="form-section__body">
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field">
+            <span class="form-field__label">디스플레이 유형</span>
+            <div class="radio-card-group" role="radiogroup" aria-label="디스플레이 유형">
+              <label class="radio-card is-active">
+                <input type="radio" name="display-type" value="lcd" checked />
+                <span class="radio-card__label">LCD</span>
+                <span class="radio-card__control" aria-hidden="true"><span class="radio-card__dot"></span></span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="display-type" value="led" />
+                <span class="radio-card__label">LED</span>
+                <span class="radio-card__control" aria-hidden="true"><span class="radio-card__dot"></span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-field">
+            <span class="form-field__label">설치 형태 (방향)</span>
+            <div class="radio-card-group" role="radiogroup" aria-label="설치 형태">
+              <label class="radio-card is-active">
+                <input type="radio" name="display-orientation" value="landscape" checked />
+                <span class="radio-card__label">가로형</span>
+                <span class="radio-card__control" aria-hidden="true"><span class="radio-card__dot"></span></span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="display-orientation" value="portrait" />
+                <span class="radio-card__label">세로형</span>
+                <span class="radio-card__control" aria-hidden="true"><span class="radio-card__dot"></span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-grid form-grid--cols-3">
+          <div class="form-field">
+            <label class="form-field__label" for="display-ratio">화면비</label>
+            <input class="field-input field-input--fluid" id="display-ratio" type="text" value="16:9" />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="display-resolution">해상도</label>
+            <input class="field-input field-input--fluid" id="display-resolution" type="text" value="FHD 1920 × 1080" />
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="display-size">규격 (인치)</label>
+            <input class="field-input field-input--fluid" id="display-size" type="text" value="55" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="media-register__actions">
+  <div class="media-register__actions-left">
+    <a class="btn-cta btn-cta--l btn-cta--tertiary" href="{{base}}CMS_02서비스_01미디어_목록.html">목록</a>
+  </div>
+  <div class="media-register__actions-right">
+    <a class="btn-cta btn-cta--l btn-cta--primary" href="{{base}}CMS_02서비스_01미디어_등록_02운영기준.html">다음</a>
+  </div>
+</div>

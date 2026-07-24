@@ -1,30 +1,49 @@
 /* ==========================================================================
    App sidebar
-   관리자 화면 좌측 공통 1차 내비게이션입니다.
    ========================================================================== */
 
+@use '../settings/asset-urls' as asset;
+
 .app-sidebar {
+  position: sticky;
+  z-index: 40;
+  top: 0;
   display: flex;
   flex: 0 0 96px;
+  align-self: flex-start;
+  height: calc(100vh - 60px);
   min-height: calc(100vh - 60px);
   justify-content: flex-end;
   padding: 40px 0 40px 20px;
+  overflow: visible;
+  box-sizing: border-box;
 }
 
 .app-sidebar__nav {
+  position: relative;
   display: flex;
   width: 76px;
+  height: 100%;
+  min-height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 0 16px;
+  padding: 0 10px;
   border: 2px solid var(--color-white);
   border-radius: 20px;
   background: rgb(255 255 255 / 30%);
   box-shadow: 0 0 30px rgb(0 0 0 / 10%);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.sidebar-menu-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .sidebar-menu {
@@ -35,16 +54,88 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
+  border: 0;
   border-radius: 16px;
   color: var(--color-gray-80);
+  background: transparent;
   font-size: 10px;
   letter-spacing: -1px;
   text-decoration: none;
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
-.sidebar-menu img {
+.sidebar-menu img,
+.sidebar-menu__icon {
   width: 24px;
   height: 24px;
+}
+
+.sidebar-menu__icon {
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sidebar-menu__icon--monitoring {
+  background-image: asset.$icon-gnb-monitoring;
+  background-size: 20px 19px;
+}
+
+.sidebar-menu__icon--service {
+  background-image: asset.$icon-gnb-service;
+  background-size: 20px 19px;
+}
+
+.sidebar-menu__icon--manage {
+  background-image: asset.$icon-gnb-manage;
+  background-size: 20px 18px;
+}
+
+.sidebar-menu__icon--execution {
+  background-image: asset.$icon-gnb-execution;
+  background-size: 18px 20px;
+}
+
+.sidebar-menu__icon--system {
+  background-image: asset.$icon-gnb-system;
+  background-size: 21px 21px;
+}
+
+.sidebar-menu.is-active .sidebar-menu__icon--monitoring {
+  background-image: asset.$icon-gnb-monitoring-on;
+}
+
+.sidebar-menu.is-active .sidebar-menu__icon--service {
+  background-image: asset.$icon-gnb-service-on;
+}
+
+.sidebar-menu.is-active .sidebar-menu__icon--manage {
+  background-image: asset.$icon-gnb-manage-on;
+}
+
+.sidebar-menu.is-active .sidebar-menu__icon--execution {
+  background-image: asset.$icon-gnb-execution-on;
+}
+
+.sidebar-menu.is-active .sidebar-menu__icon--system {
+  background-image: asset.$icon-gnb-system-on;
+}
+
+.sidebar-menu span {
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.sidebar-menu:hover,
+.sidebar-menu:focus-visible {
+  border-radius: var(--radius-pill);
+  color: var(--color-gray-80);
+  background: var(--color-gray-10);
+  outline: none;
 }
 
 .sidebar-menu.is-active {
@@ -54,14 +145,109 @@
   box-shadow: 0 6px 5px rgb(0 0 0 / 25%);
 }
 
+.sidebar-menu.is-active:hover,
+.sidebar-menu.is-active:focus-visible {
+  color: var(--color-gray-0);
+  background: var(--color-gray-80);
+}
+
+/* gnb_extend — Figma 1138:7598
+   Fill: white 50% / Effect: 배경 흐림 20 (고르게) / Shadow: 0 0 30 #000 40% */
+.sidebar-submenu {
+  position: absolute;
+  z-index: 60;
+  top: var(--submenu-top, 50%);
+  left: var(--submenu-left, 100%);
+  display: flex;
+  width: 160px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--color-white);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 50%);
+  box-shadow: 0 0 30px rgb(0 0 0 / 40%);
+  transform: translateY(-50%) translateX(-6px);
+  transition: transform var(--transition-fast);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-submenu:not([hidden]) {
+  transform: translateY(-50%) translateX(0);
+}
+
+.sidebar-submenu__item {
+  display: flex;
+  min-width: 120px;
+  height: 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px 0 12px;
+  border-radius: var(--radius-control);
+  color: var(--color-gray-60);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.sidebar-submenu__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-submenu__arrow {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.sidebar-submenu__arrow--active {
+  display: none;
+}
+
+.sidebar-submenu__item:hover,
+.sidebar-submenu__item:focus-visible,
+.sidebar-submenu__item.is-active {
+  color: var(--color-primary-60);
+  background: var(--color-white);
+  box-shadow: 0 4px 6px rgb(100 116 139 / 40%);
+  outline: none;
+}
+
+.sidebar-submenu__item:hover .sidebar-submenu__arrow--default,
+.sidebar-submenu__item:focus-visible .sidebar-submenu__arrow--default,
+.sidebar-submenu__item.is-active .sidebar-submenu__arrow--default {
+  display: none;
+}
+
+.sidebar-submenu__item:hover .sidebar-submenu__arrow--active,
+.sidebar-submenu__item:focus-visible .sidebar-submenu__arrow--active,
+.sidebar-submenu__item.is-active .sidebar-submenu__arrow--active {
+  display: block;
+}
+
+.sidebar-submenu__item.is-active {
+  font-weight: 600;
+}
+
 /* 태블릿 이하에서는 좌측 바를 하단 고정 내비게이션으로 전환합니다. */
 @media (max-width: 900px) {
   .app-sidebar {
     position: fixed;
     z-index: 50;
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
+    top: auto;
+    right: max(8px, env(safe-area-inset-right, 0px));
+    bottom: max(8px, env(safe-area-inset-bottom, 0px));
+    left: max(8px, env(safe-area-inset-left, 0px));
+    align-self: auto;
+    height: auto;
     min-height: 0;
     padding: 0;
   }
@@ -69,15 +255,61 @@
   .app-sidebar__nav {
     width: 100%;
     height: 68px;
+    min-height: 0;
     flex-direction: row;
     justify-content: space-around;
-    padding: 6px 12px;
+    gap: 4px;
+    padding: 6px 8px;
     border-radius: 18px;
-    background: rgb(255 255 255 / 88%);
+    background: rgb(255 255 255 / 92%);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .sidebar-menu-group {
+    flex-shrink: 0;
+    width: auto;
   }
 
   .sidebar-menu {
-    width: 56px;
+    width: 52px;
     height: 52px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-submenu {
+    position: fixed;
+    z-index: 55;
+    top: auto;
+    right: max(8px, env(safe-area-inset-right, 0px));
+    bottom: calc(68px + 16px + env(safe-area-inset-bottom, 0px));
+    left: max(8px, env(safe-area-inset-left, 0px));
+    width: auto;
+    max-width: min(320px, 100%);
+    margin: 0 auto;
+    transform: translateY(8px);
+  }
+
+  .sidebar-submenu:not([hidden]) {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-menu {
+    width: 48px;
+    height: 48px;
+    font-size: 9px;
+  }
+
+  .sidebar-menu span {
+    max-width: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

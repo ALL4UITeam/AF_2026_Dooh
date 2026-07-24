@@ -1,0 +1,800 @@
+/* ==========================================================================
+   Media register — Figma 1138:7181 Step 01 기본정보 입력
+   ========================================================================== */
+
+@use '../components/form-controls';
+@use '../components/cms-btn';
+@use '../components/badge-state';
+@use '../components/info-panel';
+@use '../components/tab-menu';
+@use '../settings/asset-urls' as asset;
+
+.app-main--register {
+  gap: 24px;
+}
+
+.media-register {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.media-register__shell {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border: 2px solid rgb(255 255 255 / 90%);
+  border-radius: var(--radius-card);
+  background: linear-gradient(127.58deg, rgb(255 255 255 / 10%) 0%, rgb(255 255 255 / 70%) 100%);
+  box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+}
+
+.media-register__step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+}
+
+.media-register__step-badge {
+  display: inline-flex;
+  height: 32px;
+  align-items: center;
+  gap: 4px;
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(to left, var(--color-primary-60) 0%, #0891b2 100%);
+  color: var(--color-white);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.media-register__step-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 25px;
+  background-image: asset.$icon-ico-step-etc;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 25px;
+}
+
+.media-register__step-title {
+  margin: 0;
+  color: var(--color-gray-95);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.5;
+}
+
+.media-register__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.media-register__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.media-register__actions-left,
+.media-register__actions-right {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.media-register__actions-right {
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+// --------------------------------------------------------------------------
+// Form section card — Figma con 01~05
+// --------------------------------------------------------------------------
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 20px;
+  border: 2px solid rgb(255 255 255 / 90%);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  box-shadow: 0 0 5px rgb(0 0 0 / 12%);
+}
+
+.form-section__head {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 0;
+
+  &--display {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+.form-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 12px;
+}
+
+.form-section__title-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.form-section__title {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  margin: 0;
+  color: var(--color-primary-80);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.form-section__subtitle {
+  margin: 0;
+  min-width: 0;
+  flex: 1 1 12rem;
+  color: var(--color-gray-60);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.form-grid {
+  display: grid;
+  gap: 20px;
+
+  &--cols-1 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &--cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &--settop-tail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+
+    .form-field:not(.form-field--full):not(.form-field--spacer) {
+      width: calc((100% - 40px) / 3);
+      min-width: 0;
+    }
+  }
+}
+
+.form-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+
+  &--col-narrow {
+    max-width: 552px;
+  }
+
+  &--full {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  &--spacer {
+    height: 40px;
+    margin-top: 29px;
+  }
+}
+
+.form-field__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-gray-60);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.form-field__required {
+  color: var(--color-secondary-50);
+  font-weight: 600;
+}
+
+.form-field__control {
+  display: flex;
+  min-width: 0;
+
+  &--with-btn {
+    align-items: stretch;
+    gap: 10px;
+
+    .field-input {
+      min-width: 0;
+      flex: 1;
+      width: auto;
+      max-width: none;
+    }
+
+    .btn--secondary {
+      flex-shrink: 0;
+      align-self: stretch;
+    }
+  }
+}
+
+.badge-info--settop {
+  display: inline-flex;
+  height: 32px;
+  align-items: center;
+  gap: 4px;
+  padding: 0 12px;
+  border: 1px solid var(--color-gray-20);
+  border-radius: 12px;
+  background: var(--color-white);
+  color: var(--color-info-40);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.13px;
+  line-height: normal;
+  white-space: nowrap;
+
+  .badge-info__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    background-image: asset.$icon-info-settop;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+.info-alert--compact.info-alert--warning {
+  display: block;
+  padding: 12px 20px;
+  border: 1px solid var(--color-warning-40);
+  border-radius: var(--radius-control);
+  background: var(--color-warning-10);
+
+  .info-alert__text {
+    position: relative;
+    margin: 0;
+    padding-left: 8px;
+    color: var(--color-gray-60);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      border-radius: var(--radius-pill);
+      background: var(--color-gray-60);
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Step 02 — 운영기준 · 위치 정보 (Figma 1138:7996)
+// --------------------------------------------------------------------------
+
+.form-section__sum {
+  padding-top: 20px;
+  border-top: 1px dashed var(--color-primary-20);
+  container-type: inline-size;
+  container-name: form-sum;
+}
+
+.calc-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px 24px;
+  padding: 20px 32px;
+  border: 1px solid var(--color-primary-30);
+  border-radius: 12px;
+  background: var(--color-primary-5);
+  box-shadow: 0 2px 3px rgb(52 77 138 / 20%);
+
+  &__info {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 220px;
+    align-items: center;
+    gap: 16px;
+    padding-right: 24px;
+    border-right: 1px solid var(--color-primary-20);
+  }
+
+  &__icon-wrap {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-20);
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background-image: asset.$icon-ico-calc;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__text {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--color-primary-70);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__desc {
+    margin: 0;
+    color: var(--color-gray-60);
+    font-size: 15px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  &__result {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 240px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px 16px;
+  }
+
+  &__formula {
+    min-width: 0;
+    color: var(--color-gray-60);
+    font-size: clamp(16px, 1.8vw, 25px);
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: right;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+  }
+
+  &__equal {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background-image: asset.$icon-ico-equal;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__value {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: baseline;
+    gap: 6px;
+    padding: 2px 24px;
+    border-radius: var(--radius-pill);
+    background: var(--color-white);
+    white-space: nowrap;
+  }
+
+  &__value-num {
+    color: var(--color-primary-50);
+    font-size: clamp(22px, 2.4vw, 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__value-unit {
+    color: var(--color-gray-60);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+/* 패널 실제 너비 기준 — 뷰포트보다 일찍/정확히 접힘 */
+@container form-sum (max-width: 880px) {
+  .calc-panel {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
+
+    &__info {
+      width: 100%;
+      flex: none;
+      padding-right: 0;
+      padding-bottom: 16px;
+      border-right: 0;
+      border-bottom: 1px solid var(--color-primary-20);
+    }
+
+    &__result {
+      flex: none;
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    &__formula {
+      font-size: 18px;
+    }
+
+    &__value {
+      padding: 2px 20px;
+    }
+
+    &__value-num {
+      font-size: 26px;
+    }
+  }
+}
+
+@container form-sum (max-width: 420px) {
+  .calc-panel {
+    padding: 14px 16px;
+
+    &__info {
+      gap: 12px;
+      padding-bottom: 12px;
+    }
+
+    &__icon-wrap {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    &__title,
+    &__desc {
+      font-size: 13px;
+    }
+
+    &__result {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    &__formula {
+      width: 100%;
+      font-size: 15px;
+      text-align: left;
+    }
+
+    &__equal {
+      align-self: center;
+      transform: rotate(90deg);
+    }
+
+    &__value {
+      width: 100%;
+      justify-content: center;
+      padding: 6px 16px;
+    }
+
+    &__value-num {
+      font-size: 22px;
+    }
+
+    &__value-unit {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .form-grid--settop-tail .form-field:not(.form-field--full):not(.form-field--spacer) {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .form-field--spacer {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .form-grid--cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .media-register {
+    gap: 16px;
+  }
+
+  .media-register__shell {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .media-register__sections {
+    gap: 16px;
+  }
+
+  .media-register__step {
+    flex-wrap: wrap;
+    min-height: 0;
+    gap: 8px;
+  }
+
+  .media-register__step-badge {
+    height: 28px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .media-register__step-icon {
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+  }
+
+  .media-register__step-title {
+    font-size: 17px;
+  }
+
+  .form-section {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .form-section__title {
+    min-height: 32px;
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .form-section__subtitle {
+    flex: 1 1 100%;
+    font-size: 13px;
+  }
+
+  .form-section__title-group {
+    gap: 4px;
+  }
+
+  .form-field__label {
+    font-size: 14px;
+  }
+
+  .form-grid {
+    gap: 14px;
+  }
+
+  .form-grid--cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .media-register__actions .btn-cta--l {
+    height: 48px;
+    min-width: 0;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  .badge-info--settop {
+    height: auto;
+    min-height: 28px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .info-alert--compact.info-alert--warning .info-alert__text {
+    font-size: 12px;
+  }
+
+  .form-field__control--with-btn {
+    gap: 8px;
+
+    .btn--secondary {
+      min-width: 72px;
+      height: 36px;
+      padding: 0 10px;
+      font-size: 13px;
+    }
+  }
+
+  .calc-panel {
+    /* container query 미지원 폴백 */
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
+
+    &__info {
+      width: 100%;
+      flex: none;
+      padding-right: 0;
+      padding-bottom: 16px;
+      border-right: 0;
+      border-bottom: 1px solid var(--color-primary-20);
+    }
+
+    &__result {
+      flex: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      width: 100%;
+      gap: 12px;
+    }
+
+    &__formula {
+      font-size: 18px;
+    }
+
+    &__value {
+      padding: 2px 20px;
+    }
+
+    &__value-num {
+      font-size: 24px;
+    }
+
+    &__value-unit {
+      font-size: 13px;
+    }
+  }
+
+  .tab-menu02 {
+    height: 36px;
+
+    &__item {
+      height: 36px;
+      font-size: 14px;
+    }
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .media-register__shell {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .form-section {
+    gap: 20px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .form-grid--cols-2,
+  .form-grid--cols-3,
+  .form-grid--cols-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid--settop-tail .form-field:not(.form-field--full) {
+    width: 100%;
+  }
+
+  .form-field--col-narrow {
+    max-width: none;
+  }
+
+  .calc-panel {
+    &__result {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    &__formula {
+      width: 100%;
+      font-size: 15px;
+      text-align: left;
+    }
+
+    &__equal {
+      align-self: center;
+      transform: rotate(90deg);
+    }
+
+    &__value {
+      width: 100%;
+      justify-content: center;
+      padding: 6px 16px;
+    }
+
+    &__value-num {
+      font-size: 22px;
+    }
+  }
+
+  .form-section__head {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 0;
+    gap: 8px;
+  }
+
+  .form-section__title-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .badge-info--settop {
+    align-self: flex-start;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .media-register__actions-right {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .media-register__actions {
+    flex-direction: column;
+    gap: 8px;
+
+    .media-register__actions-left,
+    .media-register__actions-right {
+      width: 100%;
+      justify-content: stretch;
+    }
+
+    .btn-cta--l {
+      width: 100%;
+      height: 44px;
+      font-size: 15px;
+    }
+  }
+}

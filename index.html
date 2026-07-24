@@ -3,54 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Doo'h CMS 미디어 관리" />
-    <title>미디어 관리 | Doo'h CMS</title>
-    <script type="module" src="./src/js/media.js"></script>
+    <meta name="description" content="Doo'h CMS 개발 페이지 목록" />
+    <title>페이지 목록 | Doo'h CMS</title>
+    <link rel="stylesheet" href="./src/styles/pages/index.scss" />
+    <script type="module" src="./src/js/pages/index.js"></script>
   </head>
-  <body class="app-page">
-    {{> app-header}}
+  <body class="page-list">
+    <main class="page-list__content link-page">
+      <h1 class="link-page__title">2026 AF Doo'h CMS</h1>
 
-    <div class="app-layout">
-      {{> app-sidebar}}
+      <div class="link-page__search">
+        <input
+          type="text"
+          id="searchInput"
+          class="link-page__search-input"
+          placeholder="검색어를 입력하세요"
+        />
+        <button type="button" id="searchButton" class="link-page__search-btn">검색</button>
+      </div>
 
-      <main class="app-main">
-        <!-- 페이지 타이틀 영역 (Primary/80) -->
-        <header class="page-heading">
-          <nav class="breadcrumb" aria-label="현재 위치">
-            <a href="#">
-              <img src="{{base}}assets/icons/home.svg" alt="" />
-              서비스
-            </a>
-            <img src="{{base}}assets/icons/breadcrumb-arrow.svg" alt="" />
-            <span>미디어</span>
-          </nav>
-          <h1>미디어</h1>
-          <p class="page-heading__meta">
-            <span>전체 <strong>9</strong> 개 미디어</span>
-            <span class="page-heading__dot" aria-hidden="true"></span>
-            <span>최근 업데이트26.05.05</span>
-          </p>
-        </header>
-
-        <!-- 검색·요약·목록 -->
-        <section class="media-content">
-          {{> components/media-filters}}
-          <div class="media-toolbar">
-            {{> components/media-summary}}
-            <div class="view-options" aria-label="보기 방식">
-              <button class="view-option is-active" type="button">
-                <img src="{{base}}assets/icons/view-list.svg" alt="" />
-                <span>리스트</span>
-              </button>
-              <button class="view-option" type="button">
-                <img src="{{base}}assets/icons/view-grid.svg" alt="" />
-                <span>카드</span>
-              </button>
-            </div>
-          </div>
-          {{> components/media-table}}
-        </section>
-      </main>
-    </div>
+      <table class="link-page__table">
+        <thead>
+          <tr>
+            <th>파일</th>
+            <th>페이지명</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          {{#each pages}}
+          <tr>
+            <td><a href="./{{name}}" target="_blank">{{name}}</a></td>
+            <td>{{title}}</td>
+            <td>{{note}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <p class="link-page__no-results" id="noResults" hidden>검색 결과가 없습니다.</p>
+    </main>
   </body>
 </html>

@@ -2,13 +2,64 @@ import { readFileSync, readdirSync } from 'node:fs'
 import { dirname, relative, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 
+const projectRoot = process.cwd()
+const publicAssetsRoot = resolve(projectRoot, 'public/assets')
+
 const includePattern = /\{\{>\s*([\w/-]+)\s*\}\}/g
+const pagesEachPattern = /\{\{#each pages\}\}[\s\S]*?\{\{\/each\}\}/
+
+function extractPageTitle(html) {
+  const match = html.match(/<title[^>]*>([^<]+)<\/title>/i)
+  return match?.[1]?.trim() ?? ''
+}
+
+/**
+ * index.html의 {{#each pages}} 블록을 루트 HTML 파일 목록으로 치환합니다.
+ */
+function pagesListPlugin() {
+  const root = process.cwd()
+
+  const buildPageRows = () =>
+    readdirSync(root, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'index.html')
+      .map((entry) => {
+        const filePath = resolve(root, entry.name)
+        const html = readFileSync(filePath, 'utf8')
+
+        return {
+          name: entry.name,
+          title: extractPageTitle(html) || entry.name.replace(/\.html$/, ''),
+          note: '',
+        }
+      })
+      .sort((a, b) => a.name.localeCompare(b.name, 'ko'))
+      .map(
+        (page) => `          <tr>
+            <td><a href="./${page.name}" target="_blank">${page.name}</a></td>
+            <td>${page.title}</td>
+            <td>${page.note}</td>
+          </tr>`,
+      )
+      .join('\n')
+
+  return {
+    name: 'pages-list',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html, ctx) {
+        if (!ctx.filename.endsWith('index.html')) return html
+        return html.replace(pagesEachPattern, buildPageRows())
+      },
+    },
+  }
+}
 
 /**
  * public 아래의 HTML 조각을 빌드 시점에 합칩니다.
  *
  * - {{> login-panel}}         → public/partials/login-panel.html
- * - {{> components/contact}}  → public/components/contact.html
+ * - {{> components/pagination}} → public/components/pagination.html
+ * - {{> pages/media/filters}}   → public/pages/media/filters.html
  * - {{> layouts/app-shell}}   → public/layouts/app-shell.html
  *
  * 조각 안에서 다른 조각을 다시 include할 수 있도록 재귀 처리합니다.
@@ -76,9 +127,22 @@ export default defineConfig({
   // dist/index.html을 file://로 직접 열어도 에셋 경로가 유지됩니다.
   base: './',
   appType: 'mpa',
-  plugins: [partialsPlugin()],
+  resolve: {
+    alias: {
+      '@assets': publicAssetsRoot,
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        loadPaths: [resolve(projectRoot, 'src/styles')],
+      },
+    },
+  },
+  plugins: [pagesListPlugin(), partialsPlugin()],
   build: {
     assetsDir: 'assets',
+    assetsInlineLimit: 0,
     rollupOptions: {
       input: getHtmlEntries(),
     },

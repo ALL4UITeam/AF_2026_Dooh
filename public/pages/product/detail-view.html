@@ -1,0 +1,98 @@
+<!-- 프로덕트 상세 — Figma 1188:3258 -->
+<section class="product-detail">
+  {{> pages/product/detail-hero}}
+
+  <div class="product-detail__body">
+    <div class="product-register__row">
+      <section class="product-register__shell product-register__shell--media" aria-labelledby="product-media-title">
+        <div class="product-register__card-head">
+          <h2 class="product-register__title" id="product-media-title">미디어 선택</h2>
+          <p class="product-register__subtitle">N:M · 미디어는 여러 프로덕트에 중복 포함</p>
+        </div>
+        <div class="media-pick media-pick--selected">
+          <header class="media-pick__head">
+            <h3 class="media-pick__list-title">미디어 목록</h3>
+            <p class="media-pick__count">
+              <span class="media-pick__count-label">N:M</span>
+              <strong class="media-pick__count-num">6</strong>
+              <span class="media-pick__count-unit">개</span>
+            </p>
+          </header>
+          <div class="media-pick__body">
+            <ul class="media-pick__list">
+              {{> pages/product/media-pick-items}}
+            </ul>
+          </div>
+          <button class="media-pick__add" type="button" data-open-media-select>
+            <span class="media-pick__add-icon" aria-hidden="true"></span>
+            미디어 추가
+          </button>
+        </div>
+      </section>
+
+      <section class="product-register__shell product-register__shell--calc" aria-labelledby="product-calc-title">
+        <div class="product-register__card-head">
+          <h2 class="product-register__title" id="product-calc-title">자동 산정 결과</h2>
+        </div>
+        <div class="auto-calc auto-calc--filled">
+          <div class="auto-calc__rows">
+            <div class="auto-calc__row">
+              <span class="auto-calc__label">운영시간 (교집합)</span>
+              <span class="auto-calc__value">09–22시</span>
+            </div>
+            <div class="auto-calc__row">
+              <span class="auto-calc__label">슬롯 재생시간 (최소)</span>
+              <span class="auto-calc__value">20초</span>
+            </div>
+            <div class="auto-calc__row">
+              <span class="auto-calc__label">총 슬롯</span>
+              <span class="auto-calc__value">6 슬롯</span>
+            </div>
+            <div class="auto-calc__row">
+              <span class="auto-calc__label">노출 보장 (20초 기준)</span>
+              <span class="auto-calc__value">100 회</span>
+            </div>
+          </div>
+          <div class="auto-calc__price">
+            <span class="auto-calc__price-label">단가</span>
+            <p class="auto-calc__price-value">
+              <span class="auto-calc__price-currency">₩</span>
+              <strong class="auto-calc__price-num">120,000</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="product-status-flow" aria-label="프로덕트 상태">
+          <span class="badge-state badge-state--pending">
+            <span class="badge-state__dot" aria-hidden="true"></span>
+            Draft
+          </span>
+          <img
+            class="product-status-flow__arrow"
+            src="{{base}}assets/icons/status-flow-arrow.svg"
+            alt=""
+            width="6"
+            height="12"
+          />
+          <span class="badge-state badge-state--warning">
+            <span class="badge-state__dot" aria-hidden="true"></span>
+            Ready
+          </span>
+          <img
+            class="product-status-flow__arrow"
+            src="{{base}}assets/icons/status-flow-arrow.svg"
+            alt=""
+            width="6"
+            height="12"
+          />
+          <span class="badge-state badge-state--success badge-state--on">
+            <span class="badge-state__dot" aria-hidden="true"></span>
+            Active
+          </span>
+        </div>
+      </section>
+    </div>
+
+    {{> pages/product/detail-actions}}
+  </div>
+</section>

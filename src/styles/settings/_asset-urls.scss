@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Asset URL tokens — public/assets 단일 소스
+   SCSS에서 url() 직접 지정 (Vite alias @assets → public/assets)
+   ========================================================================== */
+
+$icon-gnb-monitoring: url('@assets/icons/gnb-monitoring.svg');
+$icon-gnb-monitoring-on: url('@assets/icons/gnb-monitoring-on.svg');
+$icon-gnb-service: url('@assets/icons/gnb-service.svg');
+$icon-gnb-service-on: url('@assets/icons/gnb-service-on.svg');
+$icon-gnb-manage: url('@assets/icons/gnb-manage.svg');
+$icon-gnb-manage-on: url('@assets/icons/gnb-manage-on.svg');
+$icon-gnb-execution: url('@assets/icons/gnb-execution.svg');
+$icon-gnb-execution-on: url('@assets/icons/gnb-execution-on.svg');
+$icon-gnb-system: url('@assets/icons/gnb-system.svg');
+$icon-gnb-system-on: url('@assets/icons/gnb-system-on.svg');
+
+$icon-select-arrow: url('@assets/icons/select-arrow.svg');
+$icon-ico-time: url('@assets/icons/ico-time.svg');
+$icon-search-blue: url('@assets/icons/search-blue.svg');
+$icon-ioc-reset: url('@assets/icons/ioc-reset.svg');
+$icon-check-mark: url('@assets/icons/check-mark.svg');
+$icon-dot-info: url('@assets/icons/dot-info.svg');
+$icon-icon-check: url('@assets/icons/icon_check.svg');
+$icon-icon-check-f: url('@assets/icons/icon_check-f.svg');
+
+$icon-view-list: url('@assets/icons/view-list.svg');
+$icon-view-list-on: url('@assets/icons/view-list-on.svg');
+$icon-view-grid: url('@assets/icons/view-grid.svg');
+$icon-view-grid-on: url('@assets/icons/view-grid-on.svg');
+
+$icon-ico-step-etc: url('@assets/icons/ico-step-etc.svg');
+$icon-info-settop: url('@assets/icons/info-settop.svg');
+$icon-detail-settop: url('@assets/icons/detail-icon-settop.svg');
+$icon-detail-display: url('@assets/icons/detail-icon-display.svg');
+$icon-detail-location: url('@assets/icons/detail-icon-location.svg');
+$icon-ico-calc: url('@assets/icons/ico-calc.svg');
+$icon-ico-equal: url('@assets/icons/ico-equal.svg');
+
+$icon-tab-direct-muted: url('@assets/icons/tab-direct-muted.svg');
+$icon-tab-direct-on: url('@assets/icons/tab-direct-on.svg');
+$icon-tab-import: url('@assets/icons/tab-import.svg');
+$icon-tab-import-on: url('@assets/icons/tab-import-on.svg');
+
+$icon-tab-schedule-direct: url('@assets/icons/tab-schedule-direct.svg');
+$icon-tab-schedule-direct-on: url('@assets/icons/tab-schedule-direct-on.svg');
+$icon-tab-schedule-fixed: url('@assets/icons/tab-schedule-fixed.svg');
+$icon-tab-schedule-fixed-on: url('@assets/icons/tab-schedule-fixed-on.svg');
+$icon-tab-schedule-condition: url('@assets/icons/tab-schedule-condition.svg');
+$icon-tab-schedule-condition-on: url('@assets/icons/tab-schedule-condition-on.svg');
+$icon-tab-schedule-time: url('@assets/icons/tab-schedule-time.svg');
+$icon-tab-schedule-time-on: url('@assets/icons/tab-schedule-time-on.svg');
+
+$icon-plus-media: url('@assets/icons/plus-media.svg');
+$icon-step-dot: url('@assets/icons/step-dot.svg');
+
+$image-media-bg: url('@assets/images/media-bg.png');

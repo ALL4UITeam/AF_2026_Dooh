@@ -1,0 +1,37 @@
+<!-- 프로덕트 목록 테이블 + 하단 액션 (Figma 1138:9667) -->
+<div class="media-list">
+  <div class="media-table-scroll">
+    <table class="media-table media-table--product">
+      <thead>
+        <tr>
+          <th>프로덕트명</th>
+          <th>프로덕트 ID</th>
+          <th>미디어</th>
+          <th>운영시간</th>
+          <th>슬롯</th>
+          <th>단가</th>
+          <th>상태</th>
+        </tr>
+      </thead>
+      <tbody id="product-table-body">
+        <tr data-status="active"><th><a class="media-table__link" href="{{base}}CMS_02운영_01프로덕트_상세.html">교보타워 종로 패키지</a></th><td>P-2401</td><td>4개</td><td>09–22시</td><td class="is-number">6</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">120,000</span></td><td>{{> components/status-product-active}}</td></tr>
+        <tr data-status="ready"><th>강남 프라임 2면</th><td>P-2402</td><td>2개</td><td>08–20시</td><td class="is-number">4</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">80,000</span></td><td>{{> components/status-product-ready}}</td></tr>
+        <tr data-status="draft"><th>인천공항 T1 풀세트</th><td>P-2405</td><td>6개</td><td>06–24시</td><td class="is-number">8</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">150,000</span></td><td>{{> components/status-product-draft}}</td></tr>
+        <tr data-status="active"><th>전국 종일 패키지</th><td>P-2410</td><td>3개</td><td>24시간</td><td class="is-number">10</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">200,000</span></td><td>{{> components/status-product-active}}</td></tr>
+        <tr data-status="active"><th>홍대 영가 패키지</th><td>P-2412</td><td>3개</td><td>10–22시</td><td class="is-number">5</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">90,000</span></td><td>{{> components/status-product-active}}</td></tr>
+        <tr data-status="ready"><th>부산 서면 2면</th><td>P-2415</td><td>2개</td><td>08–24시</td><td class="is-number">4</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">110,000</span></td><td>{{> components/status-product-ready}}</td></tr>
+        <tr data-status="active"><th>대전 둔산 종일</th><td>P-2418</td><td>4개</td><td>09–21시</td><td class="is-number">6</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">95,000</span></td><td>{{> components/status-product-active}}</td></tr>
+        <tr data-status="active"><th>광주 충장로 패널</th><td>P-2420</td><td>2개</td><td>08–20시</td><td class="is-number">3</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">70,000</span></td><td>{{> components/status-product-active}}</td></tr>
+        <tr data-status="ready"><th>수원역 프라임</th><td>P-2422</td><td>3개</td><td>07–23시</td><td class="is-number">5</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">85,000</span></td><td>{{> components/status-product-ready}}</td></tr>
+        <tr data-status="draft"><th>제주공항 세트</th><td>P-2425</td><td>3개</td><td>06–24시</td><td class="is-number">4</td><td class="price-cell"><span class="price-cell__unit">₩</span><span class="price-cell__amount">160,000</span></td><td>{{> components/status-product-draft}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="media-list__footer">
+    {{> components/pagination}}
+    <div class="media-list__actions">
+      <a class="action-button action-button--primary" href="{{base}}CMS_02운영_01프로덕트_등록.html">프로덕트 등록</a>
+    </div>
+  </div>
+</div>
