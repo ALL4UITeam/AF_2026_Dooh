@@ -259,6 +259,18 @@
     font-size: 22px;
   }
 
+  .product-detail-hero .badge-state {
+    height: 28px;
+    min-width: 0;
+    padding: 0 10px;
+    font-size: 13px;
+
+    .badge-state__dot {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
   .product-detail-hero__meta {
     min-height: 0;
     gap: 6px;

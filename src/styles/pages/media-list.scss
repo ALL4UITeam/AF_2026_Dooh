@@ -339,6 +339,9 @@
       padding-left: 0;
       padding-right: 12px;
       background: rgb(255 255 255 / 70%);
+      transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
 
       &:first-child {
         padding-left: 20px;
@@ -353,6 +356,23 @@
       color: var(--color-gray-95);
       font-size: 17px;
       font-weight: 600;
+    }
+
+    tr:hover {
+      th,
+      td {
+        background: var(--color-gray-0);
+      }
+
+      th {
+        color: var(--color-primary-60);
+        text-decoration: underline;
+      }
+
+      .media-table__link {
+        color: var(--color-primary-60);
+        text-decoration: underline;
+      }
     }
   }
 

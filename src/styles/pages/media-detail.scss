@@ -1449,12 +1449,6 @@
     font-size: 14px;
   }
 
-  .media-detail-hero .badge-state--l {
-    height: 32px;
-    padding: 0 12px;
-    font-size: 15px;
-  }
-
   .media-detail-hero__stats {
     gap: 10px;
   }
@@ -1547,6 +1541,10 @@
 
   .data-box-group {
     gap: 16px;
+
+    &__line {
+      display: none;
+    }
   }
 
   .data-box-grid {
@@ -1667,9 +1665,9 @@
   }
 
   .media-detail-hero .badge-state--l {
-    height: 28px;
-    padding: 0 10px;
-    font-size: 13px;
+    height: 32px;
+    padding: 0 12px;
+    font-size: 15px;
 
     .badge-state__dot {
       width: 8px;
@@ -1683,9 +1681,9 @@
     line-height: 1.4;
 
     .badge-settop {
-      height: 22px;
+      height: 24px;
       padding: 0 8px;
-      font-size: 12px;
+      font-size: 13px;
     }
   }
 
@@ -1816,25 +1814,20 @@
   }
 
   .detail-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    min-height: 0;
     padding: 10px 12px;
-
-    &__line {
-      display: none;
-    }
+    gap: 8px;
 
     &__label {
       font-size: 13px;
     }
 
+    &__line {
+      min-width: 12px;
+    }
+
     &__value {
-      width: 100%;
       font-size: 14px;
-      text-align: left;
-      white-space: normal;
-      word-break: break-word;
 
       .badge-state {
         height: 28px;

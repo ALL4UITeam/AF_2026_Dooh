@@ -404,6 +404,13 @@
     word-break: keep-all;
   }
 
+  &__total {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 16px;
+  }
+
   &__equal {
     flex-shrink: 0;
     width: 24px;
@@ -478,21 +485,18 @@
 
 @container form-sum (max-width: 420px) {
   .calc-panel {
-    padding: 14px 16px;
+    gap: 20px;
+    padding: 20px;
+    border-color: var(--color-primary-20);
 
     &__info {
-      gap: 12px;
-      padding-bottom: 12px;
+      width: 100%;
+      gap: 0;
+      padding-bottom: 20px;
     }
 
     &__icon-wrap {
-      width: 40px;
-      height: 40px;
-    }
-
-    &__icon {
-      width: 18px;
-      height: 18px;
+      display: none;
     }
 
     &__title,
@@ -502,29 +506,33 @@
 
     &__result {
       flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
+      align-items: flex-end;
+      gap: 12px;
     }
 
     &__formula {
-      width: 100%;
-      font-size: 15px;
-      text-align: left;
+      width: auto;
+      font-size: 18px;
+      text-align: right;
+    }
+
+    &__total {
+      gap: 20px;
     }
 
     &__equal {
-      align-self: center;
-      transform: rotate(90deg);
+      transform: none;
     }
 
     &__value {
-      width: 100%;
-      justify-content: center;
-      padding: 6px 16px;
+      width: auto;
+      justify-content: flex-end;
+      padding: 0 20px;
     }
 
     &__value-num {
-      font-size: 22px;
+      font-size: 24px;
+      line-height: 1.5;
     }
 
     &__value-unit {
@@ -728,31 +736,59 @@
   }
 
   .calc-panel {
+    gap: 20px;
+    padding: 20px;
+    border-color: var(--color-primary-20);
+
+    &__info {
+      width: 100%;
+      gap: 0;
+      padding-bottom: 20px;
+    }
+
+    &__icon-wrap {
+      display: none;
+    }
+
+    &__title,
+    &__desc {
+      font-size: 13px;
+    }
+
     &__result {
       flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
+      align-items: flex-end;
+      gap: 12px;
+      width: 100%;
     }
 
     &__formula {
-      width: 100%;
-      font-size: 15px;
-      text-align: left;
+      width: auto;
+      font-size: 18px;
+      text-align: right;
+    }
+
+    &__total {
+      gap: 20px;
     }
 
     &__equal {
-      align-self: center;
-      transform: rotate(90deg);
+      transform: none;
     }
 
     &__value {
-      width: 100%;
-      justify-content: center;
-      padding: 6px 16px;
+      width: auto;
+      justify-content: flex-end;
+      padding: 0 20px;
     }
 
     &__value-num {
-      font-size: 22px;
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    &__value-unit {
+      font-size: 13px;
     }
   }
 
