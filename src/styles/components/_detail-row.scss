@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Detail row — label · dotted line · value (미디어/PoP 등 상세 공통)
+   ========================================================================== */
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 20px;
+  border: 1px solid #f7f8fd;
+  border-radius: 8px;
+  background: #f9fafe;
+
+  &__label {
+    flex-shrink: 0;
+    color: var(--color-primary-40);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  &__line {
+    flex: 1;
+    min-width: 24px;
+    height: 0;
+    border-top: 1px dotted var(--color-primary-20);
+  }
+
+  &__value {
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    color: var(--color-gray-80);
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-row {
+    min-height: 0;
+    padding: 10px 14px;
+    gap: 10px;
+
+    &__label {
+      font-size: 14px;
+    }
+
+    &__value {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .detail-row {
+    min-height: 0;
+    padding: 10px 12px;
+    gap: 8px;
+
+    &__label {
+      font-size: 13px;
+    }
+
+    &__line {
+      min-width: 12px;
+    }
+
+    &__value {
+      font-size: 14px;
+    }
+  }
+}
