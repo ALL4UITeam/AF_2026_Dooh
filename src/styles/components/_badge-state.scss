@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Badge — Figma badge_state / badge_settop / badge_info (1138:9134)
+   Badge
    ========================================================================== */
 
 .badge-state {
@@ -120,4 +120,61 @@
   font-size: 15px;
   line-height: 1.5;
   white-space: nowrap;
+}
+
+// --------------------------------------------------------------------------
+// Mobile — 전체 뱃지 사이즈 통일
+// default 28/13 · L 32/14 · settop 22/12 · info 28/13
+// --------------------------------------------------------------------------
+
+@media (max-width: 900px) {
+  .badge-state--l {
+    height: 36px;
+    padding: 0 14px;
+    font-size: 15px;
+
+    .badge-state__dot {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .badge-state {
+    min-width: 0;
+    height: 28px;
+    gap: 3px;
+    padding: 0 10px;
+    font-size: 13px;
+
+    &__dot {
+      width: 6px;
+      height: 6px;
+    }
+
+    &--l {
+      height: 32px;
+      padding: 0 12px;
+      font-size: 14px;
+
+      .badge-state__dot {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+
+  .badge-settop {
+    height: 22px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .badge-info {
+    height: 28px;
+    gap: 3px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
 }

@@ -1,0 +1,149 @@
+<!-- 미디어 선택 팝오버 -->
+<div
+  class="schedule-media-picker"
+  id="schedule-media-picker"
+  role="listbox"
+  aria-labelledby="schedule-media-picker-title"
+  hidden
+>
+  <header class="schedule-media-picker__header">
+    <h3 class="schedule-media-picker__title" id="schedule-media-picker-title">미디어 선택</h3>
+  </header>
+
+  <div class="schedule-media-picker__body">
+    <div class="schedule-media-picker__search">
+      <label class="schedule-media-picker__field">
+        <span class="schedule-media-picker__search-icon" aria-hidden="true">
+          <img src="{{base}}assets/icons/schedule/search.svg" alt="" />
+        </span>
+        <input
+          type="search"
+          placeholder="미디어명 · 위치 검색"
+          aria-label="미디어명 · 위치 검색"
+          data-media-picker-search
+        />
+      </label>
+      <button class="schedule-media-picker__reset" type="button" aria-label="검색 초기화" data-media-picker-reset>
+        <img src="{{base}}assets/icons/schedule/reset-btn.svg" alt="" />
+      </button>
+    </div>
+
+    <ul class="schedule-media-picker__list" data-media-picker-list>
+      <li>
+        <button
+          class="schedule-media-picker__item is-selected"
+          type="button"
+          role="option"
+          aria-selected="true"
+          data-media-id="1"
+          data-media-name="강남역 1번출구 A"
+          data-media-address="서울 강남구 강남대로 396"
+          data-media-type="실외·세로형"
+        >
+          <span class="schedule-media-picker__text">
+            <strong class="schedule-media-picker__name">강남역 1번출구 A</strong>
+            <span class="schedule-media-picker__meta">
+              <span>서울 강남구 강남대로 396</span>
+              <span>실외·세로형</span>
+            </span>
+          </span>
+          <span class="schedule-media-picker__check" aria-hidden="true">
+            <img src="{{base}}assets/icons/schedule/check-mark.svg" alt="" />
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="schedule-media-picker__item"
+          type="button"
+          role="option"
+          aria-selected="false"
+          data-media-id="2"
+          data-media-name="강남역 1번출구 B"
+          data-media-address="서울 강남구 강남대로 396"
+          data-media-type="실외·세로형"
+        >
+          <span class="schedule-media-picker__text">
+            <strong class="schedule-media-picker__name">강남역 1번출구 B</strong>
+            <span class="schedule-media-picker__meta">
+              <span>서울 강남구 강남대로 396</span>
+              <span>실외·세로형</span>
+            </span>
+          </span>
+          <span class="schedule-media-picker__check" aria-hidden="true">
+            <img src="{{base}}assets/icons/schedule/check-mark.svg" alt="" />
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="schedule-media-picker__item"
+          type="button"
+          role="option"
+          aria-selected="false"
+          data-media-id="3"
+          data-media-name="강남역 2번출구"
+          data-media-address="서울 강남구 강남대로 402"
+          data-media-type="실외·세로형"
+        >
+          <span class="schedule-media-picker__text">
+            <strong class="schedule-media-picker__name">강남역 2번출구</strong>
+            <span class="schedule-media-picker__meta">
+              <span>서울 강남구 강남대로 402</span>
+              <span>실외·세로형</span>
+            </span>
+          </span>
+          <span class="schedule-media-picker__check" aria-hidden="true">
+            <img src="{{base}}assets/icons/schedule/check-mark.svg" alt="" />
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="schedule-media-picker__item"
+          type="button"
+          role="option"
+          aria-selected="false"
+          data-media-id="4"
+          data-media-name="삼성역 COEX A"
+          data-media-address="서울 강남구 영동대로 513"
+          data-media-type="실외·세로형"
+        >
+          <span class="schedule-media-picker__text">
+            <strong class="schedule-media-picker__name">삼성역 COEX A</strong>
+            <span class="schedule-media-picker__meta">
+              <span>서울 강남구 영동대로 513</span>
+              <span>실외·세로형</span>
+            </span>
+          </span>
+          <span class="schedule-media-picker__check" aria-hidden="true">
+            <img src="{{base}}assets/icons/schedule/check-mark.svg" alt="" />
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          class="schedule-media-picker__item"
+          type="button"
+          role="option"
+          aria-selected="false"
+          data-media-id="5"
+          data-media-name="홍대 미디어보드"
+          data-media-address="서울 마포구 양화로 160"
+          data-media-type="실외·세로형"
+        >
+          <span class="schedule-media-picker__text">
+            <strong class="schedule-media-picker__name">홍대 미디어보드</strong>
+            <span class="schedule-media-picker__meta">
+              <span>서울 마포구 양화로 160</span>
+              <span>실외·세로형</span>
+            </span>
+          </span>
+          <span class="schedule-media-picker__check" aria-hidden="true">
+            <img src="{{base}}assets/icons/schedule/check-mark.svg" alt="" />
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

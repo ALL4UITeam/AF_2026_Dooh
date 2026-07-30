@@ -1,0 +1,28 @@
+<!-- 모니터링 상세 -->
+<section class="monitoring-detail">
+  <aside class="monitoring-detail__aside">
+    {{> pages/monitoring/media-list}}
+    {{> pages/monitoring/map}}
+  </aside>
+
+  <div class="monitoring-detail__main">
+    {{> pages/monitoring/device-summary}}
+
+    <nav class="tab-menu-page" aria-label="모니터링 상세 탭">
+      <div class="tab-menu-page__list">
+        <a class="tab-menu-page__item is-active" href="{{base}}CMS_02서비스_03모니터링_상세.html" aria-current="page">
+          상세
+        </a>
+        <a class="tab-menu-page__item" href="{{base}}CMS_02서비스_03모니터링_로그.html">
+          로그
+        </a>
+      </div>
+      <div class="tab-menu-page__track" aria-hidden="true"></div>
+    </nav>
+
+    <div class="monitoring-detail__panel">
+      {{> pages/monitoring/basic-info}}
+      {{> pages/monitoring/device-info}}
+    </div>
+  </div>
+</section>

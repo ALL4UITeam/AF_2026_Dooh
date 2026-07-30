@@ -1,0 +1,295 @@
+<!-- 디바이스 정보: 현재 상태 + 원격 제어 -->
+<article class="monitoring-section">
+  <h2 class="monitoring-section__title">디바이스 정보</h2>
+
+  <div class="monitoring-device">
+    <div class="device-status">
+      <header class="device-status__header">
+        <div class="device-status__titles">
+          <h3 class="device-status__title">현재 상태</h3>
+          <time class="device-status__time" datetime="2026-07-03T12:03:44">26.07.03 · 12:03:44</time>
+        </div>
+        <button type="button" class="device-status__refresh" aria-label="상태 새로고침">
+          <img src="{{base}}assets/icons/monitoring/reset-sm.svg" alt="" />
+        </button>
+      </header>
+
+      <ul class="device-status__list">
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/power.svg" alt="" />
+          </span>
+          <span class="device-option__label">전원</span>
+          <span class="device-option__value">
+            <strong>On</strong>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/battery.svg" alt="" />
+          </span>
+          <span class="device-option__label">배터리</span>
+          <span class="device-option__value">
+            <strong>97</strong><span class="device-option__unit">%</span>
+            <span class="device-option__hint">충전 중</span>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/temp-in.svg" alt="" />
+          </span>
+          <span class="device-option__label">내부 온도</span>
+          <span class="device-option__value">
+            <strong>31</strong><span class="device-option__unit">℃</span>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/temp-out.svg" alt="" />
+          </span>
+          <span class="device-option__label">외부 온도</span>
+          <span class="device-option__value">
+            <strong>18</strong><span class="device-option__unit">℃</span>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/humidity.svg" alt="" />
+          </span>
+          <span class="device-option__label">습도</span>
+          <span class="device-option__value">
+            <strong>46</strong><span class="device-option__unit">%</span>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/lux.svg" alt="" />
+          </span>
+          <span class="device-option__label">조도</span>
+          <span class="device-option__value">
+            <strong>820</strong><span class="device-option__unit">lux</span>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/power-watt.svg" alt="" />
+          </span>
+          <span class="device-option__label">소비 전력</span>
+          <span class="device-option__value">
+            <strong>142</strong><span class="device-option__unit">W</span>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/internet.svg" alt="" />
+          </span>
+          <span class="device-option__label">인터넷</span>
+          <span class="device-option__value">
+            <strong>연결됨</strong>
+            <span class="device-option__hint">68 dBm</span>
+          </span>
+        </li>
+        <li class="device-option">
+          <span class="device-option__icon" aria-hidden="true">
+            <img src="{{base}}assets/icons/monitoring/led.svg" alt="" />
+          </span>
+          <span class="device-option__label">LED</span>
+          <span class="device-option__value">
+            <strong>밝기 70</strong>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="device-remote">
+      <header class="device-remote__header">
+        <h3 class="device-remote__title">원격 제어</h3>
+        <p class="device-remote__meta">
+          보드제어 API v3 · 원격제어 <strong>00</strong>항목
+        </p>
+      </header>
+
+      <div class="device-remote__select">
+        <button
+          type="button"
+          class="device-remote__group"
+          id="remote-led-trigger"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-controls="remote-group-panel"
+        >
+          <span class="device-remote__group-icon" aria-hidden="true">
+            <img
+              class="device-remote__group-icon-img device-remote__group-icon-img--off"
+              src="{{base}}assets/icons/monitoring/power.svg"
+              alt=""
+            />
+            <img
+              class="device-remote__group-icon-img device-remote__group-icon-img--on"
+              src="{{base}}assets/icons/monitoring/power.svg"
+              alt=""
+            />
+          </span>
+          <span class="device-remote__group-label">전원</span>
+          <span class="device-remote__group-info">5개 명령</span>
+          <span class="device-remote__group-arrow" aria-hidden="true">
+            <img
+              class="device-remote__group-arrow-img device-remote__group-arrow-img--off"
+              src="{{base}}assets/icons/monitoring/chevron-down.svg"
+              alt=""
+            />
+            <img
+              class="device-remote__group-arrow-img device-remote__group-arrow-img--on"
+              src="{{base}}assets/icons/monitoring/chevron-up.svg"
+              alt=""
+            />
+          </span>
+        </button>
+
+        <div
+          class="remote-group-select"
+          id="remote-group-panel"
+          role="listbox"
+          aria-labelledby="remote-led-trigger"
+          hidden
+        >
+          <header class="remote-group-select__header">
+            <h4 class="remote-group-select__title">원격 명령그룹 선택</h4>
+          </header>
+          <div class="remote-group-select__body">
+            <ul class="remote-group-select__list">
+              <li>
+                <button type="button" class="remote-group-option is-selected" role="option" aria-selected="true">
+                  <span class="remote-group-option__icon" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/power.svg" alt="" />
+                  </span>
+                  <span class="remote-group-option__label">전원</span>
+                  <span class="remote-group-option__info">5개 명령</span>
+                  <span class="remote-group-option__check" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/check-mark-white.svg" alt="" />
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="remote-group-option" role="option" aria-selected="false">
+                  <span class="remote-group-option__icon" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/battery.svg" alt="" />
+                  </span>
+                  <span class="remote-group-option__label">배터리</span>
+                  <span class="remote-group-option__info">00개 명령</span>
+                  <span class="remote-group-option__check" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/check-mark-white.svg" alt="" />
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="remote-group-option" role="option" aria-selected="false">
+                  <span class="remote-group-option__icon" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/temp-in.svg" alt="" />
+                  </span>
+                  <span class="remote-group-option__label">내부 온도</span>
+                  <span class="remote-group-option__info">0개 명령</span>
+                  <span class="remote-group-option__check" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/check-mark-white.svg" alt="" />
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="remote-group-option" role="option" aria-selected="false">
+                  <span class="remote-group-option__icon" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/temp-out.svg" alt="" />
+                  </span>
+                  <span class="remote-group-option__label">외부 온도</span>
+                  <span class="remote-group-option__info">3개 명령</span>
+                  <span class="remote-group-option__check" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/check-mark-white.svg" alt="" />
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="remote-group-option" role="option" aria-selected="false">
+                  <span class="remote-group-option__icon" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/humidity.svg" alt="" />
+                  </span>
+                  <span class="remote-group-option__label">습도</span>
+                  <span class="remote-group-option__info">88개 명령</span>
+                  <span class="remote-group-option__check" aria-hidden="true">
+                    <img src="{{base}}assets/icons/monitoring/check-mark-white.svg" alt="" />
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="device-remote__settings">
+        <p class="device-remote__tip">
+          <strong>각 명령은 개별 전송됩니다</strong>
+          <span class="device-remote__tip-line" aria-hidden="true"></span>
+          <span>값을 변경한 뒤 해당 행의 전송 버튼을 눌러 즉시 반영하세요</span>
+        </p>
+
+        <div class="device-setting">
+          <div class="device-setting__info">
+            <p class="device-setting__name">조명 자동 모드</p>
+            <div class="device-setting__meta">
+              <span class="device-setting__code">0x01 / 0x00</span>
+              <span class="device-setting__desc">조도 기반 자동 밝기</span>
+            </div>
+          </div>
+          <div class="segment-switch" role="group" aria-label="조명 자동 모드">
+            <button type="button" class="segment-switch__item is-active">자동</button>
+            <button type="button" class="segment-switch__item">수동</button>
+          </div>
+          <button type="button" class="btn btn--s btn--tertiary is-disabled" disabled>전송</button>
+        </div>
+
+        <div class="device-setting">
+          <div class="device-setting__info">
+            <p class="device-setting__name">LED 전원</p>
+            <div class="device-setting__meta">
+              <span class="device-setting__code">setLedOn / setLedOff</span>
+              <span class="device-setting__desc">현재 켜짐</span>
+            </div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" checked />
+            <span class="toggle-switch__track">
+              <span class="toggle-switch__thumb">
+                <img src="{{base}}assets/icons/monitoring/toggle-check.svg" alt="" />
+              </span>
+            </span>
+            <span class="sr-only">LED 전원</span>
+          </label>
+          <button type="button" class="btn btn--s btn--tertiary is-disabled" disabled>전송</button>
+        </div>
+
+        <div class="device-setting">
+          <div class="device-setting__info">
+            <p class="device-setting__name">
+              LED 밝기
+              <span class="device-setting__badge">미전송</span>
+            </p>
+            <div class="device-setting__meta">
+              <span class="device-setting__code">setLedOn(int)</span>
+              <span class="device-setting__desc">범위 0~100 · 70 → 85 변경</span>
+            </div>
+          </div>
+          <div class="range-slider">
+            <input
+              class="range-slider__input"
+              type="range"
+              min="0"
+              max="100"
+              value="70"
+              aria-label="LED 밝기"
+            />
+            <output class="range-slider__value">70</output>
+          </div>
+          <button type="button" class="btn btn--s btn--tertiary">전송</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

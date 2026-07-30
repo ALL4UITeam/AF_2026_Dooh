@@ -1,0 +1,1077 @@
+/* ==========================================================================
+   PoP 스케줄 상세
+   ========================================================================== */
+
+@use '../components/badge-state';
+@use '../components/cms-btn';
+
+.app-main--detail {
+  gap: 24px;
+}
+
+// --------------------------------------------------------------------------
+// Layout
+// --------------------------------------------------------------------------
+
+.pop-detail {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  gap: 24px;
+  overflow-x: clip;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  &__aside {
+    display: flex;
+    width: 418px;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__main {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Card / row
+// --------------------------------------------------------------------------
+
+.pop-card {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0;
+  padding: 24px;
+  border: 2px solid rgb(255 255 255 / 90%);
+  border-radius: 20px;
+  background: linear-gradient(140deg, rgb(255 255 255 / 10%) 0%, rgb(255 255 255 / 70%) 100%);
+  box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+
+  &__title {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    margin: 0;
+    color: var(--color-gray-95);
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.5;
+  }
+
+  > .pop-card__title {
+    min-height: 52px;
+  }
+
+  &__desc {
+    margin: 0;
+    color: var(--color-gray-80);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  &__head {
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__tit {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__head .pop-card__title {
+    min-height: 40px;
+    flex-shrink: 0;
+  }
+
+  &__select {
+    flex-shrink: 0;
+
+    // 공통 .field-select(media-list) 디자인 유지 — 너비만 콘텐츠에 맞춤
+    &.field-select {
+      width: auto;
+      min-width: 149px;
+      max-width: 100%;
+    }
+
+    &--date.field-select {
+      min-width: 148px;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border: 2px solid rgb(255 255 255 / 90%);
+    border-radius: 20px;
+    background: var(--color-white);
+    box-shadow: 0 0 5px rgb(0 0 0 / 12%);
+  }
+
+  &__stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__panel {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid rgb(255 255 255 / 90%);
+    border-radius: 20px;
+    background: var(--color-white);
+    box-shadow: 0 0 5px rgb(0 0 0 / 12%);
+  }
+}
+
+.pop-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 20px;
+  border: 1px solid #f7f8fd;
+  border-radius: 8px;
+  background: #f9fafe;
+
+  &__label {
+    flex-shrink: 0;
+    color: var(--color-primary-40);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  &__line {
+    flex: 1;
+    min-width: 24px;
+    height: 0;
+    border-top: 1px dotted var(--color-primary-20);
+  }
+
+  &__value {
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    color: var(--color-gray-80);
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.pop-toggle {
+  display: inline-flex;
+  height: 32px;
+  min-width: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  border: 1px solid var(--color-primary-60);
+  border-radius: var(--radius-control);
+  background: var(--color-primary-40);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.pop-chip {
+  display: inline-flex;
+  height: 32px;
+  min-width: 62px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  &--time {
+    border: 1px solid var(--color-secondary-20);
+    background: var(--color-secondary-5);
+    color: var(--color-secondary-50);
+  }
+}
+
+.pop-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border: 1px solid var(--color-primary-40);
+  border-radius: 4px;
+  background: var(--color-white);
+  color: var(--color-primary-60);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+// --------------------------------------------------------------------------
+// Rate / gauge
+// --------------------------------------------------------------------------
+
+.pop-rate-block {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid rgb(255 255 255 / 90%);
+  border-radius: 20px;
+  background: var(--color-white);
+  box-shadow: 0 0 5px rgb(0 0 0 / 12%);
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__title {
+    display: flex;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-gray-60);
+    font-size: 15px;
+    line-height: 1.5;
+
+    strong {
+      color: var(--color-primary-70);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+  }
+
+  &__total {
+    display: flex;
+    flex-shrink: 0;
+    align-items: baseline;
+    gap: 2px;
+    margin: 0;
+    white-space: nowrap;
+
+    strong {
+      color: var(--color-primary-60);
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    span {
+      color: var(--color-gray-60);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+}
+
+.pop-gauge-list {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pop-gauge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+  border-bottom: 1px solid var(--color-gray-10);
+
+  &__name {
+    flex-shrink: 0;
+    width: 200px;
+    overflow: hidden;
+    color: var(--color-primary-80);
+    font-size: 17px;
+    line-height: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__track {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    align-items: center;
+    height: 12px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-10);
+    overflow: hidden;
+  }
+
+  &__bar {
+    display: block;
+    width: var(--progress, 0%);
+    height: 100%;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-70);
+  }
+
+  &__count {
+    flex-shrink: 0;
+    width: 100px;
+    color: var(--color-gray-60);
+    font-size: 15px;
+    line-height: normal;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  &__rate {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: baseline;
+    justify-content: flex-end;
+    width: 60px;
+    color: var(--color-gray-80);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: normal;
+    white-space: nowrap;
+
+    strong {
+      font-size: 19px;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+}
+
+.pop-gauge-list .pop-gauge {
+  &:nth-child(1) .pop-gauge__bar {
+    background: var(--color-primary-70);
+  }
+
+  &:nth-child(2) .pop-gauge__bar {
+    background: var(--color-primary-60);
+  }
+
+  &:nth-child(3) .pop-gauge__bar {
+    background: var(--color-primary-50);
+  }
+
+  &:nth-child(4) .pop-gauge__bar {
+    background: var(--color-primary-40);
+  }
+
+  &:nth-child(5) .pop-gauge__bar {
+    background: var(--color-primary-30);
+  }
+}
+
+// --------------------------------------------------------------------------
+// Day chart
+// --------------------------------------------------------------------------
+
+.pop-day-chart-scroll {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pop-day-chart {
+  display: flex;
+  width: 100%;
+  min-width: 560px;
+  flex-direction: column;
+  gap: 15px;
+
+  &__area {
+    position: relative;
+    display: flex;
+    height: 150px;
+    align-items: flex-end;
+    border-bottom: 1px solid #e9e9e9;
+  }
+
+  &__goal {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 0;
+    border-top: 1px dashed var(--color-gray-30);
+    pointer-events: none;
+  }
+
+  &__group {
+    display: flex;
+    flex: 1 1 0;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 40px;
+  }
+
+  &__bar {
+    display: block;
+    width: 100%;
+    max-width: 36px;
+    height: var(--h, 100%);
+    border-radius: 4px 4px 0 0;
+    background: var(--color-primary-40);
+
+    &--accent {
+      background: var(--color-secondary-50);
+    }
+  }
+
+  &__axis {
+    display: flex;
+    width: 100%;
+
+    span {
+      flex: 1 1 0;
+      color: rgb(0 0 0 / 70%);
+      font-size: 12px;
+      line-height: normal;
+      text-align: center;
+    }
+  }
+
+  &__legend {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    padding: 8px 20px;
+    border: 1px solid var(--color-gray-10);
+    border-radius: 4px;
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__dash {
+    display: block;
+    width: 20px;
+    height: 0;
+    border-top: 1px dashed var(--color-gray-40);
+  }
+}
+
+// --------------------------------------------------------------------------
+// Log table / controls
+// --------------------------------------------------------------------------
+
+.field-date {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: var(--border-width-regular) solid var(--color-gray-20);
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+  cursor: pointer;
+
+  &__value {
+    color: var(--color-gray-80);
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    border-color: var(--color-gray-30);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-60);
+    outline-offset: 2px;
+  }
+}
+
+.pop-play {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--color-gray-60);
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+
+  strong {
+    color: var(--color-gray-60);
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+.media-table--pop-log {
+  min-width: 720px;
+
+  thead th:nth-child(5),
+  tbody td:nth-child(5) {
+    width: 100px;
+    text-align: center;
+  }
+
+  tbody {
+    th {
+      color: var(--color-gray-95);
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    td:nth-child(1),
+    td:nth-child(3),
+    td:nth-child(4) {
+      color: var(--color-gray-60);
+    }
+
+    td:nth-child(5) {
+      .badge-state {
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Responsive
+// --------------------------------------------------------------------------
+
+@media (max-width: 1280px) {
+  .app-main--detail {
+    gap: 20px;
+  }
+
+  .pop-detail {
+    gap: 20px;
+  }
+
+  .pop-detail__content {
+    flex-direction: column;
+  }
+
+  .pop-detail__aside {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .pop-detail__main {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .pop-gauge {
+    gap: 12px;
+
+    &__name {
+      width: 160px;
+      font-size: 15px;
+    }
+
+    &__count {
+      width: 90px;
+      font-size: 13px;
+    }
+
+    &__rate {
+      width: 52px;
+      font-size: 15px;
+
+      strong {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .pop-day-chart__group {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-main--detail {
+    gap: 16px;
+  }
+
+  .pop-detail {
+    gap: 16px;
+  }
+
+  .pop-detail__aside {
+    display: flex;
+    grid-template-columns: none;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pop-card {
+    gap: 16px;
+    padding: 20px;
+
+    &__title {
+      font-size: 19px;
+    }
+
+    > .pop-card__title {
+      min-height: 0;
+    }
+
+    &__head {
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 0;
+      gap: 12px;
+      width: 100%;
+    }
+
+    &__tit {
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 4px 10px;
+    }
+
+    &__desc {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &__head .pop-card__title {
+      min-height: 0;
+    }
+
+    &__filters {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    &__filters .pop-card__select.field-select {
+      width: auto;
+      min-width: 0;
+      max-width: none;
+      flex: 1 1 calc(50% - 4px);
+    }
+
+    &__head > .pop-card__select.field-select {
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+      flex: none;
+    }
+
+    &__body,
+    &__panel {
+      padding: 16px;
+    }
+
+    &__stack {
+      gap: 16px;
+    }
+  }
+
+  .pop-row {
+    &__line {
+      display: none;
+    }
+
+    &__value {
+      flex: 1;
+      overflow: visible;
+      text-overflow: unset;
+      white-space: normal;
+      word-break: keep-all;
+    }
+  }
+
+  .pop-rate-block {
+    gap: 16px;
+    padding: 16px;
+
+    &__head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    &__title strong {
+      font-size: 17px;
+    }
+
+    &__total strong {
+      font-size: 22px;
+    }
+  }
+
+  .pop-gauge {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 40px;
+    padding: 10px 0;
+    gap: 8px 12px;
+
+    &__name {
+      width: 100%;
+    }
+
+    &__track {
+      order: 3;
+      width: 100%;
+      flex: 1 1 100%;
+    }
+
+    &__count {
+      width: auto;
+      margin-left: auto;
+    }
+
+    &__rate {
+      width: auto;
+    }
+  }
+
+  .pop-day-chart {
+    min-width: 520px;
+
+    &__group {
+      gap: 4px;
+      padding: 0 8px;
+    }
+
+    &__bar {
+      max-width: 24px;
+    }
+  }
+
+  .pop-card__filters {
+    .field-select,
+    .pop-card__select.field-select {
+      flex: 1 1 calc(50% - 4px);
+      width: auto;
+      min-width: 0;
+      max-width: none;
+    }
+  }
+
+  .media-table.media-table--pop-log {
+    min-width: 640px;
+  }
+
+  .pop-detail__footer .btn-cta--l {
+    height: 48px;
+    min-width: 0;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-main--detail {
+    gap: 12px;
+  }
+
+  .pop-detail {
+    gap: 12px;
+  }
+
+  .pop-detail__aside,
+  .pop-detail__main {
+    gap: 12px;
+  }
+
+  // 공통 상세(미디어/단말/등록)와 동일: L 버튼 → 모바일 44px
+  .pop-detail__footer {
+    .btn-cta--l {
+      width: 100%;
+      min-width: 0;
+      height: 44px;
+      padding: 0 20px;
+      font-size: 15px;
+    }
+  }
+
+  .pop-card {
+    gap: 12px;
+    padding: 14px;
+    border-radius: 16px;
+
+    &__title {
+      min-height: 0;
+      font-size: 17px;
+    }
+
+    > .pop-card__title {
+      min-height: 0;
+      margin-bottom: 0;
+    }
+
+    &__desc {
+      font-size: 13px;
+    }
+
+    &__tit {
+      flex-wrap: wrap;
+      gap: 2px 8px;
+    }
+
+    &__head {
+      gap: 10px;
+    }
+
+    &__body,
+    &__panel,
+    .pop-rate-block {
+      gap: 10px;
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    &__stack {
+      gap: 12px;
+    }
+
+    &__filters {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .field-select,
+      .pop-card__select.field-select {
+        flex: 1 1 calc(50% - 4px);
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        height: 36px;
+
+        select {
+          font-size: 14px;
+        }
+      }
+    }
+
+    // 카드 헤더 단독 셀렉트(일자별 추세) — 공통 모바일 .field-select와 동일 높이
+    &__head > .pop-card__select.field-select {
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+      flex: none;
+      height: 36px;
+
+      select {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // 공통 detail-row와 동일: 가로 유지 (세로 스택 X)
+  .pop-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    min-height: 0;
+    padding: 10px 14px;
+
+    &__label {
+      font-size: 14px;
+    }
+
+    &__line {
+      display: block;
+      min-width: 12px;
+    }
+
+    &__value {
+      width: auto;
+      overflow: hidden;
+      font-size: 15px;
+      text-align: right;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .pop-toggle,
+  .pop-chip {
+    height: 28px;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .pop-rate-block {
+    &__title {
+      gap: 6px;
+      font-size: 13px;
+
+      strong {
+        font-size: 16px;
+      }
+    }
+
+    &__total strong {
+      font-size: 20px;
+    }
+
+    &__total span {
+      font-size: 15px;
+    }
+  }
+
+  .pop-gauge {
+    padding: 8px 0;
+    gap: 6px 8px;
+
+    &__name {
+      font-size: 14px;
+      white-space: normal;
+    }
+
+    &__count {
+      font-size: 12px;
+    }
+
+    &__rate {
+      font-size: 14px;
+
+      strong {
+        font-size: 16px;
+      }
+    }
+
+    &__track {
+      height: 10px;
+    }
+  }
+
+  .pop-day-chart {
+    min-width: 440px;
+    gap: 10px;
+
+    &__area {
+      height: 120px;
+    }
+
+    &__goal {
+      top: 28px;
+    }
+
+    &__group {
+      gap: 3px;
+      padding: 0 6px;
+    }
+
+    &__bar {
+      max-width: 18px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    &__axis span {
+      font-size: 11px;
+    }
+
+    &__legend {
+      padding: 6px 12px;
+      font-size: 11px;
+    }
+  }
+
+  .media-table.media-table--pop-log {
+    min-width: 560px;
+
+    th,
+    td {
+      height: 44px;
+      font-size: 13px;
+    }
+
+    tbody th {
+      font-size: 14px;
+    }
+  }
+
+  .pop-play {
+    font-size: 12px;
+
+    strong {
+      font-size: 15px;
+    }
+  }
+}

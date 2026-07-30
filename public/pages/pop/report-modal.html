@@ -1,0 +1,66 @@
+<div
+  class="modal pop-report-modal"
+  id="pop-report-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="pop-report-modal-title"
+  aria-hidden="true"
+>
+  <div class="modal__backdrop" data-close-modal tabindex="-1"></div>
+
+  <div class="pop-report-dialog">
+    <header class="pop-report-dialog__header">
+      <div class="pop-report-dialog__title-wrap">
+        <img
+          class="pop-report-dialog__title-icon"
+          src="{{base}}assets/icons/pop/report-title.svg"
+          alt=""
+          width="30"
+          height="30"
+        />
+        <h2 class="pop-report-dialog__title" id="pop-report-modal-title">실적 리포트 미리보기</h2>
+      </div>
+
+      <div class="pop-report-dialog__actions">
+        <div class="pop-report-dialog__tools">
+          <button class="pop-report-tool" type="button">
+            <img src="{{base}}assets/icons/pop/excel.svg" alt="" width="16" height="16" />
+            <span>엑셀</span>
+          </button>
+          <button class="pop-report-tool" type="button">
+            <img src="{{base}}assets/icons/pop/print.svg" alt="" width="16" height="16" />
+            <span>인쇄</span>
+          </button>
+          <button class="pop-report-tool pop-report-tool--primary" type="button">
+            <img src="{{base}}assets/icons/pop/pdf-download.svg" alt="" width="16" height="16" />
+            <span>PDF 다운로드</span>
+          </button>
+        </div>
+        <button class="pop-report-dialog__close" type="button" data-close-modal aria-label="닫기">
+          <img src="{{base}}assets/icons/pop/close.svg" alt="" width="40" height="40" />
+        </button>
+      </div>
+    </header>
+
+    <div class="pop-report-dialog__body">
+      {{> pages/pop/report-document}}
+    </div>
+
+    <footer class="pop-report-dialog__paging">
+      <div class="pop-report-paging">
+        <button class="pop-report-paging__btn is-disabled" type="button" disabled>
+          <img src="{{base}}assets/icons/page-prev.svg" alt="" width="20" height="20" />
+          <span>이전</span>
+        </button>
+        <p class="pop-report-paging__page">
+          <strong>1</strong>
+          <span>/ 2</span>
+        </p>
+        <button class="pop-report-paging__btn" type="button">
+          <span>다음</span>
+          <img src="{{base}}assets/icons/page-next.svg" alt="" width="20" height="20" />
+        </button>
+      </div>
+    </footer>
+  </div>
+</div>

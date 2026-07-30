@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tab menu — Figma tabmenu / tab02 (1138:9083, 1138:9000)
+   Tab menu
    ========================================================================== */
 
 @use '../settings/asset-urls' as asset;
@@ -141,6 +141,7 @@
     font-size: 17px;
     font-weight: 600;
     line-height: normal;
+    text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
 

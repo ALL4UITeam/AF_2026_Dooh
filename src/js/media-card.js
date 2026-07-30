@@ -4,5 +4,4 @@ import { initMediaFilters } from './components/media-filters.js'
 initAppSidebar()
 initMediaFilters({
   itemSelector: '.media-card',
-  containerSelector: '#media-card-grid',
 })

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Doo'h CMS 모니터링 상세" />
+    <title>모니터링 상세 | Doo'h CMS</title>
+    {{> app-critical-styles}}
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+    <link rel="stylesheet" href="./src/styles/pages/monitoring-detail.scss" />
+    <script type="module" src="./src/js/monitoring-detail.js"></script>
+  </head>
+  <body class="app-page" data-active-menu="service" data-active-submenu-item="monitoring">
+    {{> app-header}}
+
+    <div class="app-layout">
+      {{> app-sidebar}}
+
+      <main class="app-main app-main--detail">
+        <header class="page-heading">
+          <nav class="breadcrumb" aria-label="현재 위치">
+            <a href="#">
+              <img src="{{base}}assets/icons/home.svg" alt="" />
+              서비스
+            </a>
+            <img src="{{base}}assets/icons/breadcrumb-arrow.svg" alt="" />
+            <span>모니터링</span>
+          </nav>
+          <h1>모니터링 상세</h1>
+        </header>
+
+        {{> pages/monitoring/detail-view}}
+      </main>
+    </div>
+  </body>
+</html>

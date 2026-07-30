@@ -1,0 +1,288 @@
+<!-- 일간뷰: 유형별 캠페인 목록 -->
+<div class="schedule-daylist">
+  <div class="schedule-daylist__tabs" role="tablist" aria-label="스케줄 유형">
+    <button class="schedule-daylist__tab is-active" type="button" role="tab" aria-selected="true" data-daylist-tab="repeat">
+      <img src="{{base}}assets/icons/schedule/tab-repeat.svg" alt="" />
+      반복형
+    </button>
+    <span class="schedule-daylist__tab-line" aria-hidden="true"></span>
+    <button class="schedule-daylist__tab" type="button" role="tab" aria-selected="false" data-daylist-tab="fixed">
+      <img src="{{base}}assets/icons/schedule/tab-fixed.svg" alt="" />
+      고정형
+    </button>
+    <span class="schedule-daylist__tab-line" aria-hidden="true"></span>
+    <button class="schedule-daylist__tab" type="button" role="tab" aria-selected="false" data-daylist-tab="condition">
+      <img src="{{base}}assets/icons/schedule/tab-condition.svg" alt="" />
+      조건형
+    </button>
+    <span class="schedule-daylist__tab-line" aria-hidden="true"></span>
+    <button class="schedule-daylist__tab" type="button" role="tab" aria-selected="false" data-daylist-tab="ai">
+      <img src="{{base}}assets/icons/schedule/tab-ai.svg" alt="" />
+      AI 자동
+    </button>
+  </div>
+
+  <div class="schedule-daylist__panels">
+    <div class="schedule-daylist__panel" data-daylist-panel="repeat">
+      <header class="schedule-daylist__head">
+        <div class="schedule-daylist__tit">
+          <h3 class="schedule-daylist__title">반복형 목록</h3>
+          <p class="schedule-daylist__count">전체 <strong data-daylist-count>4</strong>건</p>
+        </div>
+        <div class="schedule-daylist__hint">
+          <img src="{{base}}assets/icons/schedule/info-tip.svg" alt="" />
+          <span>행을 드래그하거나 화살표로 순번을 조정하세요</span>
+        </div>
+        <button class="schedule-daylist__reset" type="button" aria-label="순서 초기화" data-daylist-reset>
+          <img src="{{base}}assets/icons/schedule/order-reset.svg" alt="" />
+        </button>
+      </header>
+
+      <ul class="schedule-daylist__list" data-daylist-list>
+        <li class="schedule-daylist__item">
+          <button class="schedule-daylist__handle" type="button" aria-label="드래그하여 순서 변경">
+            <img src="{{base}}assets/icons/schedule/drag-handle.svg" alt="" />
+          </button>
+          <div class="schedule-daylist__main">
+            <div class="schedule-daylist__lead">
+              <span class="schedule-daylist__num">01</span>
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+            </div>
+            <div class="schedule-daylist__text">
+              <strong class="schedule-daylist__name">나이키 6월 캠페인</strong>
+              <span class="schedule-daylist__desc">나이키코리아 · 4슬롯 · 운영시간 반복</span>
+            </div>
+            <div class="schedule-daylist__time">
+              <img src="{{base}}assets/icons/schedule/clock.svg" alt="" />
+              <span><b>30</b><em>초</em></span>
+            </div>
+          </div>
+          <div class="schedule-daylist__moves">
+            <button class="schedule-daylist__move" type="button" aria-label="위로 이동" data-move-up>
+              <img src="{{base}}assets/icons/schedule/chevron-up.svg" alt="" />
+            </button>
+            <button class="schedule-daylist__move" type="button" aria-label="아래로 이동" data-move-down>
+              <img src="{{base}}assets/icons/schedule/chevron-down.svg" alt="" />
+            </button>
+          </div>
+        </li>
+        <li class="schedule-daylist__item">
+          <button class="schedule-daylist__handle" type="button" aria-label="드래그하여 순서 변경">
+            <img src="{{base}}assets/icons/schedule/drag-handle.svg" alt="" />
+          </button>
+          <div class="schedule-daylist__main">
+            <div class="schedule-daylist__lead">
+              <span class="schedule-daylist__num">02</span>
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+            </div>
+            <div class="schedule-daylist__text">
+              <strong class="schedule-daylist__name">금연 캠페인 2025</strong>
+              <span class="schedule-daylist__desc">보건복지부 · 3슬롯 · 운영시간 반복</span>
+            </div>
+            <div class="schedule-daylist__time">
+              <img src="{{base}}assets/icons/schedule/clock.svg" alt="" />
+              <span><b>30</b><em>초</em></span>
+            </div>
+          </div>
+          <div class="schedule-daylist__moves">
+            <button class="schedule-daylist__move" type="button" aria-label="위로 이동" data-move-up>
+              <img src="{{base}}assets/icons/schedule/chevron-up.svg" alt="" />
+            </button>
+            <button class="schedule-daylist__move" type="button" aria-label="아래로 이동" data-move-down>
+              <img src="{{base}}assets/icons/schedule/chevron-down.svg" alt="" />
+            </button>
+          </div>
+        </li>
+        <li class="schedule-daylist__item">
+          <button class="schedule-daylist__handle" type="button" aria-label="드래그하여 순서 변경">
+            <img src="{{base}}assets/icons/schedule/drag-handle.svg" alt="" />
+          </button>
+          <div class="schedule-daylist__main">
+            <div class="schedule-daylist__lead">
+              <span class="schedule-daylist__num">03</span>
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+            </div>
+            <div class="schedule-daylist__text">
+              <strong class="schedule-daylist__name">여름 물놀이 안전</strong>
+              <span class="schedule-daylist__desc">행정안전부 · 2슬롯 · 운영시간 반복</span>
+            </div>
+            <div class="schedule-daylist__time">
+              <img src="{{base}}assets/icons/schedule/clock.svg" alt="" />
+              <span><b>30</b><em>초</em></span>
+            </div>
+          </div>
+          <div class="schedule-daylist__moves">
+            <button class="schedule-daylist__move" type="button" aria-label="위로 이동" data-move-up>
+              <img src="{{base}}assets/icons/schedule/chevron-up.svg" alt="" />
+            </button>
+            <button class="schedule-daylist__move" type="button" aria-label="아래로 이동" data-move-down>
+              <img src="{{base}}assets/icons/schedule/chevron-down.svg" alt="" />
+            </button>
+          </div>
+        </li>
+        <li class="schedule-daylist__item">
+          <button class="schedule-daylist__handle" type="button" aria-label="드래그하여 순서 변경">
+            <img src="{{base}}assets/icons/schedule/drag-handle.svg" alt="" />
+          </button>
+          <div class="schedule-daylist__main">
+            <div class="schedule-daylist__lead">
+              <span class="schedule-daylist__num">04</span>
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+            </div>
+            <div class="schedule-daylist__text">
+              <strong class="schedule-daylist__name">신한카드 혜택</strong>
+              <span class="schedule-daylist__desc">신한카드 · 3슬롯 · 운영시간 반복</span>
+            </div>
+            <div class="schedule-daylist__time">
+              <img src="{{base}}assets/icons/schedule/clock.svg" alt="" />
+              <span><b>30</b><em>초</em></span>
+            </div>
+          </div>
+          <div class="schedule-daylist__moves">
+            <button class="schedule-daylist__move" type="button" aria-label="위로 이동" data-move-up>
+              <img src="{{base}}assets/icons/schedule/chevron-up.svg" alt="" />
+            </button>
+            <button class="schedule-daylist__move" type="button" aria-label="아래로 이동" data-move-down>
+              <img src="{{base}}assets/icons/schedule/chevron-down.svg" alt="" />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="schedule-daylist__panel" data-daylist-panel="fixed" hidden>
+      <header class="schedule-daylist__head">
+        <div class="schedule-daylist__tit">
+          <h3 class="schedule-daylist__title">고정형 목록</h3>
+          <p class="schedule-daylist__count">전체 <strong data-daylist-count>1</strong>건</p>
+        </div>
+        <div class="schedule-daylist__hint">
+          <img src="{{base}}assets/icons/schedule/info-tip.svg" alt="" />
+          <span>행을 드래그하거나 화살표로 순번을 조정하세요</span>
+        </div>
+        <button class="schedule-daylist__reset" type="button" aria-label="순서 초기화" data-daylist-reset>
+          <img src="{{base}}assets/icons/schedule/order-reset.svg" alt="" />
+        </button>
+      </header>
+      <ul class="schedule-daylist__list" data-daylist-list>
+        <li class="schedule-daylist__item">
+          <button class="schedule-daylist__handle" type="button" aria-label="드래그하여 순서 변경">
+            <img src="{{base}}assets/icons/schedule/drag-handle.svg" alt="" />
+          </button>
+          <div class="schedule-daylist__main">
+            <div class="schedule-daylist__lead">
+              <span class="schedule-daylist__num">01</span>
+              <span class="schedule-type-badge schedule-type-badge--fixed schedule-type-badge--sm">고정형</span>
+            </div>
+            <div class="schedule-daylist__text">
+              <strong class="schedule-daylist__name">LG 가전 캠페인</strong>
+              <span class="schedule-daylist__desc">LG전자 · 2슬롯 · 지정 시간 고정</span>
+            </div>
+            <div class="schedule-daylist__time">
+              <img src="{{base}}assets/icons/schedule/clock.svg" alt="" />
+              <span><b>30</b><em>초</em></span>
+            </div>
+          </div>
+          <div class="schedule-daylist__moves">
+            <button class="schedule-daylist__move" type="button" aria-label="위로 이동" data-move-up>
+              <img src="{{base}}assets/icons/schedule/chevron-up.svg" alt="" />
+            </button>
+            <button class="schedule-daylist__move" type="button" aria-label="아래로 이동" data-move-down>
+              <img src="{{base}}assets/icons/schedule/chevron-down.svg" alt="" />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="schedule-daylist__panel" data-daylist-panel="condition" hidden>
+      <header class="schedule-daylist__head">
+        <div class="schedule-daylist__tit">
+          <h3 class="schedule-daylist__title">조건형 목록</h3>
+          <p class="schedule-daylist__count">전체 <strong data-daylist-count>1</strong>건</p>
+        </div>
+        <div class="schedule-daylist__hint">
+          <img src="{{base}}assets/icons/schedule/info-tip.svg" alt="" />
+          <span>행을 드래그하거나 화살표로 순번을 조정하세요</span>
+        </div>
+        <button class="schedule-daylist__reset" type="button" aria-label="순서 초기화" data-daylist-reset>
+          <img src="{{base}}assets/icons/schedule/order-reset.svg" alt="" />
+        </button>
+      </header>
+      <ul class="schedule-daylist__list" data-daylist-list>
+        <li class="schedule-daylist__item">
+          <button class="schedule-daylist__handle" type="button" aria-label="드래그하여 순서 변경">
+            <img src="{{base}}assets/icons/schedule/drag-handle.svg" alt="" />
+          </button>
+          <div class="schedule-daylist__main">
+            <div class="schedule-daylist__lead">
+              <span class="schedule-daylist__num">01</span>
+              <span class="schedule-type-badge schedule-type-badge--condition schedule-type-badge--sm">조건형</span>
+            </div>
+            <div class="schedule-daylist__text">
+              <strong class="schedule-daylist__name">현대 날씨 센싱</strong>
+              <span class="schedule-daylist__desc">현대자동차 · 조건 충족 시 재생</span>
+            </div>
+            <div class="schedule-daylist__time">
+              <img src="{{base}}assets/icons/schedule/clock.svg" alt="" />
+              <span><b>30</b><em>초</em></span>
+            </div>
+          </div>
+          <div class="schedule-daylist__moves">
+            <button class="schedule-daylist__move" type="button" aria-label="위로 이동" data-move-up>
+              <img src="{{base}}assets/icons/schedule/chevron-up.svg" alt="" />
+            </button>
+            <button class="schedule-daylist__move" type="button" aria-label="아래로 이동" data-move-down>
+              <img src="{{base}}assets/icons/schedule/chevron-down.svg" alt="" />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="schedule-daylist__panel" data-daylist-panel="ai" hidden>
+      <header class="schedule-daylist__head">
+        <div class="schedule-daylist__tit">
+          <h3 class="schedule-daylist__title">AI 자동 목록</h3>
+          <p class="schedule-daylist__count">전체 <strong data-daylist-count>1</strong>건</p>
+        </div>
+        <div class="schedule-daylist__hint">
+          <img src="{{base}}assets/icons/schedule/info-tip.svg" alt="" />
+          <span>행을 드래그하거나 화살표로 순번을 조정하세요</span>
+        </div>
+        <button class="schedule-daylist__reset" type="button" aria-label="순서 초기화" data-daylist-reset>
+          <img src="{{base}}assets/icons/schedule/order-reset.svg" alt="" />
+        </button>
+      </header>
+      <ul class="schedule-daylist__list" data-daylist-list>
+        <li class="schedule-daylist__item">
+          <button class="schedule-daylist__handle" type="button" aria-label="드래그하여 순서 변경">
+            <img src="{{base}}assets/icons/schedule/drag-handle.svg" alt="" />
+          </button>
+          <div class="schedule-daylist__main">
+            <div class="schedule-daylist__lead">
+              <span class="schedule-daylist__num">01</span>
+              <span class="schedule-type-badge schedule-type-badge--ai schedule-type-badge--sm">AI 자동</span>
+            </div>
+            <div class="schedule-daylist__text">
+              <strong class="schedule-daylist__name">카카오 브랜드</strong>
+              <span class="schedule-daylist__desc">카카오 · 피크 타임 자동 편성</span>
+            </div>
+            <div class="schedule-daylist__time">
+              <img src="{{base}}assets/icons/schedule/clock.svg" alt="" />
+              <span><b>30</b><em>초</em></span>
+            </div>
+          </div>
+          <div class="schedule-daylist__moves">
+            <button class="schedule-daylist__move" type="button" aria-label="위로 이동" data-move-up>
+              <img src="{{base}}assets/icons/schedule/chevron-up.svg" alt="" />
+            </button>
+            <button class="schedule-daylist__move" type="button" aria-label="아래로 이동" data-move-down>
+              <img src="{{base}}assets/icons/schedule/chevron-down.svg" alt="" />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

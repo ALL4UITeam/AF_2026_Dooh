@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Doo'h CMS PoP 스케줄 상세" />
+    <title>PoP 스케줄 상세 | Doo'h CMS</title>
+    {{> app-critical-styles}}
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+    <link rel="stylesheet" href="./src/styles/pages/media-list.scss" />
+    <link rel="stylesheet" href="./src/styles/pages/pop-detail.scss" />
+    <script type="module" src="./src/js/pop-detail.js"></script>
+  </head>
+  <body class="app-page" data-active-menu="execution" data-active-submenu-item="pop">
+    {{> app-header}}
+
+    <div class="app-layout">
+      {{> app-sidebar}}
+
+      <main class="app-main app-main--detail">
+        <header class="page-heading page-heading--with-stat">
+          <div class="page-heading__body">
+            <nav class="breadcrumb" aria-label="현재 위치">
+              <a href="{{base}}CMS_04실행_01PoP_목록.html">
+                <img src="{{base}}assets/icons/home.svg" alt="" />
+                실행
+              </a>
+              <img src="{{base}}assets/icons/breadcrumb-arrow.svg" alt="" />
+              <a href="{{base}}CMS_04실행_01PoP_목록.html">PoP 및 결과 확인</a>
+              <img src="{{base}}assets/icons/breadcrumb-arrow.svg" alt="" />
+              <span>스케줄 상세</span>
+            </nav>
+            <h1>6월 강남 출퇴근 패키지</h1>
+            <p class="page-heading__meta">
+              <span>운영 미디어 <strong>4</strong> 개</span>
+            </p>
+          </div>
+          <div class="page-heading__stats">
+            <div class="page-heading__stat">
+              <span class="page-heading__stat-label">기간 내 총 송출</span>
+              <strong class="page-heading__stat-value">22,860회</strong>
+            </div>
+            <div class="page-heading__stat">
+              <span class="page-heading__stat-label">보장 횟수 달성률</span>
+              <strong class="page-heading__stat-value">95%</strong>
+            </div>
+            <div class="page-heading__stat">
+              <span class="page-heading__stat-label">최근 송출 일시</span>
+              <strong class="page-heading__stat-value page-heading__stat-value--split">
+                06.12 <span>14:35</span>
+              </strong>
+            </div>
+          </div>
+        </header>
+
+        {{> pages/pop/detail-view}}
+      </main>
+    </div>
+  </body>
+</html>

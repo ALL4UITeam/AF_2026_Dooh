@@ -1,0 +1,26 @@
+<form class="media-filters pop-filters" id="pop-filters">
+  <div class="media-selects">
+    <button class="field-date" type="button" id="pop-date-range" aria-label="기간 선택">
+      <span class="field-date__value">2026-03-31 ~ 2026-04-07</span>
+      <img class="field-date__icon" src="{{base}}assets/icons/ico-calendar.svg" alt="" width="20" height="20" />
+    </button>
+  </div>
+
+  <div class="media-filters__search">
+    <label class="search-input">
+      <span class="sr-only">스케줄 검색</span>
+      <img src="{{base}}assets/icons/search-blue.svg" alt="" />
+      <input id="pop-keyword" type="search" placeholder="검색어를 입력해주세요." />
+    </label>
+    <button class="filter-reset-btn" id="reset-filters" type="reset" aria-label="초기화">
+      <span class="filter-reset-btn__icon" aria-hidden="true"></span>
+    </button>
+    <button class="action-button action-button--primary" type="submit">검색</button>
+  </div>
+
+  <select id="status-filter" hidden>
+    <option value="all" selected>전체</option>
+    <option value="achieved">달성</option>
+    <option value="shortfall">미달</option>
+  </select>
+</form>

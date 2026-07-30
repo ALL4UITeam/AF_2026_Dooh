@@ -1,0 +1,73 @@
+<!-- 미디어 요약 정보 -->
+<article class="schedule-media" aria-labelledby="schedule-media-name">
+  <img
+    class="schedule-media__icon"
+    src="{{base}}assets/icons/schedule/location.svg"
+    alt=""
+  />
+
+  <div class="schedule-media__body">
+    <div class="schedule-media__select">
+      <div class="schedule-media__select-wrap" data-media-picker-root>
+        <div class="schedule-media__name-box">
+          <button
+            class="schedule-media__trigger"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="schedule-media-picker"
+            data-open-media-picker
+          >
+            <span class="schedule-media__name-wrap">
+              <strong class="schedule-media__name" id="schedule-media-name" data-media-name-label>강남역 1번출구 A</strong>
+              <img
+                class="schedule-media__arrow"
+                src="{{base}}assets/icons/ico-schedule-arrow.svg"
+                alt=""
+              />
+            </span>
+          </button>
+          {{> pages/schedule/media-select-popover}}
+        </div>
+        <button class="schedule-media__address" type="button" data-open-media-picker data-media-address-label>
+          서울 강남구 강남대로 396
+        </button>
+      </div>
+      <div class="schedule-media__divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="schedule-media__row">
+      <div class="schedule-media__meta">
+        <div class="data-box">
+          <span class="data-box__label">설치유형</span>
+          <span class="data-box__value" data-media-type-label>실외·세로형</span>
+        </div>
+        <div class="data-box">
+          <span class="data-box__label">운영 시간</span>
+          <span class="data-box__value">07:00~22:00</span>
+        </div>
+        <div class="data-box">
+          <span class="data-box__label">기준 슬롯</span>
+          <span class="data-box__value">30초 × 20개</span>
+        </div>
+        <div class="data-box">
+          <span class="data-box__label">최소 보장</span>
+          <span class="data-box__value">90회/일</span>
+        </div>
+        <div class="schedule-sensor">
+          <span class="data-box__label">센서</span>
+          <div class="schedule-sensor__list">
+            <span class="schedule-sensor__badge schedule-sensor__badge--time">타임</span>
+            <span class="schedule-sensor__badge schedule-sensor__badge--env">환경</span>
+            <span class="schedule-sensor__badge schedule-sensor__badge--target">타겟</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="badge-state badge-state--success badge-state--l">
+        <span class="badge-state__dot" aria-hidden="true"></span>
+        운영중
+      </span>
+    </div>
+  </div>
+</article>

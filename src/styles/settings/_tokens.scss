@@ -1,6 +1,5 @@
 /* ==========================================================================
    Design tokens
-   피그마 변수(1138:7599 기준 Primary/Gray/System)를 CSS 커스텀 프로퍼티로 둡니다.
    ========================================================================== */
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css');
@@ -10,7 +9,7 @@
   font-family: 'Pretendard GOV', 'Pretendard', sans-serif;
   font-synthesis: none;
 
-  /* Primary (Figma Primary/*) */
+  /* Primary */
   --color-primary-0: #ffffff;
   --color-primary-5: #eff2fb;
   --color-primary-10: #dee4f5;
@@ -25,7 +24,7 @@
   /* Alias: 기존 코드·로그인에서 쓰던 브랜드 블루 */
   --color-brand-blue: var(--color-primary-60);
 
-  /* Neutral (Figma Gray/*) */
+  /* Neutral */
   --color-white: #ffffff;
   --color-gray-0: #f8fafc;
   --color-gray-5: #f1f5f9;
@@ -39,10 +38,14 @@
   --color-gray-95: #050914;
 
   /* Semantic */
+  --color-secondary-5: #ecfeff;
   --color-secondary-20: #a5f3fc;
   --color-secondary-50: #06b6d4;
   --color-secondary-80: #155e75;
   --color-cyan-50: var(--color-secondary-50);
+  --color-accent-5: #f9f3ff;
+  --color-accent-20: #e9d2ff;
+  --color-accent-50: #a855f7;
   --color-danger: #9f1239;
   --color-placeholder: #8999af;
   --color-warning: #ffb340;

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 14.8333 11.5001" fill="none">
+  <!-- Figma 세로(위) 화살표를 -90deg 회전해 왼쪽 방향 -->
+  <g transform="translate(0 11.5001) rotate(-90)">
+    <path d="M5.74984 0.75L5.74983 14.0833M5.74984 0.75C6.84783 0.750009 10.75 5.74983 10.75 5.74983M5.74984 0.75C4.65184 0.74999 0.750034 5.74987 0.750034 5.74987" stroke="#14181F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

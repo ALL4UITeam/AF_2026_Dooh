@@ -1,0 +1,63 @@
+<!-- 일간뷰: 미디어 요약 정보 -->
+<article class="schedule-media schedule-media--day" aria-labelledby="schedule-media-name">
+  <img
+    class="schedule-media__icon"
+    src="{{base}}assets/icons/schedule/location.svg"
+    alt=""
+  />
+
+  <div class="schedule-media__body">
+    <div class="schedule-media__select">
+      <div class="schedule-media__select-wrap" data-media-picker-root>
+        <div class="schedule-media__name-box">
+          <div class="schedule-media__heading">
+            <span class="schedule-media__badge">미디어</span>
+            <button
+              class="schedule-media__trigger"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="schedule-media-picker"
+              data-open-media-picker
+            >
+              <span class="schedule-media__name-wrap">
+                <strong class="schedule-media__name" id="schedule-media-name" data-media-name-label>강남역 1번출구 A</strong>
+                <img
+                  class="schedule-media__arrow"
+                  src="{{base}}assets/icons/ico-schedule-arrow.svg"
+                  alt=""
+                />
+              </span>
+            </button>
+          </div>
+          {{> pages/schedule/media-select-popover}}
+        </div>
+        <p class="schedule-media__summary" data-media-summary-label>
+          운영 07:00–22:00 · 30초 × 20슬롯 루프
+        </p>
+      </div>
+      <div class="schedule-media__divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="schedule-media__row">
+      <div class="schedule-media__meta">
+        <div class="data-box">
+          <span class="data-box__label">총 슬롯</span>
+          <span class="data-box__value">20</span>
+        </div>
+        <div class="data-box">
+          <span class="data-box__label">점유</span>
+          <span class="data-box__value">17</span>
+        </div>
+        <div class="data-box">
+          <span class="data-box__label">여유</span>
+          <span class="data-box__value">3</span>
+        </div>
+        <div class="data-box">
+          <span class="data-box__label">편성 캠페인</span>
+          <span class="data-box__value">7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

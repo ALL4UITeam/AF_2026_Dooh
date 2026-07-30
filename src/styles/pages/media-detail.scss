@@ -23,7 +23,7 @@
 }
 
 // --------------------------------------------------------------------------
-// Hero — sub title (1138:8152)
+// Hero — sub title
 // --------------------------------------------------------------------------
 
 .media-detail-hero {
@@ -166,7 +166,7 @@
 }
 
 // --------------------------------------------------------------------------
-// Quick info summary — Figma 1138:8261
+// Quick info summary
 // --------------------------------------------------------------------------
 
 .detail-summary {
@@ -486,7 +486,7 @@
 }
 
 // --------------------------------------------------------------------------
-// Overview (B-1 v3.1) — Figma 1138:8352
+// Overview (B-1)
 // --------------------------------------------------------------------------
 
 .media-detail-hero__breadcrumb .media-detail-hero__breadcrumb-current {
@@ -839,7 +839,7 @@
 }
 
 // --------------------------------------------------------------------------
-// Analytics (B-2 v3.1) — Figma 1138:8622
+// Analytics (B-2)
 // --------------------------------------------------------------------------
 
 .media-detail--analytics {
@@ -1664,27 +1664,10 @@
     font-size: 20px;
   }
 
-  .media-detail-hero .badge-state--l {
-    height: 32px;
-    padding: 0 12px;
-    font-size: 15px;
-
-    .badge-state__dot {
-      width: 8px;
-      height: 8px;
-    }
-  }
-
   .media-detail-hero__meta {
     gap: 4px;
     font-size: 13px;
     line-height: 1.4;
-
-    .badge-settop {
-      height: 24px;
-      padding: 0 8px;
-      font-size: 13px;
-    }
   }
 
   .media-detail-hero__stats {
@@ -1828,12 +1811,6 @@
 
     &__value {
       font-size: 14px;
-
-      .badge-state {
-        height: 28px;
-        padding: 0 10px;
-        font-size: 13px;
-      }
     }
   }
 
@@ -1915,12 +1892,6 @@
       font-size: 14px;
       white-space: normal;
       word-break: break-word;
-
-      .badge-state {
-        height: 28px;
-        padding: 0 10px;
-        font-size: 13px;
-      }
     }
   }
 

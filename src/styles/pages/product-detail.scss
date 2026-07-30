@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Product detail — Figma 1188:3258 프로덕트 상세
+   Product detail
    ========================================================================== */
 
 @use '../components/badge-state';
@@ -22,7 +22,7 @@
 }
 
 // --------------------------------------------------------------------------
-// Hero — Figma 1188:3298 (title area)
+// Hero
 // --------------------------------------------------------------------------
 
 .product-detail-hero {
@@ -257,18 +257,6 @@
 
   .product-detail-hero__title {
     font-size: 22px;
-  }
-
-  .product-detail-hero .badge-state {
-    height: 28px;
-    min-width: 0;
-    padding: 0 10px;
-    font-size: 13px;
-
-    .badge-state__dot {
-      width: 8px;
-      height: 8px;
-    }
   }
 
   .product-detail-hero__meta {

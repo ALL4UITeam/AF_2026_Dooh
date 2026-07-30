@@ -1,0 +1,41 @@
+<!-- 미디어별 편성표 - 일간뷰 -->
+<section class="schedule-page schedule-page--day">
+  <nav class="tab-menu-page" aria-label="편성표 유형">
+    <div class="tab-menu-page__list" role="tablist">
+      <button
+        class="tab-menu-page__item is-active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        data-tab="media"
+      >
+        미디어
+      </button>
+      <button
+        class="tab-menu-page__item"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        data-tab="product"
+      >
+        상품
+      </button>
+    </div>
+    <div class="tab-menu-page__track" aria-hidden="true"></div>
+  </nav>
+
+  <div class="schedule-page__panel" data-tab-panel="media">
+    {{> pages/schedule/media-info-day}}
+
+    <div class="schedule-page__body schedule-page__body--day">
+      {{> pages/schedule/day-timeline}}
+      {{> pages/schedule/order-panel}}
+    </div>
+
+    <div class="schedule-page__actions">
+      <a class="btn-cta btn-cta--l btn-cta--primary" href="{{base}}CMS_03운영_04편성표_일간_순서조정.html">순서조정</a>
+    </div>
+  </div>
+
+  <div class="schedule-page__empty" data-tab-panel="product" hidden>상품별 편성표는 준비 중입니다.</div>
+</section>

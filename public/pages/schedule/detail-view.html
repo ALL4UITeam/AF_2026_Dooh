@@ -1,0 +1,41 @@
+<!-- 미디어별 편성표 -->
+<section class="schedule-page">
+  <nav class="tab-menu-page" aria-label="편성표 유형">
+    <div class="tab-menu-page__list" role="tablist">
+      <button
+        class="tab-menu-page__item is-active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        data-tab="media"
+      >
+        미디어
+      </button>
+      <button
+        class="tab-menu-page__item"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        data-tab="product"
+      >
+        상품
+      </button>
+    </div>
+    <div class="tab-menu-page__track" aria-hidden="true"></div>
+  </nav>
+
+  <div class="schedule-page__panel" data-tab-panel="media">
+    {{> pages/schedule/media-info}}
+
+    <div class="schedule-page__body">
+      {{> pages/schedule/calendar}}
+      {{> pages/schedule/day-panel}}
+    </div>
+
+    <div class="schedule-page__actions">
+      <button class="btn-cta btn-cta--l btn-cta--primary" type="button">상세보기</button>
+    </div>
+  </div>
+
+  <div class="schedule-page__empty" data-tab-panel="product" hidden>상품별 편성표는 준비 중입니다.</div>
+</section>

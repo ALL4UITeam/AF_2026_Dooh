@@ -1,0 +1,51 @@
+<!-- 미디어별 일간 뷰 - 순서조정 (Figma 1306:7873) -->
+<section class="schedule-page schedule-page--day">
+  {{> pages/schedule/media-info-day}}
+
+  <section class="schedule-calendar schedule-calendar--day schedule-calendar--daylist" aria-labelledby="schedule-day-title">
+    <div class="schedule-calendar__toolbar">
+      <div class="schedule-calendar__nav">
+        <button class="schedule-calendar__nav-btn" type="button" data-day-prev aria-label="이전 달">
+          <img src="{{base}}assets/icons/schedule/arrow-prev.svg" alt="" />
+        </button>
+        <h2 class="schedule-calendar__title" id="schedule-day-title">
+          <span data-calendar-year>2026년</span>
+          <span data-calendar-month>6월</span>
+        </h2>
+        <button class="schedule-calendar__nav-btn" type="button" data-day-next aria-label="다음 달">
+          <img src="{{base}}assets/icons/schedule/arrow-next.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="view-options" role="group" aria-label="캘린더 보기">
+        <a
+          class="view-option"
+          href="{{base}}CMS_03운영_04편성표_월간.html"
+          data-calendar-view="month"
+          aria-pressed="false"
+        >
+          <span class="view-option__icon view-option__icon--month" aria-hidden="true"></span>
+          월간
+        </a>
+        <a
+          class="view-option is-active"
+          href="{{base}}CMS_03운영_04편성표_일간.html"
+          data-calendar-view="day"
+          aria-pressed="true"
+        >
+          <span class="view-option__icon view-option__icon--day" aria-hidden="true"></span>
+          일간
+        </a>
+      </div>
+    </div>
+
+    <div class="schedule-calendar__panel schedule-calendar__panel--daylist" role="region" aria-label="유형별 캠페인 목록">
+      {{> pages/schedule/day-list}}
+    </div>
+  </section>
+
+  <div class="schedule-page__actions schedule-page__actions--split">
+    <a class="btn-cta btn-cta--l btn-cta--secondary" href="{{base}}CMS_03운영_04편성표_일간.html">취소</a>
+    <button class="btn-cta btn-cta--l btn-cta--primary" type="button">순서 저장</button>
+  </div>
+</section>

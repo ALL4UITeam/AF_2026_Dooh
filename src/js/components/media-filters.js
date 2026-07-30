@@ -1,7 +1,7 @@
 /**
  * 미디어 목록 검색·상태 필터 (리스트/카드 공통)
  */
-export function initMediaFilters({ itemSelector, containerSelector }) {
+export function initMediaFilters({ itemSelector }) {
   const filterForm = document.querySelector('#media-filters')
   const keywordInput = document.querySelector('#media-keyword')
   const statusSelect = document.querySelector('#status-filter')

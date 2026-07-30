@@ -1,0 +1,43 @@
+<form class="media-filters" id="deploy-filters">
+  <div class="media-selects">
+    <label class="field-select">
+      <span class="sr-only">고객사</span>
+      <select id="client-filter">
+        <option value="all">전체 고객사</option>
+        <option value="kyobo">교보</option>
+        <option value="incheon">인천대</option>
+      </select>
+      <img src="{{base}}assets/icons/select-arrow.svg" alt="" />
+    </label>
+    <label class="field-select">
+      <span class="sr-only">배포명</span>
+      <select id="deploy-name-filter">
+        <option value="all">배포명</option>
+        <option value="firmware">펌웨어</option>
+        <option value="content">콘텐츠</option>
+        <option value="patch">패치</option>
+      </select>
+      <img src="{{base}}assets/icons/select-arrow.svg" alt="" />
+    </label>
+  </div>
+
+  <div class="media-filters__search">
+    <label class="search-input">
+      <span class="sr-only">배포명·대상 검색</span>
+      <img src="{{base}}assets/icons/search-blue.svg" alt="" />
+      <input id="deploy-keyword" type="search" placeholder="배포명·대상 검색" />
+    </label>
+    <button class="filter-reset-btn" id="reset-filters" type="reset" aria-label="초기화">
+      <span class="filter-reset-btn__icon" aria-hidden="true"></span>
+    </button>
+    <button class="action-button action-button--primary" type="submit">검색</button>
+  </div>
+
+  <select id="status-filter" hidden>
+    <option value="all" selected>전체</option>
+    <option value="progress">진행 중</option>
+    <option value="done">완료</option>
+    <option value="pending">대기</option>
+    <option value="fail">실패</option>
+  </select>
+</form>

@@ -1,0 +1,273 @@
+<!-- 편성표 일간 타임라인 -->
+<section class="schedule-calendar schedule-calendar--day" aria-labelledby="schedule-day-title">
+  <div class="schedule-calendar__toolbar">
+    <div class="schedule-calendar__nav">
+      <button class="schedule-calendar__nav-btn" type="button" data-day-prev aria-label="이전 날">
+        <img src="{{base}}assets/icons/schedule/arrow-prev.svg" alt="" />
+      </button>
+      <h2 class="schedule-calendar__title" id="schedule-day-title">
+        <span data-calendar-year>2026년</span>
+        <span data-calendar-month>6월</span>
+      </h2>
+      <button class="schedule-calendar__nav-btn" type="button" data-day-next aria-label="다음 날">
+        <img src="{{base}}assets/icons/schedule/arrow-next.svg" alt="" />
+      </button>
+    </div>
+
+    <div class="view-options" role="group" aria-label="캘린더 보기">
+      <a
+        class="view-option"
+        href="{{base}}CMS_03운영_04편성표_월간.html"
+        data-calendar-view="month"
+        aria-pressed="false"
+      >
+        <span class="view-option__icon view-option__icon--month" aria-hidden="true"></span>
+        월간
+      </a>
+      <a
+        class="view-option is-active"
+        href="{{base}}CMS_03운영_04편성표_일간.html"
+        data-calendar-view="day"
+        aria-pressed="true"
+      >
+        <span class="view-option__icon view-option__icon--day" aria-hidden="true"></span>
+        일간
+      </a>
+    </div>
+  </div>
+
+  <div class="schedule-calendar__panel schedule-calendar__panel--day">
+    <header class="schedule-timeline__head">
+      <h3 class="schedule-timeline__title">캠페인 / 광고</h3>
+    </header>
+
+    <div class="schedule-timeline" data-schedule-timeline>
+      <section class="schedule-timeline__group" aria-label="반복형">
+        <header class="schedule-timeline__category">
+          <span class="schedule-type-badge schedule-type-badge--repeat">
+            <img src="{{base}}assets/icons/schedule/badge-repeat.svg" alt="" />
+            반복형
+          </span>
+          <p class="schedule-timeline__count"><strong>4</strong>건</p>
+          <span class="schedule-timeline__rule" aria-hidden="true"></span>
+        </header>
+        <ul class="schedule-timeline__list">
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">나이키 6월 캠페인</strong>
+                <span class="schedule-timeline__desc">나이키코리아 · 4슬롯 · 운영시간 내...</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--repeat" style="--start: 7; --end: 22">7:00~22:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">금연 캠페인 2025</strong>
+                <span class="schedule-timeline__desc">보건복지부 · 3슬롯 · 최소 노출 반복</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--repeat" style="--start: 7; --end: 22">7:00~22:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">여름 물놀이 안전</strong>
+                <span class="schedule-timeline__desc">행정안전부 · 2슬롯 · 주간 반복</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--repeat" style="--start: 7; --end: 22">7:00~22:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--repeat schedule-type-badge--sm">반복형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">신한카드 프로모션</strong>
+                <span class="schedule-timeline__desc">신한카드 · 3슬롯 · 운영시간 내...</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--repeat" style="--start: 7; --end: 22">7:00~22:00</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="schedule-timeline__group" aria-label="고정형">
+        <header class="schedule-timeline__category">
+          <span class="schedule-type-badge schedule-type-badge--fixed">
+            <img src="{{base}}assets/icons/schedule/badge-fixed.svg" alt="" />
+            고정형
+          </span>
+          <p class="schedule-timeline__count"><strong>4</strong>건</p>
+          <span class="schedule-timeline__rule" aria-hidden="true"></span>
+        </header>
+        <ul class="schedule-timeline__list">
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--fixed schedule-type-badge--sm">고정형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">LG 가전 캠페인</strong>
+                <span class="schedule-timeline__desc">LG전자 · 3슬롯 · 오전 고정</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--fixed" style="--start: 7; --end: 13">7:00~13:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--fixed schedule-type-badge--sm">고정형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">삼성 여름 광고</strong>
+                <span class="schedule-timeline__desc">삼성전자 · 4슬롯 · 주간 고정</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--fixed" style="--start: 9; --end: 18">9:00~18:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--fixed schedule-type-badge--sm">고정형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">탄소중립 생활실천</strong>
+                <span class="schedule-timeline__desc">환경부 · 2슬롯 · 오후 고정</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--fixed" style="--start: 12; --end: 20">12:00~20:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--fixed schedule-type-badge--sm">고정형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">롯데시네마 광고</strong>
+                <span class="schedule-timeline__desc">롯데컬처웍스 · 2슬롯 · 낮 고정</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--fixed" style="--start: 10; --end: 15">10:00~15:00</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="schedule-timeline__group" aria-label="조건형">
+        <header class="schedule-timeline__category">
+          <span class="schedule-type-badge schedule-type-badge--condition">
+            <img src="{{base}}assets/icons/schedule/badge-condition.svg" alt="" />
+            조건형
+          </span>
+          <p class="schedule-timeline__count"><strong>2</strong>건</p>
+          <span class="schedule-timeline__rule" aria-hidden="true"></span>
+        </header>
+        <ul class="schedule-timeline__list">
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--condition schedule-type-badge--sm">조건형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">현대 날씨 센싱</strong>
+                <span class="schedule-timeline__desc">현대자동차 · 2슬롯 · 우천 시 노출</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--condition" style="--start: 7; --end: 22">7:00~22:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--condition schedule-type-badge--sm">조건형</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">미세먼지 센싱</strong>
+                <span class="schedule-timeline__desc">환경공단 · 2슬롯 · 나쁨 이상 노출</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--condition" style="--start: 7; --end: 22">7:00~22:00</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="schedule-timeline__group" aria-label="AI 자동">
+        <header class="schedule-timeline__category">
+          <span class="schedule-type-badge schedule-type-badge--ai">
+            <img src="{{base}}assets/icons/schedule/badge-ai.svg" alt="" />
+            AI 자동
+          </span>
+          <p class="schedule-timeline__count"><strong>3</strong>건</p>
+          <span class="schedule-timeline__rule" aria-hidden="true"></span>
+        </header>
+        <ul class="schedule-timeline__list">
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--ai schedule-type-badge--sm">AI 자동</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">카카오 브랜드</strong>
+                <span class="schedule-timeline__desc">카카오 · 2슬롯 · 저녁 피크 자동</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--ai" style="--start: 18; --end: 22">18:00~22:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--ai schedule-type-badge--sm">AI 자동</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">배민 점심 프로모션</strong>
+                <span class="schedule-timeline__desc">우아한형제들 · 2슬롯 · 점심 피크 자동</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--ai" style="--start: 11; --end: 14">11:00~14:00</span>
+            </div>
+          </li>
+          <li class="schedule-timeline__row">
+            <div class="schedule-timeline__subject">
+              <span class="schedule-type-badge schedule-type-badge--ai schedule-type-badge--sm">AI 자동</span>
+              <div class="schedule-timeline__text">
+                <strong class="schedule-timeline__name">쿠팡 로켓배송</strong>
+                <span class="schedule-timeline__desc">쿠팡 · 2슬롯 · 저녁 피크 자동</span>
+              </div>
+            </div>
+            <div class="schedule-timeline__track">
+              <span class="schedule-timeline__bar schedule-timeline__bar--ai" style="--start: 19; --end: 22">19:00~22:00</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="schedule-timeline__legend" aria-label="스케줄 유형">
+      <span class="schedule-timeline__legend-item">
+        <span class="schedule-timeline__swatch schedule-timeline__swatch--repeat" aria-hidden="true"></span>
+        반복형
+      </span>
+      <span class="schedule-timeline__legend-item">
+        <span class="schedule-timeline__swatch schedule-timeline__swatch--fixed" aria-hidden="true"></span>
+        고정형
+      </span>
+      <span class="schedule-timeline__legend-item">
+        <span class="schedule-timeline__swatch schedule-timeline__swatch--condition" aria-hidden="true"></span>
+        조건형
+      </span>
+      <span class="schedule-timeline__legend-item">
+        <span class="schedule-timeline__swatch schedule-timeline__swatch--ai" aria-hidden="true"></span>
+        AI 자동
+      </span>
+    </footer>
+  </div>
+</section>

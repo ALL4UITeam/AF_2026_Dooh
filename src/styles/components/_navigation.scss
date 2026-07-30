@@ -64,16 +64,6 @@
   }
 }
 
-.app-footer {
-  display: flex;
-  min-height: 64px;
-  align-items: center;
-  justify-content: center;
-  padding: 12px var(--page-gutter);
-  border-top: 1px solid var(--color-gray-10);
-  background: var(--color-white);
-}
-
 .company-info {
   display: flex;
   flex-direction: column;

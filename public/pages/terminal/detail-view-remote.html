@@ -1,0 +1,24 @@
+<div class="terminal-detail">
+  {{> pages/terminal/detail-hero}}
+  {{> pages/terminal/basic-info}}
+
+  <nav class="tab-menu-page" aria-label="단말 상세 탭">
+    <div class="tab-menu-page__list">
+      <a class="tab-menu-page__item" href="#">설치 · 연결 이력</a>
+      <a class="tab-menu-page__item" href="{{base}}Admin_02자원_01단말관리_03상세_02상태이력.html">
+        상태 이력
+      </a>
+      <a
+        class="tab-menu-page__item is-active"
+        href="{{base}}Admin_02자원_01단말관리_03상세_03원격제어.html"
+        aria-current="page"
+      >
+        원격 제어
+      </a>
+    </div>
+    <div class="tab-menu-page__track" aria-hidden="true"></div>
+  </nav>
+
+  {{> pages/monitoring/device-info}}
+  {{> pages/terminal/detail-actions}}
+</div>

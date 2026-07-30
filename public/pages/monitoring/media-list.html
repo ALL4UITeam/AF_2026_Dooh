@@ -1,0 +1,99 @@
+<!-- 미디어 목록 패널 -->
+<article class="monitoring-media-list">
+  <header class="monitoring-media-list__header">
+    <h2 class="monitoring-media-list__title">미디어 목록</h2>
+    <p class="monitoring-media-list__count">
+      <strong>00</strong>건
+    </p>
+  </header>
+
+  <form class="monitoring-media-list__search" role="search">
+    <label class="search-input search-input--fill">
+      <span class="sr-only">미디어 검색</span>
+      <img src="{{base}}assets/icons/search-blue.svg" alt="" />
+      <input type="search" placeholder="검색어를 입력해주세요." />
+    </label>
+    <button class="filter-reset-btn" type="reset" aria-label="검색 초기화">
+      <span class="filter-reset-btn__icon" aria-hidden="true"></span>
+    </button>
+  </form>
+
+  <div class="monitoring-media-list__table-wrap">
+    <table class="monitoring-table">
+      <thead>
+        <tr>
+          <th scope="col" class="monitoring-table__col-no">no</th>
+          <th scope="col" class="monitoring-table__col-name">미디어명</th>
+          <th scope="col" class="monitoring-table__col-status">셋탑 상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="is-selected">
+          <td>1</td>
+          <td>
+            <span class="monitoring-table__name">광화문역_미디어1</span>
+            <span class="monitoring-table__addr">서울특별시 대한민국</span>
+          </td>
+          <td>
+            <span class="badge-state badge-state--error">
+              <span class="badge-state__dot" aria-hidden="true"></span>
+              장애
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <span class="monitoring-table__name">광화문역_미디어2</span>
+            <span class="monitoring-table__addr">서울특별시 종로구 종로1가</span>
+          </td>
+          <td>
+            <span class="badge-state badge-state--warning">
+              <span class="badge-state__dot" aria-hidden="true"></span>
+              신호없음
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <span class="monitoring-table__name">종로1가_미디어2</span>
+            <span class="monitoring-table__addr">서울특별시 종로구 종로1가</span>
+          </td>
+          <td>
+            <span class="badge-state badge-state--success">
+              <span class="badge-state__dot" aria-hidden="true"></span>
+              정상
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <span class="monitoring-table__name">종로2가_미디어1</span>
+            <span class="monitoring-table__addr">서울특별시 종로구 종로2가</span>
+          </td>
+          <td>
+            <span class="badge-state badge-state--success">
+              <span class="badge-state__dot" aria-hidden="true"></span>
+              정상
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            <span class="monitoring-table__name">종로2가_미디어2</span>
+            <span class="monitoring-table__addr">서울특별시 종로구 종로2가</span>
+          </td>
+          <td>
+            <span class="badge-state badge-state--pending">
+              <span class="badge-state__dot" aria-hidden="true"></span>
+              확인불가
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</article>

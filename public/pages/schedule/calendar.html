@@ -1,0 +1,73 @@
+<!-- 편성표 캘린더 (daterangepicker) -->
+<section class="schedule-calendar" aria-labelledby="schedule-calendar-title">
+  <div class="schedule-calendar__toolbar">
+    <div class="schedule-calendar__nav">
+      <button class="schedule-calendar__nav-btn" type="button" data-calendar-prev aria-label="이전 달">
+        <img src="{{base}}assets/icons/schedule/arrow-prev.svg" alt="" />
+      </button>
+      <h2 class="schedule-calendar__title" id="schedule-calendar-title">
+        <span data-calendar-year>2026년</span>
+        <span data-calendar-month>6월</span>
+      </h2>
+      <button class="schedule-calendar__nav-btn" type="button" data-calendar-next aria-label="다음 달">
+        <img src="{{base}}assets/icons/schedule/arrow-next.svg" alt="" />
+      </button>
+    </div>
+
+    <div class="view-options" role="group" aria-label="캘린더 보기">
+      <a
+        class="view-option is-active"
+        href="{{base}}CMS_03운영_04편성표_월간.html"
+        data-calendar-view="month"
+        aria-pressed="true"
+      >
+        <span class="view-option__icon view-option__icon--month" aria-hidden="true"></span>
+        월간
+      </a>
+      <a
+        class="view-option"
+        href="{{base}}CMS_03운영_04편성표_일간.html"
+        data-calendar-view="day"
+        aria-pressed="false"
+      >
+        <span class="view-option__icon view-option__icon--day" aria-hidden="true"></span>
+        일간
+      </a>
+    </div>
+  </div>
+
+  <div class="schedule-calendar__panel">
+    <label class="visually-hidden" for="schedule-daterange">편성 기간</label>
+    <input
+      id="schedule-daterange"
+      class="schedule-calendar__input"
+      type="text"
+      readonly
+      value="2026-06-29"
+      aria-hidden="true"
+      tabindex="-1"
+    />
+    <div class="schedule-calendar__host" data-calendar-host></div>
+    <footer class="schedule-calendar__legend">
+      <ul class="schedule-calendar__legend-list" aria-label="슬롯 상태">
+        <li class="schedule-calendar__legend-item schedule-calendar__legend-item--ok">
+          <span class="schedule-calendar__legend-dot" aria-hidden="true"></span>
+          여유 ~50%
+        </li>
+        <li class="schedule-calendar__legend-item schedule-calendar__legend-item--busy">
+          <span class="schedule-calendar__legend-dot" aria-hidden="true"></span>
+          혼잡 55~75%
+        </li>
+        <li class="schedule-calendar__legend-item schedule-calendar__legend-item--hot">
+          <span class="schedule-calendar__legend-dot" aria-hidden="true"></span>
+          포화 80~95%
+        </li>
+        <li class="schedule-calendar__legend-item schedule-calendar__legend-item--full">
+          <span class="schedule-calendar__legend-dot" aria-hidden="true"></span>
+          마감 100%
+        </li>
+      </ul>
+      <p class="schedule-calendar__legend-note">엮인 미디어 중 가장 빠듯한 슬롯 기준</p>
+    </footer>
+  </div>
+</section>

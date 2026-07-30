@@ -57,10 +57,9 @@ function pagesListPlugin() {
 /**
  * public 아래의 HTML 조각을 빌드 시점에 합칩니다.
  *
- * - {{> login-panel}}         → public/partials/login-panel.html
+ * - {{> app-header}}            → public/partials/app-header.html
  * - {{> components/pagination}} → public/components/pagination.html
  * - {{> pages/media/filters}}   → public/pages/media/filters.html
- * - {{> layouts/app-shell}}   → public/layouts/app-shell.html
  *
  * 조각 안에서 다른 조각을 다시 include할 수 있도록 재귀 처리합니다.
  */

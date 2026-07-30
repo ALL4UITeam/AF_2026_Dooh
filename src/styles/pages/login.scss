@@ -489,7 +489,6 @@
   }
 
   &:hover {
-    // Figma 1138:9647 — hover: border Primary/60 + drop-shadow
     border-color: var(--color-primary-60);
     color: var(--color-white);
     background: linear-gradient(151.46deg, var(--color-primary-50) 0%, #0b1124 100%);
